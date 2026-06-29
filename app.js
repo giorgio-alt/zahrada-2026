@@ -84,6 +84,30 @@
     return wrap;
   }
 
+  function formatMoney(value) {
+    if (value === undefined || value === null || value === "") return "";
+    if (typeof value === "number") return `${value.toLocaleString("cs-CZ")} Kč`;
+    return value;
+  }
+
+  function worklogMarker(type) {
+    return {
+      own: "🟩",
+      shared: "🟦",
+      mixed: "🟧",
+      off: "⬜",
+    }[type || "off"];
+  }
+
+  function worklogTone(type) {
+    return {
+      own: "good",
+      shared: "split",
+      mixed: "wait",
+      off: "",
+    }[type || "off"];
+  }
+
   function renderNav() {
     const nav = document.querySelector("#mainNav");
     data.nav.forEach(([id, label]) => {
@@ -149,12 +173,123 @@
 
   function renderWorklog() {
     const section = document.querySelector("#worklog");
-    sectionTitle(section, "📒 Stavební deník");
-    section.append(
-      grid(data.worklog, ([label, tone, title, body]) =>
-        card({ badge: label, tone, title, body })
-      )
-    );
+    const calendar = data.worklog;
+    sectionTitle(section, "📒 Stavební kalendář");
+
+    const layout = el("div", "calendar-layout");
+    const panel = el("div", "calendar-panel");
+    const header = el("div", "calendar-head");
+    header.append(el("p", "eyebrow", "Měsíční přehled stavby"));
+    header.append(el("h3", "", calendar.monthLabel));
+    panel.append(header);
+
+    const calendarGrid = el("div", "calendar-grid");
+    calendar.weekdays.forEach((weekday) => calendarGrid.append(el("div", "calendar-weekday", weekday)));
+
+    const detail = el("article", "calendar-detail");
+    const days = calendar.days || [];
+    const selectedDay = days.find((day) => day.selected) || days.find((day) => day.type !== "off") || days[0];
+
+    function selectDay(day) {
+      calendarGrid.querySelectorAll(".calendar-day").forEach((button) => {
+        const isSelected = Number(button.dataset.day) === day.day;
+        button.classList.toggle("is-selected", isSelected);
+        button.setAttribute("aria-expanded", String(isSelected));
+      });
+      renderWorklogDetail(detail, day);
+    }
+
+    days.forEach((day) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = `calendar-day type-${day.type || "off"}`;
+      button.dataset.day = day.day;
+      button.title = day.tooltip || `${day.day}.6. ${day.title || "Nepracovalo se"}`;
+      button.setAttribute("aria-expanded", "false");
+      button.append(el("span", "calendar-date", day.day));
+      button.append(el("span", "calendar-marker", worklogMarker(day.type)));
+      if (day.short) button.append(el("span", "calendar-short", day.short));
+      calendarGrid.append(button);
+    });
+
+    calendarGrid.addEventListener("click", (event) => {
+      const button = event.target.closest(".calendar-day");
+      if (!button) return;
+      const day = days.find((item) => item.day === Number(button.dataset.day));
+      if (day) selectDay(day);
+    });
+
+    panel.append(calendarGrid);
+    layout.append(panel);
+
+    const legend = el("div", "calendar-legend");
+    calendar.legend.forEach(([marker, label]) => {
+      const item = el("span", "");
+      item.append(el("span", "legend-marker", marker), el("span", "", label));
+      legend.append(item);
+    });
+    layout.append(legend);
+    layout.append(detail);
+    section.append(layout);
+
+    if (selectedDay) selectDay(selectedDay);
+  }
+
+  function renderWorklogDetail(container, day) {
+    const detail = day.detail || {};
+    const finance = detail.finance;
+    container.replaceChildren();
+    container.className = `calendar-detail type-${day.type || "off"}`;
+    container.append(badge(`${worklogMarker(day.type)} ${day.title || "Nepracovalo se"}`, worklogTone(day.type)));
+    container.append(el("h3", "", `📅 ${detail.date || `${day.day}. 6. 2026`}`));
+
+    const detailGrid = el("div", "detail-grid");
+    detailGrid.append(detailBlock("👷 Pracovali", listContent(detail.workers, "Nepracovalo se")));
+    detailGrid.append(detailBlock("Hotovo", listContent(detail.done, day.title || "Nepracovalo se")));
+    detailGrid.append(detailBlock("💰 Finance", financeContent(finance, day.type)));
+    detailGrid.append(detailBlock("Dotčené projekty", listContent(detail.projects, "Bez vazby na aktivní projekt")));
+    container.append(detailGrid);
+
+    const notes = el("div", "detail-notes");
+    notes.append(el("h4", "", "Poznámky"));
+    notes.append(el("p", "", detail.notes || "Bez stavební aktivity."));
+    container.append(notes);
+  }
+
+  function detailBlock(title, content) {
+    const block = el("div", "detail-block");
+    block.append(el("h4", "", title));
+    block.append(content);
+    return block;
+  }
+
+  function listContent(items, fallback) {
+    const list = el("ul", "detail-list");
+    const values = Array.isArray(items) && items.length ? items : [fallback];
+    values.forEach((item) => list.append(el("li", "", item)));
+    return list;
+  }
+
+  function financeContent(finance, type) {
+    const wrap = el("div", "finance-list");
+    if (!finance) {
+      wrap.append(financeRow("Celkem", type === "off" ? "0 Kč" : "Doplnit"));
+      return wrap;
+    }
+
+    wrap.append(financeRow("Celkem", formatMoney(finance.total)));
+    if (finance.sharedPercent) wrap.append(financeRow("Společný projekt", `${finance.sharedPercent} % / ${formatMoney(finance.sharedAmount)}`));
+    if (finance.ownPercent) wrap.append(financeRow("Náš projekt", `${finance.ownPercent} % / ${formatMoney(finance.ownAmount)}`));
+    if (finance.ourSharedShare !== undefined) wrap.append(financeRow("Náš podíl ze společné části", formatMoney(finance.ourSharedShare)));
+    if (finance.neighborSharedShare !== undefined) wrap.append(financeRow("Podíl Lofflemanových", formatMoney(finance.neighborSharedShare)));
+    if (finance.ourCost !== undefined) wrap.append(financeRow("Náš reálný náklad", formatMoney(finance.ourCost)));
+    return wrap;
+  }
+
+  function financeRow(label, value) {
+    const row = el("div", "finance-row");
+    row.append(el("span", "", label), el("strong", "", value));
+    return row;
   }
 
   function renderSettlement() {
