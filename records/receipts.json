@@ -80,7 +80,7 @@
       "linkedRecords": [
         {
           "type": "sharedCost",
-          "id": "shared-obi-beton-b25-2026-06-19"
+          "id": "shared-obi-material-prepazeni-2026-06"
         }
       ],
       "note": "Sdileny naklad s Loffelmanovymi."
@@ -118,7 +118,7 @@
       "linkedRecords": [
         {
           "type": "sharedCost",
-          "id": "shared-obi-bedneni-beton-kliny-2026-06-24"
+          "id": "shared-obi-material-prepazeni-2026-06"
         }
       ],
       "note": "Sdileny naklad s Loffelmanovymi."
@@ -157,7 +157,7 @@
       "linkedRecords": [
         {
           "type": "sharedCost",
-          "id": "shared-obi-bedneni-roxor-beton-2026-06-24"
+          "id": "shared-obi-material-prepazeni-2026-06"
         }
       ],
       "note": "Sdileny naklad s Loffelmanovymi."
@@ -182,7 +182,7 @@
       "linkedRecords": [
         {
           "type": "sharedCost",
-          "id": "shared-obi-beton-hobby-2026-06-25"
+          "id": "shared-obi-material-prepazeni-2026-06"
         }
       ],
       "note": "Sdileny naklad s Loffelmanovymi."

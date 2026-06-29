@@ -65,64 +65,22 @@
       "note": "Sdilena polozka 50/50, uhrazeno nami."
     },
     {
-      "id": "payment-obi-beton-b25-2026-06-19",
-      "date": "2026-06-19",
-      "type": "shared_expense",
-      "title": "OBI - beton B25",
-      "amount": 763,
-      "paidBy": "us",
-      "paidTo": "OBI",
-      "status": "paid",
-      "sharedCostId": "shared-obi-beton-b25-2026-06-19",
-      "receiptIds": [
-        "receipt-2026-06-19-obi-beton-b25"
-      ],
-      "note": "Sdilena polozka 50/50 s Loffelmanovymi."
-    },
-    {
-      "id": "payment-obi-bedneni-beton-kliny-2026-06-24",
-      "date": "2026-06-24",
-      "type": "shared_expense",
-      "title": "OBI - ztracene bedneni, beton a kliny",
-      "amount": 4537,
-      "paidBy": "us",
-      "paidTo": "OBI",
-      "status": "paid",
-      "sharedCostId": "shared-obi-bedneni-beton-kliny-2026-06-24",
-      "receiptIds": [
-        "receipt-2026-06-24-obi-bedneni-beton-kliny"
-      ],
-      "note": "Sdilena polozka 50/50 s Loffelmanovymi."
-    },
-    {
-      "id": "payment-obi-bedneni-roxor-beton-2026-06-24",
-      "date": "2026-06-24",
-      "type": "shared_expense",
-      "title": "OBI - ztracene bedneni, roxor a beton",
-      "amount": 4694,
-      "paidBy": "us",
-      "paidTo": "OBI",
-      "status": "paid",
-      "sharedCostId": "shared-obi-bedneni-roxor-beton-2026-06-24",
-      "receiptIds": [
-        "receipt-2026-06-24-obi-bedneni-roxor-beton"
-      ],
-      "note": "Sdilena polozka 50/50 s Loffelmanovymi."
-    },
-    {
-      "id": "payment-obi-beton-hobby-2026-06-25",
+      "id": "payment-obi-material-prepazeni-2026-06",
       "date": "2026-06-25",
       "type": "shared_expense",
-      "title": "OBI - beton hobby",
-      "amount": 2970,
+      "title": "OBI - material k zahradnimu prepazeni",
+      "amount": 12964,
       "paidBy": "us",
       "paidTo": "OBI",
       "status": "paid",
-      "sharedCostId": "shared-obi-beton-hobby-2026-06-25",
+      "sharedCostId": "shared-obi-material-prepazeni-2026-06",
       "receiptIds": [
+        "receipt-2026-06-19-obi-beton-b25",
+        "receipt-2026-06-24-obi-bedneni-beton-kliny",
+        "receipt-2026-06-24-obi-bedneni-roxor-beton",
         "receipt-2026-06-25-obi-beton-hobby"
       ],
-      "note": "Sdilena polozka 50/50 s Loffelmanovymi."
+      "note": "Souhrnna sdilena polozka 50/50 s Loffelmanovymi za OBI uctenky ve varkach."
     },
     {
       "id": "payment-obi-private-material-2026-06-29",

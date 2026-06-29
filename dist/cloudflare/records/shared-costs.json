@@ -34,64 +34,22 @@
       "note": "Driveway plotove pole uhrazeno nami."
     },
     {
-      "id": "shared-obi-beton-b25-2026-06-19",
+      "id": "shared-obi-material-prepazeni-2026-06",
       "category": "material",
-      "title": "OBI - beton B25",
-      "amount": 763,
+      "title": "OBI - material k zahradnimu prepazeni",
+      "amount": 12964,
       "split": "50/50",
-      "ourShare": 381.5,
-      "counterpartyShare": 381.5,
+      "ourShare": 6482,
+      "counterpartyShare": 6482,
       "paidBy": "us",
       "settlementStatus": "reimbursable",
       "receiptIds": [
-        "receipt-2026-06-19-obi-beton-b25"
-      ],
-      "note": "Sdileny material k zahradnimu prepazeni."
-    },
-    {
-      "id": "shared-obi-bedneni-beton-kliny-2026-06-24",
-      "category": "material",
-      "title": "OBI - ztracene bedneni, beton a kliny",
-      "amount": 4537,
-      "split": "50/50",
-      "ourShare": 2268.5,
-      "counterpartyShare": 2268.5,
-      "paidBy": "us",
-      "settlementStatus": "reimbursable",
-      "receiptIds": [
-        "receipt-2026-06-24-obi-bedneni-beton-kliny"
-      ],
-      "note": "Sdileny material k zahradnimu prepazeni."
-    },
-    {
-      "id": "shared-obi-bedneni-roxor-beton-2026-06-24",
-      "category": "material",
-      "title": "OBI - ztracene bedneni, roxor a beton",
-      "amount": 4694,
-      "split": "50/50",
-      "ourShare": 2347,
-      "counterpartyShare": 2347,
-      "paidBy": "us",
-      "settlementStatus": "reimbursable",
-      "receiptIds": [
-        "receipt-2026-06-24-obi-bedneni-roxor-beton"
-      ],
-      "note": "Sdileny material k zahradnimu prepazeni."
-    },
-    {
-      "id": "shared-obi-beton-hobby-2026-06-25",
-      "category": "material",
-      "title": "OBI - beton hobby",
-      "amount": 2970,
-      "split": "50/50",
-      "ourShare": 1485,
-      "counterpartyShare": 1485,
-      "paidBy": "us",
-      "settlementStatus": "reimbursable",
-      "receiptIds": [
+        "receipt-2026-06-19-obi-beton-b25",
+        "receipt-2026-06-24-obi-bedneni-beton-kliny",
+        "receipt-2026-06-24-obi-bedneni-roxor-beton",
         "receipt-2026-06-25-obi-beton-hobby"
       ],
-      "note": "Sdileny material k zahradnimu prepazeni."
+      "note": "Souhrnna polozka za OBI uctenky ve varkach: beton, ztracene bedneni, roxor a kliny."
     },
     {
       "id": "shared-work-2026-06-23",
