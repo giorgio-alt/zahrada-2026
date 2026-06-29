@@ -154,10 +154,10 @@
     },
     {
       "id": "liability-ivan-work-2026-06-17-26",
-      "date": "2026-06-26",
+      "date": "2026-06-29",
       "type": "work_liability",
-      "title": "Prace Ivanovy party 17.-26. 6.",
-      "amount": 72000,
+      "title": "Prace Ivanovy party 17.-29. 6.",
+      "amount": 78000,
       "paidBy": "us",
       "paidTo": "Ivanova parta",
       "status": "logged",
@@ -169,10 +169,11 @@
         "work-2026-06-23",
         "work-2026-06-24",
         "work-2026-06-25",
-        "work-2026-06-26"
+        "work-2026-06-26",
+        "work-2026-06-29"
       ],
       "receiptIds": [],
-      "note": "Evidovano 8 pracovnich dnu x 9 000 Kc. Stav ponechan jako logged, dokud nebude potvrzena realna vyplata."
+      "note": "Evidovano 8 plnych pracovnich dnu x 9 000 Kc a 1 snizeny den x 6 000 Kc. Stav ponechan jako logged, dokud nebude potvrzena realna vyplata."
     }
   ]
 }

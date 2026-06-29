@@ -140,6 +140,19 @@
       "paidBy": "pending",
       "settlementStatus": "reimbursable",
       "workDayId": "work-2026-06-26"
+    },
+    {
+      "id": "shared-work-2026-06-29",
+      "category": "work",
+      "title": "Prace 29. 6. - sdilena cast 20 % dne",
+      "amount": 1200,
+      "split": "50/50",
+      "ourShare": 600,
+      "counterpartyShare": 600,
+      "paidBy": "pending",
+      "settlementStatus": "reimbursable",
+      "workDayId": "work-2026-06-29",
+      "note": "Snizena sazba 6 000 Kc, pracovali pouze Ivan a Tatino."
     }
   ],
   "openItems": [
@@ -170,9 +183,9 @@
   ],
   "totals": {
     "knownMaterial": 65354,
-    "knownWork": 22500,
-    "knownSharedTotal": 87854,
-    "ourKnownShare": 43927,
-    "counterpartyKnownShare": 43927
+    "knownWork": 23700,
+    "knownSharedTotal": 89054,
+    "ourKnownShare": 44527,
+    "counterpartyKnownShare": 44527
   }
 }

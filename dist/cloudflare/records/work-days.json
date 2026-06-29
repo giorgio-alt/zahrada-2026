@@ -107,15 +107,34 @@
       "neighborSharedShare": 2250,
       "status": "logged",
       "note": "Dokoncen jizni plot bez podhrabovek a nahozeny WPC desky. Zbyva omitnout."
+    },
+    {
+      "id": "work-2026-06-29",
+      "date": "2026-06-29",
+      "dayRate": 6000,
+      "workers": [
+        "Ivan",
+        "Tatino"
+      ],
+      "ownProjectPercent": 80,
+      "sharedProjectPercent": 20,
+      "ownProjectAmount": 4800,
+      "sharedProjectAmount": 1200,
+      "ourSharedShare": 600,
+      "neighborSharedShare": 600,
+      "status": "logged",
+      "note": "Nater perlinky na zidku. Pracovali pouze Ivan a Tatino, proto snizena sazba 6 000 Kc."
     }
   ],
   "totals": {
-    "days": 8,
-    "totalWork": 72000,
-    "ownProjectAmount": 49500,
-    "sharedProjectAmount": 22500,
-    "ourSharedShare": 11250,
-    "neighborSharedShare": 11250,
-    "ourTotalWorkCost": 60750
+    "days": 9,
+    "fullDays": 8,
+    "reducedDays": 1,
+    "totalWork": 78000,
+    "ownProjectAmount": 54300,
+    "sharedProjectAmount": 23700,
+    "ourSharedShare": 11850,
+    "neighborSharedShare": 11850,
+    "ourTotalWorkCost": 66150
   }
 }
