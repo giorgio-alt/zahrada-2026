@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "currency": "CZK",
+  "workerTeam": "Ivanova parta",
+  "defaultDayRate": 9000,
+  "entries": [
+    {
+      "id": "work-2026-06-17",
+      "date": "2026-06-17",
+      "dayRate": 9000,
+      "ownProjectPercent": 100,
+      "sharedProjectPercent": 0,
+      "ownProjectAmount": 9000,
+      "sharedProjectAmount": 0,
+      "ourSharedShare": 0,
+      "neighborSharedShare": 0,
+      "status": "logged",
+      "note": "Start praci. Ivanova parta zacala pracovat."
+    },
+    {
+      "id": "work-2026-06-18",
+      "date": "2026-06-18",
+      "dayRate": 9000,
+      "ownProjectPercent": 100,
+      "sharedProjectPercent": 0,
+      "ownProjectAmount": 9000,
+      "sharedProjectAmount": 0,
+      "ourSharedShare": 0,
+      "neighborSharedShare": 0,
+      "status": "logged",
+      "note": "Prace pokracuji."
+    },
+    {
+      "id": "work-2026-06-19",
+      "date": "2026-06-19",
+      "dayRate": 9000,
+      "ownProjectPercent": 100,
+      "sharedProjectPercent": 0,
+      "ownProjectAmount": 9000,
+      "sharedProjectAmount": 0,
+      "ourSharedShare": 0,
+      "neighborSharedShare": 0,
+      "status": "logged",
+      "note": "Prace pokracuji."
+    },
+    {
+      "id": "work-2026-06-22",
+      "date": "2026-06-22",
+      "dayRate": 9000,
+      "ownProjectPercent": 100,
+      "sharedProjectPercent": 0,
+      "ownProjectAmount": 9000,
+      "sharedProjectAmount": 0,
+      "ourSharedShare": 0,
+      "neighborSharedShare": 0,
+      "status": "logged",
+      "note": "Prace pokracuji."
+    },
+    {
+      "id": "work-2026-06-23",
+      "date": "2026-06-23",
+      "dayRate": 9000,
+      "ownProjectPercent": 50,
+      "sharedProjectPercent": 50,
+      "ownProjectAmount": 4500,
+      "sharedProjectAmount": 4500,
+      "ourSharedShare": 2250,
+      "neighborSharedShare": 2250,
+      "status": "logged",
+      "note": "Od 10:00 spolecny zapadni plot mezi nami a Loffelmanovymi."
+    },
+    {
+      "id": "work-2026-06-24",
+      "date": "2026-06-24",
+      "dayRate": 9000,
+      "ownProjectPercent": 25,
+      "sharedProjectPercent": 75,
+      "ownProjectAmount": 2250,
+      "sharedProjectAmount": 6750,
+      "ourSharedShare": 3375,
+      "neighborSharedShare": 3375,
+      "status": "logged",
+      "note": "Nakup, mereni a zasazeni ztraceneho bedneni. Zbytek dne strzeni jizniho plotu."
+    },
+    {
+      "id": "work-2026-06-25",
+      "date": "2026-06-25",
+      "dayRate": 9000,
+      "ownProjectPercent": 25,
+      "sharedProjectPercent": 75,
+      "ownProjectAmount": 2250,
+      "sharedProjectAmount": 6750,
+      "ourSharedShare": 3375,
+      "neighborSharedShare": 3375,
+      "status": "logged",
+      "note": "Dorazily ROJA WPC desky a sloupky. Betonaz."
+    },
+    {
+      "id": "work-2026-06-26",
+      "date": "2026-06-26",
+      "dayRate": 9000,
+      "ownProjectPercent": 50,
+      "sharedProjectPercent": 50,
+      "ownProjectAmount": 4500,
+      "sharedProjectAmount": 4500,
+      "ourSharedShare": 2250,
+      "neighborSharedShare": 2250,
+      "status": "logged",
+      "note": "Dokoncen jizni plot bez podhrabovek a nahozeny WPC desky. Zbyva omitnout."
+    }
+  ],
+  "totals": {
+    "days": 8,
+    "totalWork": 72000,
+    "ownProjectAmount": 49500,
+    "sharedProjectAmount": 22500,
+    "ourSharedShare": 11250,
+    "neighborSharedShare": 11250,
+    "ourTotalWorkCost": 60750
+  }
+}

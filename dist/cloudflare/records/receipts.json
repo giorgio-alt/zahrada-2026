@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "receipts": [
+    {
+      "id": "receipt-2026-06-28-akto-zabradli",
+      "date": "2026-06-28",
+      "vendor": "Petr Sedlacek / AKTO",
+      "invoiceNumber": "26062801",
+      "variableSymbol": "26062801",
+      "dueDate": "2026-07-12",
+      "taxableSupplyDate": "2026-06-28",
+      "amount": 80109.12,
+      "currency": "CZK",
+      "file": "assets/receipts/2026-06-28_akto-zabradli_faktura-26062801_80109-12.png",
+      "status": "verified",
+      "lineItems": [
+        {
+          "title": "Dodavka a montaz skleneneho zabradli dle CN",
+          "quantity": 1,
+          "unit": "ks",
+          "priceWithoutVat": 59100,
+          "vatRate": 12,
+          "totalWithVat": 66192
+        },
+        {
+          "title": "Madlo na sklo 2 ks 1400 mm s montazi",
+          "quantity": 2.8,
+          "unit": "bm",
+          "priceWithoutVat": 5096,
+          "vatRate": 12,
+          "totalWithVat": 5707.52
+        },
+        {
+          "title": "Madlo na stenu na puvodni drzaky",
+          "quantity": 4.4,
+          "unit": "bm",
+          "priceWithoutVat": 6380,
+          "vatRate": 12,
+          "totalWithVat": 7145.6
+        },
+        {
+          "title": "Lista L polepena vinylem s montazi",
+          "quantity": 1,
+          "unit": "ks",
+          "priceWithoutVat": 950,
+          "vatRate": 12,
+          "totalWithVat": 1064
+        }
+      ],
+      "totals": {
+        "withoutVat": 71526,
+        "vat": 8583.12,
+        "withVat": 80109.12
+      },
+      "linkedRecords": [
+        {
+          "type": "payment",
+          "id": "payment-zabradli-akto-2026-06-28"
+        }
+      ],
+      "note": "Faktura za zabradli dle objednavky. Soukromy naklad, mimo sdilene vyuctovani s Loffelmanovymi."
+    },
+    {
+      "id": "receipt-2026-06-19-obi-beton-b25",
+      "date": "2026-06-19",
+      "vendor": "OBI Ceska republika s.r.o.",
+      "amount": 763,
+      "currency": "CZK",
+      "file": "assets/receipts/IMG_8198.JPG",
+      "status": "verified",
+      "lineItems": [
+        {
+          "title": "Beton B25",
+          "quantity": 7,
+          "unit": "ks",
+          "unitPriceWithVat": 109,
+          "totalWithVat": 763
+        }
+      ],
+      "linkedRecords": [
+        {
+          "type": "sharedCost",
+          "id": "shared-obi-beton-b25-2026-06-19"
+        }
+      ],
+      "note": "Sdileny naklad s Loffelmanovymi."
+    },
+    {
+      "id": "receipt-2026-06-24-obi-bedneni-beton-kliny",
+      "date": "2026-06-24",
+      "vendor": "OBI Ceska republika s.r.o.",
+      "amount": 4537,
+      "currency": "CZK",
+      "file": "assets/receipts/IMG_8199.JPG",
+      "status": "verified",
+      "lineItems": [
+        {
+          "title": "Bedneni ztracene",
+          "quantity": 27,
+          "unit": "ks",
+          "unitPriceWithVat": 69,
+          "totalWithVat": 1863
+        },
+        {
+          "title": "Beton hobby",
+          "quantity": 25,
+          "unit": "ks",
+          "unitPriceWithVat": 99,
+          "totalWithVat": 2475
+        },
+        {
+          "title": "Kliny leveling",
+          "quantity": 1,
+          "unit": "ks",
+          "totalWithVat": 199
+        }
+      ],
+      "linkedRecords": [
+        {
+          "type": "sharedCost",
+          "id": "shared-obi-bedneni-beton-kliny-2026-06-24"
+        }
+      ],
+      "note": "Sdileny naklad s Loffelmanovymi."
+    },
+    {
+      "id": "receipt-2026-06-24-obi-bedneni-roxor-beton",
+      "date": "2026-06-24",
+      "vendor": "OBI Ceska republika s.r.o.",
+      "amount": 4694,
+      "currency": "CZK",
+      "file": "assets/receipts/IMG_8200.JPG",
+      "status": "verified",
+      "lineItems": [
+        {
+          "title": "Bedneni ztracene",
+          "quantity": 36,
+          "unit": "ks",
+          "unitPriceWithVat": 69,
+          "totalWithVat": 2484
+        },
+        {
+          "title": "Tyc roxorova",
+          "quantity": 25,
+          "unit": "ks",
+          "unitPriceWithVat": 29,
+          "totalWithVat": 725
+        },
+        {
+          "title": "Beton hobby",
+          "quantity": 15,
+          "unit": "ks",
+          "unitPriceWithVat": 99,
+          "totalWithVat": 1485
+        }
+      ],
+      "linkedRecords": [
+        {
+          "type": "sharedCost",
+          "id": "shared-obi-bedneni-roxor-beton-2026-06-24"
+        }
+      ],
+      "note": "Sdileny naklad s Loffelmanovymi."
+    },
+    {
+      "id": "receipt-2026-06-25-obi-beton-hobby",
+      "date": "2026-06-25",
+      "vendor": "OBI Ceska republika s.r.o.",
+      "amount": 2970,
+      "currency": "CZK",
+      "file": "assets/receipts/IMG_8201.JPG",
+      "status": "verified",
+      "lineItems": [
+        {
+          "title": "Beton hobby",
+          "quantity": 30,
+          "unit": "ks",
+          "unitPriceWithVat": 99,
+          "totalWithVat": 2970
+        }
+      ],
+      "linkedRecords": [
+        {
+          "type": "sharedCost",
+          "id": "shared-obi-beton-hobby-2026-06-25"
+        }
+      ],
+      "note": "Sdileny naklad s Loffelmanovymi."
+    },
+    {
+      "id": "receipt-2026-06-29-obi-private-material-927",
+      "date": "2026-06-29",
+      "vendor": "OBI Ceska republika s.r.o.",
+      "amount": 927,
+      "currency": "CZK",
+      "file": "assets/receipts/IMG_8202.JPG",
+      "status": "verified",
+      "lineItems": [
+        {
+          "title": "Chranicka kabelova",
+          "quantity": 1,
+          "unit": "ks",
+          "totalWithVat": 499
+        },
+        {
+          "title": "Armovaci tkanina",
+          "quantity": 1,
+          "unit": "role",
+          "totalWithVat": 269
+        },
+        {
+          "title": "Lepidlo stavebni",
+          "quantity": 1,
+          "unit": "ks",
+          "totalWithVat": 159
+        }
+      ],
+      "linkedRecords": [
+        {
+          "type": "payment",
+          "id": "payment-obi-private-material-2026-06-29"
+        }
+      ],
+      "note": "Nesdileny naklad. Nepatri do vyuctovani s Loffelmanovymi."
+    }
+  ],
+  "example": {
+    "id": "receipt-2026-06-25-roja-wpc",
+    "date": "2026-06-25",
+    "vendor": "ROJA",
+    "amount": 37669,
+    "currency": "CZK",
+    "file": "assets/receipts/2026-06-25_roja_wpc-plot_37669.jpg",
+    "status": "photo_uploaded",
+    "linkedRecords": [
+      {
+        "type": "sharedCost",
+        "id": "shared-wpc-roja-2026-06"
+      },
+      {
+        "type": "payment",
+        "id": "payment-wpc-roja-2026-06"
+      }
+    ],
+    "note": "Priklad struktury. Pri realnem pridani uctenky presunout do pole receipts."
+  }
+}

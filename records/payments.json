@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "currency": "CZK",
+  "entries": [
+    {
+      "id": "payment-cement-ivan-2026-06-20",
+      "date": "2026-06-20",
+      "type": "expense",
+      "title": "Ivan - cement a material",
+      "amount": 5644,
+      "paidBy": "us",
+      "paidTo": "Ivan",
+      "status": "paid",
+      "receiptIds": [],
+      "note": "Uhrazeno 20. 6."
+    },
+    {
+      "id": "payment-paving-14m2-2026-06",
+      "date": null,
+      "type": "private_expense",
+      "title": "Dlazba 14 m2",
+      "amount": 9800,
+      "paidBy": "us",
+      "paidTo": null,
+      "status": "paid",
+      "receiptIds": [],
+      "note": "Zakoupeno, zaplaceno a polozeno. Soucasti objednavky byla i mensi cast dlazby urcena pro sousedy, naklad zustava 100 % na nasi strane."
+    },
+    {
+      "id": "payment-fences-2026-06",
+      "date": null,
+      "type": "expense",
+      "title": "Ploty a podhrabovky",
+      "amount": 31305.98,
+      "paidBy": "us",
+      "paidTo": null,
+      "status": "paid",
+      "receiptIds": [],
+      "note": "Zaplaceno a dovezeno."
+    },
+    {
+      "id": "payment-wpc-roja-2026-06",
+      "date": null,
+      "type": "shared_expense",
+      "title": "Zahradni prepazeni WPC",
+      "amount": 37669,
+      "paidBy": "us",
+      "paidTo": "ROJA",
+      "status": "paid",
+      "sharedCostId": "shared-wpc-roja-2026-06",
+      "receiptIds": [],
+      "note": "Sdilena polozka 50/50."
+    },
+    {
+      "id": "payment-driveway-field-2026-06",
+      "date": null,
+      "type": "shared_expense",
+      "title": "Driveway plotove pole",
+      "amount": 14721,
+      "paidBy": "us",
+      "paidTo": "Fortamigo",
+      "status": "paid",
+      "sharedCostId": "shared-driveway-field-2026-06",
+      "receiptIds": [],
+      "note": "Sdilena polozka 50/50, uhrazeno nami."
+    },
+    {
+      "id": "payment-obi-beton-b25-2026-06-19",
+      "date": "2026-06-19",
+      "type": "shared_expense",
+      "title": "OBI - beton B25",
+      "amount": 763,
+      "paidBy": "us",
+      "paidTo": "OBI",
+      "status": "paid",
+      "sharedCostId": "shared-obi-beton-b25-2026-06-19",
+      "receiptIds": [
+        "receipt-2026-06-19-obi-beton-b25"
+      ],
+      "note": "Sdilena polozka 50/50 s Loffelmanovymi."
+    },
+    {
+      "id": "payment-obi-bedneni-beton-kliny-2026-06-24",
+      "date": "2026-06-24",
+      "type": "shared_expense",
+      "title": "OBI - ztracene bedneni, beton a kliny",
+      "amount": 4537,
+      "paidBy": "us",
+      "paidTo": "OBI",
+      "status": "paid",
+      "sharedCostId": "shared-obi-bedneni-beton-kliny-2026-06-24",
+      "receiptIds": [
+        "receipt-2026-06-24-obi-bedneni-beton-kliny"
+      ],
+      "note": "Sdilena polozka 50/50 s Loffelmanovymi."
+    },
+    {
+      "id": "payment-obi-bedneni-roxor-beton-2026-06-24",
+      "date": "2026-06-24",
+      "type": "shared_expense",
+      "title": "OBI - ztracene bedneni, roxor a beton",
+      "amount": 4694,
+      "paidBy": "us",
+      "paidTo": "OBI",
+      "status": "paid",
+      "sharedCostId": "shared-obi-bedneni-roxor-beton-2026-06-24",
+      "receiptIds": [
+        "receipt-2026-06-24-obi-bedneni-roxor-beton"
+      ],
+      "note": "Sdilena polozka 50/50 s Loffelmanovymi."
+    },
+    {
+      "id": "payment-obi-beton-hobby-2026-06-25",
+      "date": "2026-06-25",
+      "type": "shared_expense",
+      "title": "OBI - beton hobby",
+      "amount": 2970,
+      "paidBy": "us",
+      "paidTo": "OBI",
+      "status": "paid",
+      "sharedCostId": "shared-obi-beton-hobby-2026-06-25",
+      "receiptIds": [
+        "receipt-2026-06-25-obi-beton-hobby"
+      ],
+      "note": "Sdilena polozka 50/50 s Loffelmanovymi."
+    },
+    {
+      "id": "payment-obi-private-material-2026-06-29",
+      "date": "2026-06-29",
+      "type": "private_expense",
+      "title": "OBI - chranicka, armovaci tkanina a lepidlo",
+      "amount": 927,
+      "paidBy": "us",
+      "paidTo": "OBI",
+      "status": "paid",
+      "receiptIds": [
+        "receipt-2026-06-29-obi-private-material-927"
+      ],
+      "note": "Nesdileny naklad. Nepatri do vyuctovani s Loffelmanovymi."
+    },
+    {
+      "id": "payment-zabradli-akto-2026-06-28",
+      "date": "2026-06-28",
+      "type": "private_expense",
+      "title": "Zabradli - dodavka a montaz",
+      "amount": 80109.12,
+      "paidBy": "us",
+      "paidTo": "Petr Sedlacek / AKTO",
+      "status": "paid",
+      "receiptIds": [
+        "receipt-2026-06-28-akto-zabradli"
+      ],
+      "note": "Projekt Zabradli dokoncen, namontovan a uzavren. 100 % soukromy naklad, neni soucasti sdileneho vyuctovani."
+    },
+    {
+      "id": "liability-ivan-work-2026-06-17-26",
+      "date": "2026-06-26",
+      "type": "work_liability",
+      "title": "Prace Ivanovy party 17.-26. 6.",
+      "amount": 72000,
+      "paidBy": "us",
+      "paidTo": "Ivanova parta",
+      "status": "logged",
+      "workDayIds": [
+        "work-2026-06-17",
+        "work-2026-06-18",
+        "work-2026-06-19",
+        "work-2026-06-22",
+        "work-2026-06-23",
+        "work-2026-06-24",
+        "work-2026-06-25",
+        "work-2026-06-26"
+      ],
+      "receiptIds": [],
+      "note": "Evidovano 8 pracovnich dnu x 9 000 Kc. Stav ponechan jako logged, dokud nebude potvrzena realna vyplata."
+    }
+  ]
+}

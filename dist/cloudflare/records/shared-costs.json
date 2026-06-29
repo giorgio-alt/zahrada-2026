@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "currency": "CZK",
+  "counterparty": "Loffelmanovi",
+  "defaultSplit": {
+    "ours": 50,
+    "counterparty": 50
+  },
+  "entries": [
+    {
+      "id": "shared-wpc-roja-2026-06",
+      "category": "material",
+      "title": "WPC desky + sloupky + prislusenstvi",
+      "amount": 37669,
+      "split": "50/50",
+      "ourShare": 18834.5,
+      "counterpartyShare": 18834.5,
+      "paidBy": "us",
+      "settlementStatus": "reimbursable",
+      "receiptIds": [],
+      "note": "ROJA WPC material pro zahradni prepazeni."
+    },
+    {
+      "id": "shared-driveway-field-2026-06",
+      "category": "material",
+      "title": "Hlinikove plotove pole driveway",
+      "amount": 14721,
+      "split": "50/50",
+      "ourShare": 7360.5,
+      "counterpartyShare": 7360.5,
+      "paidBy": "us",
+      "settlementStatus": "reimbursable",
+      "receiptIds": [],
+      "note": "Driveway plotove pole uhrazeno nami."
+    },
+    {
+      "id": "shared-obi-beton-b25-2026-06-19",
+      "category": "material",
+      "title": "OBI - beton B25",
+      "amount": 763,
+      "split": "50/50",
+      "ourShare": 381.5,
+      "counterpartyShare": 381.5,
+      "paidBy": "us",
+      "settlementStatus": "reimbursable",
+      "receiptIds": [
+        "receipt-2026-06-19-obi-beton-b25"
+      ],
+      "note": "Sdileny material k zahradnimu prepazeni."
+    },
+    {
+      "id": "shared-obi-bedneni-beton-kliny-2026-06-24",
+      "category": "material",
+      "title": "OBI - ztracene bedneni, beton a kliny",
+      "amount": 4537,
+      "split": "50/50",
+      "ourShare": 2268.5,
+      "counterpartyShare": 2268.5,
+      "paidBy": "us",
+      "settlementStatus": "reimbursable",
+      "receiptIds": [
+        "receipt-2026-06-24-obi-bedneni-beton-kliny"
+      ],
+      "note": "Sdileny material k zahradnimu prepazeni."
+    },
+    {
+      "id": "shared-obi-bedneni-roxor-beton-2026-06-24",
+      "category": "material",
+      "title": "OBI - ztracene bedneni, roxor a beton",
+      "amount": 4694,
+      "split": "50/50",
+      "ourShare": 2347,
+      "counterpartyShare": 2347,
+      "paidBy": "us",
+      "settlementStatus": "reimbursable",
+      "receiptIds": [
+        "receipt-2026-06-24-obi-bedneni-roxor-beton"
+      ],
+      "note": "Sdileny material k zahradnimu prepazeni."
+    },
+    {
+      "id": "shared-obi-beton-hobby-2026-06-25",
+      "category": "material",
+      "title": "OBI - beton hobby",
+      "amount": 2970,
+      "split": "50/50",
+      "ourShare": 1485,
+      "counterpartyShare": 1485,
+      "paidBy": "us",
+      "settlementStatus": "reimbursable",
+      "receiptIds": [
+        "receipt-2026-06-25-obi-beton-hobby"
+      ],
+      "note": "Sdileny material k zahradnimu prepazeni."
+    },
+    {
+      "id": "shared-work-2026-06-23",
+      "category": "work",
+      "title": "Prace 23. 6. - sdilena cast 50 % dne",
+      "amount": 4500,
+      "split": "50/50",
+      "ourShare": 2250,
+      "counterpartyShare": 2250,
+      "paidBy": "pending",
+      "settlementStatus": "reimbursable",
+      "workDayId": "work-2026-06-23"
+    },
+    {
+      "id": "shared-work-2026-06-24",
+      "category": "work",
+      "title": "Prace 24. 6. - sdilena cast 75 % dne",
+      "amount": 6750,
+      "split": "50/50",
+      "ourShare": 3375,
+      "counterpartyShare": 3375,
+      "paidBy": "pending",
+      "settlementStatus": "reimbursable",
+      "workDayId": "work-2026-06-24"
+    },
+    {
+      "id": "shared-work-2026-06-25",
+      "category": "work",
+      "title": "Prace 25. 6. - sdilena cast 75 % dne",
+      "amount": 6750,
+      "split": "50/50",
+      "ourShare": 3375,
+      "counterpartyShare": 3375,
+      "paidBy": "pending",
+      "settlementStatus": "reimbursable",
+      "workDayId": "work-2026-06-25"
+    },
+    {
+      "id": "shared-work-2026-06-26",
+      "category": "work",
+      "title": "Prace 26. 6. - sdilena cast 50 % dne",
+      "amount": 4500,
+      "split": "50/50",
+      "ourShare": 2250,
+      "counterpartyShare": 2250,
+      "paidBy": "pending",
+      "settlementStatus": "reimbursable",
+      "workDayId": "work-2026-06-26"
+    }
+  ],
+  "openItems": [
+    {
+      "id": "shared-facade-mistral",
+      "title": "Fasada - Mistral omitka silikon 1,5H TB",
+      "category": "material",
+      "status": "missing_amount"
+    },
+    {
+      "id": "shared-fasteners",
+      "title": "Spojovaci material",
+      "category": "material",
+      "status": "ongoing"
+    },
+    {
+      "id": "shared-paving-wall",
+      "title": "Dlazba u spolecne zidky",
+      "category": "material",
+      "status": "needs_measurement"
+    },
+    {
+      "id": "shared-paving-work",
+      "title": "Pokladka dlazby",
+      "category": "work",
+      "status": "pending"
+    }
+  ],
+  "totals": {
+    "knownMaterial": 65354,
+    "knownWork": 22500,
+    "knownSharedTotal": 87854,
+    "ourKnownShare": 43927,
+    "counterpartyKnownShare": 43927
+  }
+}
