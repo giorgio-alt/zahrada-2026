@@ -8,6 +8,7 @@ const distDir = "dist";
 const cloudflareDir = `${distDir}/cloudflare`;
 const standaloneHtmlPath = `${distDir}/zahradni-dashboard-standalone.html`;
 const cloudflareZipPath = `${distDir}/zahradni-dashboard-cloudflare.zip`;
+const shouldCreateZip = !process.argv.includes("--no-zip");
 
 function inlineAssets(html, css, dataJs, appJs) {
   return html
@@ -47,10 +48,12 @@ async function createCloudflarePackage() {
     rm(`${cloudflareDir}/assets/.DS_Store`, { force: true }),
   ]);
 
-  await rm(cloudflareZipPath, { force: true });
-  await run("zip", ["-qr", "../zahradni-dashboard-cloudflare.zip", ".", "-x", "*.DS_Store", "__MACOSX/*"], {
-    cwd: cloudflareDir,
-  });
+  if (shouldCreateZip) {
+    await rm(cloudflareZipPath, { force: true });
+    await run("zip", ["-qr", "../zahradni-dashboard-cloudflare.zip", ".", "-x", "*.DS_Store", "__MACOSX/*"], {
+      cwd: cloudflareDir,
+    });
+  }
 }
 
 await mkdir(distDir, { recursive: true });
@@ -58,4 +61,8 @@ await createStandaloneHtml();
 await createCloudflarePackage();
 
 console.log(`Standalone HTML: ${standaloneHtmlPath}`);
-console.log(`Cloudflare ZIP: ${cloudflareZipPath}`);
+if (shouldCreateZip) {
+  console.log(`Cloudflare ZIP: ${cloudflareZipPath}`);
+} else {
+  console.log(`Cloudflare output: ${cloudflareDir}`);
+}

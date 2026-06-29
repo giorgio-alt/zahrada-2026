@@ -48,5 +48,18 @@ Aktuálně vygenerované soubory jsou ve složce `dist`:
 Po úpravách dat nebo vzhledu lze exporty znovu sestavit příkazem:
 
 ```bash
-node build.mjs
+npm run build
 ```
+
+## Cloudflare Pages
+
+Pro automaticky deploy bez rucniho nahravani ZIPu pripoj GitHub repozitar `giorgio-alt/zahrada-2026` do Cloudflare Pages.
+
+Nastaveni buildu:
+
+- Framework preset: `None`
+- Production branch: `main`
+- Build command: `npm run build:cloudflare`
+- Build output directory: `dist/cloudflare`
+
+Po tomto nastaveni se kazdy `git push` do vetve `main` automaticky nasadi na Cloudflare Pages.
