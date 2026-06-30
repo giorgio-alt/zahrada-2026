@@ -377,7 +377,7 @@ window.ZAHRADA_DASHBOARD = {
     ],
   },
   projects: [
-    ["🧱 Ploty a zeď", ["✅ Vybráno", "✅ Objednáno", "✅ Zaplaceno", "✅ Dovezeno", "✅ Jižní plot dokončen bez podhrabovek"], "Jižní plot hotov", "good"],
+    ["🧱 Ploty a zeď", ["✅ Vybráno", "✅ Objednáno", "✅ Zaplaceno", "✅ Dovezeno", "✅ Jižní plot dokončen bez podhrabovek", "🌅 Východní plot - čeká realizace", "⏳ Výkop", "⏳ Betonáž sloupků", "⏳ Instalace sloupků", "⏳ Montáž plotových panelů", "⏳ Finální dokončení"], "Jižní plot hotov, východní plot čeká", "wait"],
     ["🪵 Zahradní přepažení", ["✅ ROJA WPC desky a sloupky dorazily", "✅ WPC desky nahozeny", "✅ Podezdívka / ztracené bednění proběhlo", "✅ OBI účtenky za beton a bednění zaevidovány", "⏳ Zbývá omítnout", "🎨 Omítka: Mistral silikon 1,5H TB"], "Zbývá omítka", "wait"],
     ["🪵 Pergola", ["✅ Rozpočet pergoly schválen: 207 000 Kč", "✅ Patky hotové", "⏳ Čeká termín realizace", "⏳ Navazující práce budou doplněny podle realizace"], "Čeká termín", "wait"],
     ["🌳 Zahradní domek", ["⏳ Projekt plánován", "🪨 Dlažba pod zahradní domek (cca 26 m²)", "⏳ Odhad nákladu: 18 200 Kč", "⏳ Realizace bude navázaná na finální umístění domku"], "Plánováno", "wait"],
@@ -386,6 +386,7 @@ window.ZAHRADA_DASHBOARD = {
     ["🧱 Zábradlí", ["✅ Realizace dokončena", "✅ Namontováno", "✅ Uhrazeno", "✅ Projekt uzavřen", "🔒 100 % soukromý náklad, mimo sdílené vyúčtování"], "Dokončeno", "good"],
     ["🪞 Zrcadla", ["⏳ Doplnit cenu", "⏳ Schválit výšku umístění", "⏳ Montáž", "Poznámka: výšku zrcadel musí odsouhlasit Lucie."], "Čeká realizace", "wait"],
     ["🧱 Tapety", ["⏳ Doplnit cenu", "⏳ Instalace"], "Čeká realizace", "wait"],
+    ["💡 Osvětlení", ["⏳ Světlo - šatna Lucie", "Poznámka: čeká na předání / dovoz od Tondy.", "⏳ Světlo nad kuchyňský ostrůvek", "⏳ Světlo - chodba 2NP", "⏳ Dodělat LED track - chodba 1NP"], "Probíhá", "wait"],
   ],
   plan: [
     {
@@ -396,6 +397,7 @@ window.ZAHRADA_DASHBOARD = {
         ["ploty-zaplaceny", "Ploty zaplaceny", true],
         ["ploty-dovezeny", "Ploty a podhrabovky dovezeny", true],
         ["jizni-plot-hotov", "Jižní plot dokončen bez podhrabovek", true],
+        ["vychodni-plot-dokoncit", "Dokončit východní plot", false],
       ],
     },
     {
@@ -451,6 +453,15 @@ window.ZAHRADA_DASHBOARD = {
         ["tapety-instalace", "Instalace", false],
       ],
     },
+    {
+      title: "💡 Osvětlení",
+      items: [
+        ["osvetleni-satna-tonda", "Převzít světlo do šatny od Tondy", false],
+        ["osvetleni-ostruvek", "Namontovat světlo nad ostrůvek", false],
+        ["osvetleni-chodba-2np", "Namontovat světlo v chodbě 2NP", false],
+        ["osvetleni-led-track-1np", "Dokončit LED track v chodbě 1NP", false],
+      ],
+    },
   ],
   electricity: [
     ["✅ Uzavřeno", "good", "Hlavní kabel", "Kornhauser kontaktován. Kabel vede u souseda a není v kolizi."],
@@ -479,7 +490,9 @@ window.ZAHRADA_DASHBOARD = {
     "Kluci: spočítat dlažbu a práci pro sousedy.",
     "Doúčtovat fasádu, spojovací materiál a případnou navazující práci k zahradnímu přepažení.",
     "Dokončit omítku zahradního přepažení - Mistral silikon 1,5H TB.",
+    "Dokončit východní plot: výkop, betonáž sloupků, instalace sloupků, montáž panelů a finální dokončení.",
     "Zrcadla: doplnit cenu a nechat Lucií odsouhlasit výšku umístění.",
     "Tapety: doplnit cenu a termín instalace.",
+    "Osvětlení: převzít světlo do šatny od Tondy, namontovat světlo nad ostrůvek, světlo v chodbě 2NP a dokončit LED track v chodbě 1NP.",
   ],
 };
