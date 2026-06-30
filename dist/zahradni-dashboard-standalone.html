@@ -549,6 +549,10 @@ tr:last-child td {
   background: linear-gradient(145deg, var(--orange), transparent 66%);
 }
 
+.calendar-day.type-payment::before {
+  background: linear-gradient(145deg, var(--brown), transparent 66%);
+}
+
 .calendar-day.type-off {
   color: rgba(45, 36, 27, 0.62);
 }
@@ -805,7 +809,7 @@ tr:last-child td {
 window.ZAHRADA_DASHBOARD = {
   title: "Zahradní projekt - master dashboard",
   intro:
-    "Konsolidovaná verze s kompletním výpočtem práce, deníkem 23.-29. 6., vyúčtováním se sousedy a aktuálními novinkami.",
+    "Konsolidovaná verze s kompletním výpočtem práce, deníkem 23.-30. 6., vyúčtováním se sousedy a aktuálními novinkami.",
   nav: [
     ["overview", "🏡 Přehled"],
     ["docs", "🔗 Dokumenty"],
@@ -842,7 +846,7 @@ window.ZAHRADA_DASHBOARD = {
       badge: "✅ 8 + 1 dnů",
       tone: "good",
       title: "👷 Práce Ivanovy party",
-      body: "Celkem 8 plných pracovních dnů x 9 000 Kč + 1 snížený den x 6 000 Kč = 78 000 Kč.",
+      body: "Celkem 8 plných pracovních dnů x 9 000 Kč + 1 snížený den x 6 000 Kč = 78 000 Kč. Dne 30. 6. vyplaceno Ivanovi 72 000 Kč, zbývá doplatit 6 000 Kč.",
     },
   ],
   documents: [
@@ -897,8 +901,11 @@ window.ZAHRADA_DASHBOARD = {
       ["✅ Položeno", "good", "🪨 Dlažba 14 m²", "9 800 Kč", "Zakoupeno, zaplaceno a položeno. Součástí objednávky byla i menší část dlažby určená pro sousedy; náklad zůstává 100 % na naší straně."],
       ["✅ Uhrazeno", "good", "🧱 Ivan - cement", "5 644 Kč"],
       ["✅ Evidováno", "good", "👷 Práce Ivanovy party", "78 000 Kč", "8 plných dnů + 1 snížený den. Den 29. 6. má sazbu 6 000 Kč, protože pracovali pouze Ivan a Tatíno."],
+      ["✅ Uhrazeno", "good", "💸 Částečné vyrovnání Ivanovi", "72 000 Kč", "Vyplaceno 30. 6. 2026 proti evidované práci Ivanovy party. Zbývá doplatit 6 000 Kč."],
       ["✅ Uhrazeno", "good", "🧱 Zábradlí", "80 109,12 Kč"],
       ["⏳ Odhad", "wait", "🪨 Dlažba pod zahradní domek", "18 200 Kč", "Plánovaná dlažba cca 26 m² pro budoucí zahradní domek."],
+      ["⏳ Plánováno", "wait", "🪞 Zrcadla", "⏳ doplnit", "Výšku zrcadel musí odsouhlasit Lucie."],
+      ["⏳ Plánováno", "wait", "🧱 Tapety", "⏳ doplnit"],
     ],
     rows: [
       ["Pergola", "207 000 Kč", "✅ schváleno"],
@@ -909,13 +916,18 @@ window.ZAHRADA_DASHBOARD = {
       ["OBI nesdílený materiál", "927 Kč", "✅ uhrazeno námi, mimo vyúčtování s Loffelmanovými"],
       ["Dlažba 14 m²", "9 800 Kč", "✅ zakoupeno, zaplaceno a položeno; menší část objednávky byla určena pro sousedy, náklad zůstává náš"],
       ["Ivan - cement a materiál", "5 644 Kč", "✅ uhrazeno 20. 6."],
-      ["Práce Ivanovy party", "78 000 Kč", "✅ 8 plných dnů + 1 snížený den"],
+      ["Práce Ivanovy party", "78 000 Kč", "✅ 8 plných dnů + 1 snížený den; částečně uhrazeno 72 000 Kč dne 30. 6."],
+      ["Částečné vyrovnání Ivanovi", "72 000 Kč", "✅ uhrazeno 30. 6. 2026, platba proti závazku práce"],
       ["Zábradlí", "80 109,12 Kč", "✅ dokončeno, namontováno a uhrazeno - 100 % náš náklad"],
       ["Dlažba pod zahradní domek cca 26 m²", "18 200 Kč", "⏳ odhad"],
+      ["Zrcadla", "⏳ doplnit", "Plánováno"],
+      ["Tapety", "⏳ doplnit", "Plánováno"],
     ],
     totals: [
-      ["Součet včetně práce a odhadu", "496 340,10 Kč"],
+      ["Nákladový součet včetně práce a odhadu", "496 340,10 Kč"],
       ["Potvrzené / objednané bez odhadu dlažby", "478 140,10 Kč"],
+      ["Z vyúčtované práce uhrazeno Ivanovi", "72 000 Kč"],
+      ["Zbývá doplatit Ivanovi", "6 000 Kč"],
     ],
   },
   workCosts: {
@@ -950,6 +962,7 @@ window.ZAHRADA_DASHBOARD = {
       ["🟩", "Náš projekt"],
       ["🟦", "Společný projekt"],
       ["🟧", "Kombinovaný den"],
+      ["💸", "Platba / vyrovnání"],
       ["⬜", "Nepracovalo se"],
     ],
     days: [
@@ -1109,7 +1122,6 @@ window.ZAHRADA_DASHBOARD = {
       {
         day: 29,
         type: "mixed",
-        selected: true,
         title: "Nátěr perlinky na zídku",
         short: "Perlinka",
         tooltip: "29.6. Perlinka / 2 pracovníci / 6 000 Kč",
@@ -1122,7 +1134,22 @@ window.ZAHRADA_DASHBOARD = {
           notes: "Dělal se nátěr perlinky na zídku. Pracovali pouze Ivan a Tatíno, proto snížená sazba dne 6 000 Kč. 20 % času bylo na společném projektu a 80 % na našem samostatném projektu.",
         },
       },
-      { day: 30, type: "off", title: "Nepracovalo se" },
+      {
+        day: 30,
+        type: "payment",
+        selected: true,
+        title: "Částečné vyrovnání s Ivanem",
+        short: "Vyrovnání",
+        tooltip: "30.6. Částečné vyrovnání s Ivanem / vyplaceno 72 000 Kč",
+        detail: {
+          date: "30. 6. 2026",
+          workers: [],
+          done: ["Proběhlo částečné finanční vyrovnání s Ivanem", "Vyplaceno 72 000 Kč"],
+          finance: { total: 72000, ourCost: 72000 },
+          projects: ["👷 Práce Ivanovy party"],
+          notes: "Platba je vedena proti už evidované práci Ivanovy party v celkové hodnotě 78 000 Kč. Historie práce zůstává zachovaná, po částečném vyrovnání zbývá doplatit 6 000 Kč.",
+        },
+      },
     ],
   },
   settlement: {
@@ -1165,6 +1192,8 @@ window.ZAHRADA_DASHBOARD = {
     ["⚡ Elektro", "Kornhauser bez kolize, 380 V v rozvaděči, řešit s tátou zachování 11 kW nabíjení."],
     ["🏊 Bazén", "Čeká budget a finální plán."],
     ["🧱 Zábradlí", ["✅ Realizace dokončena", "✅ Namontováno", "✅ Uhrazeno", "✅ Projekt uzavřen", "🔒 100 % soukromý náklad, mimo sdílené vyúčtování"], "Dokončeno", "good"],
+    ["🪞 Zrcadla", ["⏳ Doplnit cenu", "⏳ Schválit výšku umístění", "⏳ Montáž", "Poznámka: výšku zrcadel musí odsouhlasit Lucie."], "Čeká realizace", "wait"],
+    ["🧱 Tapety", ["⏳ Doplnit cenu", "⏳ Instalace"], "Čeká realizace", "wait"],
   ],
   plan: [
     {
@@ -1215,6 +1244,21 @@ window.ZAHRADA_DASHBOARD = {
         ["domek-dlazba-termin", "Doplnit termín realizace dlažby pod zahradní domek", false],
       ],
     },
+    {
+      title: "🪞 Zrcadla",
+      items: [
+        ["zrcadla-cena", "Doplnit cenu", false],
+        ["zrcadla-vyska-lucie", "Schválit výšku umístění s Lucií", false],
+        ["zrcadla-montaz", "Montáž", false],
+      ],
+    },
+    {
+      title: "🧱 Tapety",
+      items: [
+        ["tapety-cena", "Doplnit cenu", false],
+        ["tapety-instalace", "Instalace", false],
+      ],
+    },
   ],
   electricity: [
     ["✅ Uzavřeno", "good", "Hlavní kabel", "Kornhauser kontaktován. Kabel vede u souseda a není v kolizi."],
@@ -1227,7 +1271,10 @@ window.ZAHRADA_DASHBOARD = {
     ["✅ Hotovo", "good", "26. 6. 2026", "Jižní plot dokončen bez podhrabovek, WPC desky nahozeny"],
     ["✅ Hotovo", "good", "28. 6. 2026", "Zábradlí dokončeno, namontováno a vyfakturováno"],
     ["✅ Hotovo", "good", "29. 6. 2026", "Nátěr perlinky na zídku, snížený pracovní den 6 000 Kč"],
+    ["✅ Uhrazeno", "good", "30. 6. 2026", "💸 Částečné vyrovnání s Ivanem - vyplaceno 72 000 Kč"],
     ["⏳ Plánováno", "wait", "Doplnit", "Dlažba pod zahradní domek cca 26 m²"],
+    ["⏳ Čeká", "wait", "Doplnit", "Zrcadla - cena, výška odsouhlasená Lucií a montáž"],
+    ["⏳ Čeká", "wait", "Doplnit", "Tapety - cena a instalace"],
     ["⏳ Čeká", "wait", "Doplnit", "Omítka zahradního přepažení"],
     ["⏳ Čeká", "wait", "Doplnit", "Pergola - termín realizace"],
     ["⚠️ Řešit", "risk", "Doplnit", "Elektro bez ztráty 11 kW nabíjení"],
@@ -1240,6 +1287,8 @@ window.ZAHRADA_DASHBOARD = {
     "Kluci: spočítat dlažbu a práci pro sousedy.",
     "Doúčtovat fasádu, spojovací materiál a případnou navazující práci k zahradnímu přepažení.",
     "Dokončit omítku zahradního přepažení - Mistral silikon 1,5H TB.",
+    "Zrcadla: doplnit cenu a nechat Lucií odsouhlasit výšku umístění.",
+    "Tapety: doplnit cenu a termín instalace.",
   ],
 };
 
@@ -1342,6 +1391,7 @@ window.ZAHRADA_DASHBOARD = {
       own: "🟩",
       shared: "🟦",
       mixed: "🟧",
+      payment: "💸",
       off: "⬜",
     }[type || "off"];
   }
@@ -1351,6 +1401,7 @@ window.ZAHRADA_DASHBOARD = {
       own: "good",
       shared: "split",
       mixed: "wait",
+      payment: "good",
       off: "",
     }[type || "off"];
   }

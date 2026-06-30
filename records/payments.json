@@ -116,9 +116,14 @@
       "type": "work_liability",
       "title": "Prace Ivanovy party 17.-29. 6.",
       "amount": 78000,
+      "paidAmount": 72000,
+      "outstandingAmount": 6000,
       "paidBy": "us",
       "paidTo": "Ivanova parta",
-      "status": "logged",
+      "status": "partially_paid",
+      "settlementPaymentIds": [
+        "payment-ivan-partial-settlement-2026-06-30"
+      ],
       "workDayIds": [
         "work-2026-06-17",
         "work-2026-06-18",
@@ -131,7 +136,20 @@
         "work-2026-06-29"
       ],
       "receiptIds": [],
-      "note": "Evidovano 8 plnych pracovnich dnu x 9 000 Kc a 1 snizeny den x 6 000 Kc. Stav ponechan jako logged, dokud nebude potvrzena realna vyplata."
+      "note": "Evidovano 8 plnych pracovnich dnu x 9 000 Kc a 1 snizeny den x 6 000 Kc. Dne 30. 6. 2026 probehlo castecne vyrovnani 72 000 Kc, zbyva doplatit 6 000 Kc."
+    },
+    {
+      "id": "payment-ivan-partial-settlement-2026-06-30",
+      "date": "2026-06-30",
+      "type": "work_settlement",
+      "title": "Castecne vyrovnani Ivanovi",
+      "amount": 72000,
+      "paidBy": "us",
+      "paidTo": "Ivan",
+      "status": "paid",
+      "relatedLiabilityId": "liability-ivan-work-2026-06-17-26",
+      "receiptIds": [],
+      "note": "Castecna uhrada proti evidovane praci Ivanovy party 17.-29. 6. 2026."
     }
   ]
 }

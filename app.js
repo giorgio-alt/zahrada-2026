@@ -95,6 +95,7 @@
       own: "🟩",
       shared: "🟦",
       mixed: "🟧",
+      payment: "💸",
       off: "⬜",
     }[type || "off"];
   }
@@ -104,6 +105,7 @@
       own: "good",
       shared: "split",
       mixed: "wait",
+      payment: "good",
       off: "",
     }[type || "off"];
   }
