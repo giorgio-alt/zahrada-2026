@@ -124,17 +124,31 @@
       "neighborSharedShare": 600,
       "status": "logged",
       "note": "Nater perlinky na zidku. Pracovali pouze Ivan a Tatino, proto snizena sazba 6 000 Kc."
+    },
+    {
+      "id": "work-2026-07-01",
+      "date": "2026-07-01",
+      "dayRate": 9000,
+      "ownProjectPercent": 0,
+      "sharedProjectPercent": 100,
+      "ownProjectAmount": 0,
+      "sharedProjectAmount": 9000,
+      "ourSharedShare": 4500,
+      "neighborSharedShare": 4500,
+      "status": "logged",
+      "project": "Driveway zidka",
+      "note": "Plna parta pracovala cely den na driveway zidce. Cely den jde do spolecneho projektu 50/50 s Loffelmanovymi."
     }
   ],
   "totals": {
-    "days": 9,
-    "fullDays": 8,
+    "days": 10,
+    "fullDays": 9,
     "reducedDays": 1,
-    "totalWork": 78000,
+    "totalWork": 87000,
     "ownProjectAmount": 54300,
-    "sharedProjectAmount": 23700,
-    "ourSharedShare": 11850,
-    "neighborSharedShare": 11850,
-    "ourTotalWorkCost": 66150
+    "sharedProjectAmount": 32700,
+    "ourSharedShare": 16350,
+    "neighborSharedShare": 16350,
+    "ourTotalWorkCost": 70650
   }
 }

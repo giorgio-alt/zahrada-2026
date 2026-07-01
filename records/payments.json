@@ -68,8 +68,8 @@
       "id": "payment-obi-driveway-wall-material-2026-07-01",
       "date": "2026-07-01",
       "type": "shared_expense",
-      "title": "OBI - material na driveway zidku",
-      "amount": 8061,
+      "title": "Ztracene bedneni a beton - Driveway zidka",
+      "amount": 7653,
       "paidBy": "us",
       "paidTo": "OBI",
       "status": "paid",
@@ -77,7 +77,7 @@
       "receiptIds": [
         "receipt-2026-07-01-obi-driveway-wall-material"
       ],
-      "note": "Dve OBI uctenky hrazene nami ve 100 %, sdilena polozka 50/50 s Loffelmanovymi."
+      "note": "Dve OBI uctenky hrazene nami ve 100 %, sdilena polozka 50/50 s Loffelmanovymi. Redukce na vozik 229 Kc a 179 Kc byly vyrazeny z evidence."
     },
     {
       "id": "payment-obi-material-prepazeni-2026-06",
@@ -127,12 +127,12 @@
     },
     {
       "id": "liability-ivan-work-2026-06-17-26",
-      "date": "2026-06-29",
+      "date": "2026-07-01",
       "type": "work_liability",
-      "title": "Prace Ivanovy party 17.-29. 6.",
-      "amount": 78000,
+      "title": "Prace Ivanovy party 17. 6.-1. 7.",
+      "amount": 87000,
       "paidAmount": 72000,
-      "outstandingAmount": 6000,
+      "outstandingAmount": 15000,
       "paidBy": "us",
       "paidTo": "Ivanova parta",
       "status": "partially_paid",
@@ -148,10 +148,11 @@
         "work-2026-06-24",
         "work-2026-06-25",
         "work-2026-06-26",
-        "work-2026-06-29"
+        "work-2026-06-29",
+        "work-2026-07-01"
       ],
       "receiptIds": [],
-      "note": "Evidovano 8 plnych pracovnich dnu x 9 000 Kc a 1 snizeny den x 6 000 Kc. Dne 30. 6. 2026 probehlo castecne vyrovnani 72 000 Kc, zbyva doplatit 6 000 Kc."
+      "note": "Evidovano 9 plnych pracovnich dnu x 9 000 Kc a 1 snizeny den x 6 000 Kc. Dne 30. 6. 2026 probehlo castecne vyrovnani 72 000 Kc, zbyva doplatit 15 000 Kc."
     },
     {
       "id": "payment-ivan-partial-settlement-2026-06-30",
@@ -164,7 +165,7 @@
       "status": "paid",
       "relatedLiabilityId": "liability-ivan-work-2026-06-17-26",
       "receiptIds": [],
-      "note": "Castecna uhrada proti evidovane praci Ivanovy party 17.-29. 6. 2026."
+      "note": "Castecna uhrada proti evidovane praci Ivanovy party."
     }
   ]
 }

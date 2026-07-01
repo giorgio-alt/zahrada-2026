@@ -194,7 +194,7 @@
 
     function selectDay(day) {
       calendarGrid.querySelectorAll(".calendar-day").forEach((button) => {
-        const isSelected = Number(button.dataset.day) === day.day;
+        const isSelected = button.dataset.key === worklogDayKey(day);
         button.classList.toggle("is-selected", isSelected);
         button.setAttribute("aria-expanded", String(isSelected));
       });
@@ -205,10 +205,10 @@
       const button = document.createElement("button");
       button.type = "button";
       button.className = `calendar-day type-${day.type || "off"}`;
-      button.dataset.day = day.day;
-      button.title = day.tooltip || `${day.day}.6. ${day.title || "Nepracovalo se"}`;
+      button.dataset.key = worklogDayKey(day);
+      button.title = day.tooltip || `${day.label || day.day}. ${day.title || "Nepracovalo se"}`;
       button.setAttribute("aria-expanded", "false");
-      button.append(el("span", "calendar-date", day.day));
+      button.append(el("span", "calendar-date", day.label || day.day));
       button.append(el("span", "calendar-marker", worklogMarker(day.type)));
       if (day.short) button.append(el("span", "calendar-short", day.short));
       calendarGrid.append(button);
@@ -217,7 +217,7 @@
     calendarGrid.addEventListener("click", (event) => {
       const button = event.target.closest(".calendar-day");
       if (!button) return;
-      const day = days.find((item) => item.day === Number(button.dataset.day));
+      const day = days.find((item) => worklogDayKey(item) === button.dataset.key);
       if (day) selectDay(day);
     });
 
@@ -292,6 +292,10 @@
     const row = el("div", "finance-row");
     row.append(el("span", "", label), el("strong", "", value));
     return row;
+  }
+
+  function worklogDayKey(day) {
+    return day.id || `${day.detail?.date || ""}-${day.day}`;
   }
 
   function renderSettlement() {

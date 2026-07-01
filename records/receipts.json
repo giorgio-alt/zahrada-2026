@@ -191,17 +191,17 @@
       "id": "receipt-2026-07-01-obi-driveway-wall-material",
       "date": "2026-07-01",
       "vendor": "OBI Ceska republika s.r.o.",
-      "amount": 8061,
+      "amount": 7653,
       "currency": "CZK",
       "file": "assets/receipts/IMG_8228.JPG",
       "status": "verified",
       "lineItems": [
         {
-          "title": "OBI uctenka 1 - material na driveway zidku",
-          "totalWithVat": 5196
+          "title": "Ztracene bedneni a beton - uctenka 1 po vyrazeni redukci na vozik",
+          "totalWithVat": 4788
         },
         {
-          "title": "OBI uctenka 2 - material na driveway zidku",
+          "title": "Ztracene bedneni a beton - uctenka 2",
           "totalWithVat": 2865
         }
       ],
@@ -215,7 +215,7 @@
           "id": "payment-obi-driveway-wall-material-2026-07-01"
         }
       ],
-      "note": "Dve OBI uctenky z 1. 7. 2026 na material k driveway zidce. Hrazeno nami ve 100 %, deleny naklad 50/50 s Loffelmanovymi."
+      "note": "Dve OBI uctenky z 1. 7. 2026 na ztracene bedneni a beton k driveway zidce. Hrazeno nami ve 100 %, deleny naklad 50/50 s Loffelmanovymi. Redukce na vozik 229 Kc a 179 Kc byly vyrazeny z evidence."
     },
     {
       "id": "receipt-2026-06-29-obi-private-material-927",
