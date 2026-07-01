@@ -65,6 +65,21 @@
       "note": "Sdilena polozka 50/50, uhrazeno nami."
     },
     {
+      "id": "payment-obi-driveway-wall-material-2026-07-01",
+      "date": "2026-07-01",
+      "type": "shared_expense",
+      "title": "OBI - material na driveway zidku",
+      "amount": 8061,
+      "paidBy": "us",
+      "paidTo": "OBI",
+      "status": "paid",
+      "sharedCostId": "shared-obi-driveway-wall-2026-07-01",
+      "receiptIds": [
+        "receipt-2026-07-01-obi-driveway-wall-material"
+      ],
+      "note": "Dve OBI uctenky hrazene nami ve 100 %, sdilena polozka 50/50 s Loffelmanovymi."
+    },
+    {
       "id": "payment-obi-material-prepazeni-2026-06",
       "date": "2026-06-25",
       "type": "shared_expense",

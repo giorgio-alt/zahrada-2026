@@ -188,6 +188,36 @@
       "note": "Sdileny naklad s Loffelmanovymi."
     },
     {
+      "id": "receipt-2026-07-01-obi-driveway-wall-material",
+      "date": "2026-07-01",
+      "vendor": "OBI Ceska republika s.r.o.",
+      "amount": 8061,
+      "currency": "CZK",
+      "file": "assets/receipts/IMG_8228.JPG",
+      "status": "verified",
+      "lineItems": [
+        {
+          "title": "OBI uctenka 1 - material na driveway zidku",
+          "totalWithVat": 5196
+        },
+        {
+          "title": "OBI uctenka 2 - material na driveway zidku",
+          "totalWithVat": 2865
+        }
+      ],
+      "linkedRecords": [
+        {
+          "type": "sharedCost",
+          "id": "shared-obi-driveway-wall-2026-07-01"
+        },
+        {
+          "type": "payment",
+          "id": "payment-obi-driveway-wall-material-2026-07-01"
+        }
+      ],
+      "note": "Dve OBI uctenky z 1. 7. 2026 na material k driveway zidce. Hrazeno nami ve 100 %, deleny naklad 50/50 s Loffelmanovymi."
+    },
+    {
       "id": "receipt-2026-06-29-obi-private-material-927",
       "date": "2026-06-29",
       "vendor": "OBI Ceska republika s.r.o.",

@@ -34,6 +34,21 @@
       "note": "Driveway plotove pole uhrazeno nami."
     },
     {
+      "id": "shared-obi-driveway-wall-2026-07-01",
+      "category": "material",
+      "title": "OBI - material na driveway zidku",
+      "amount": 8061,
+      "split": "50/50",
+      "ourShare": 4030.5,
+      "counterpartyShare": 4030.5,
+      "paidBy": "us",
+      "settlementStatus": "reimbursable",
+      "receiptIds": [
+        "receipt-2026-07-01-obi-driveway-wall-material"
+      ],
+      "note": "Dve OBI uctenky za material na driveway zidku, hrazene nami ve 100 %."
+    },
+    {
       "id": "shared-obi-material-prepazeni-2026-06",
       "category": "material",
       "title": "OBI - material k zahradnimu prepazeni",
@@ -140,10 +155,10 @@
     }
   ],
   "totals": {
-    "knownMaterial": 65354,
+    "knownMaterial": 73415,
     "knownWork": 23700,
-    "knownSharedTotal": 89054,
-    "ourKnownShare": 44527,
-    "counterpartyKnownShare": 44527
+    "knownSharedTotal": 97115,
+    "ourKnownShare": 48557.5,
+    "counterpartyKnownShare": 48557.5
   }
 }
