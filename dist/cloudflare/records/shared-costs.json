@@ -129,6 +129,19 @@
       "note": "Snizena sazba 6 000 Kc, pracovali pouze Ivan a Tatino."
     },
     {
+      "id": "shared-work-2026-06-30",
+      "category": "work",
+      "title": "Prace 30. 6. - vykop driveway zidky",
+      "amount": 6000,
+      "split": "50/50",
+      "ourShare": 3000,
+      "counterpartyShare": 3000,
+      "paidBy": "pending",
+      "settlementStatus": "reimbursable",
+      "workDayId": "work-2026-06-30",
+      "note": "Vykop zakladu pro driveway zidku. Cely den jde do spolecneho projektu 50/50 s Loffelmanovymi."
+    },
+    {
       "id": "shared-work-2026-07-01",
       "category": "work",
       "title": "Prace 1. 7. - driveway zidka",
@@ -170,9 +183,9 @@
   ],
   "totals": {
     "knownMaterial": 73007,
-    "knownWork": 32700,
-    "knownSharedTotal": 105707,
-    "ourKnownShare": 52853.5,
-    "counterpartyKnownShare": 52853.5
+    "knownWork": 38700,
+    "knownSharedTotal": 111707,
+    "ourKnownShare": 55853.5,
+    "counterpartyKnownShare": 55853.5
   }
 }

@@ -126,6 +126,25 @@
       "note": "Nater perlinky na zidku. Pracovali pouze Ivan a Tatino, proto snizena sazba 6 000 Kc."
     },
     {
+      "id": "work-2026-06-30",
+      "date": "2026-06-30",
+      "dayRate": 6000,
+      "workers": [
+        "Vasil - 8 h",
+        "Tatino - 8 h",
+        "Ivan - cca 1 h vypomoc"
+      ],
+      "ownProjectPercent": 0,
+      "sharedProjectPercent": 100,
+      "ownProjectAmount": 0,
+      "sharedProjectAmount": 6000,
+      "ourSharedShare": 3000,
+      "neighborSharedShare": 3000,
+      "status": "logged",
+      "project": "Driveway zidka",
+      "note": "Vykop zakladu pro driveway zidku. Cely den je spolecny projekt 50/50 s Loffelmanovymi."
+    },
+    {
       "id": "work-2026-07-01",
       "date": "2026-07-01",
       "dayRate": 9000,
@@ -141,14 +160,14 @@
     }
   ],
   "totals": {
-    "days": 10,
+    "days": 11,
     "fullDays": 9,
-    "reducedDays": 1,
-    "totalWork": 87000,
+    "reducedDays": 2,
+    "totalWork": 93000,
     "ownProjectAmount": 54300,
-    "sharedProjectAmount": 32700,
-    "ourSharedShare": 16350,
-    "neighborSharedShare": 16350,
-    "ourTotalWorkCost": 70650
+    "sharedProjectAmount": 38700,
+    "ourSharedShare": 19350,
+    "neighborSharedShare": 19350,
+    "ourTotalWorkCost": 73650
   }
 }

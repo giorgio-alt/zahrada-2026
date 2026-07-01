@@ -285,6 +285,9 @@
     if (finance.ourSharedShare !== undefined) wrap.append(financeRow("Náš podíl ze společné části", formatMoney(finance.ourSharedShare)));
     if (finance.neighborSharedShare !== undefined) wrap.append(financeRow("Podíl Lofflemanových", formatMoney(finance.neighborSharedShare)));
     if (finance.ourCost !== undefined) wrap.append(financeRow("Náš reálný náklad", formatMoney(finance.ourCost)));
+    if (Array.isArray(finance.extraRows)) {
+      finance.extraRows.forEach(([label, value]) => wrap.append(financeRow(label, value)));
+    }
     return wrap;
   }
 
