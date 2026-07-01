@@ -126,6 +126,32 @@
       "note": "Projekt Zabradli dokoncen, namontovan a uzavren. 100 % soukromy naklad, neni soucasti sdileneho vyuctovani."
     },
     {
+      "id": "payment-mirrors-2026-07-01",
+      "date": "2026-07-01",
+      "type": "private_expense",
+      "title": "Zrcadla",
+      "amount": 10348,
+      "paidBy": "us",
+      "paidTo": null,
+      "status": "paid",
+      "project": "Zrcadla",
+      "receiptIds": [],
+      "note": "Projekt Zrcadla dokoncen 1. 7. 2026. Zaplaceno a dokončeno."
+    },
+    {
+      "id": "payment-console-table-2026-07-01",
+      "date": "2026-07-01",
+      "type": "standalone_expense",
+      "title": "Konzolovy stolek",
+      "amount": 4847,
+      "paidBy": "us",
+      "paidTo": null,
+      "status": "paid",
+      "project": null,
+      "receiptIds": [],
+      "note": "Samostatna evidovana polozka, zatim neprirazena k zadnemu projektu."
+    },
+    {
       "id": "liability-ivan-work-2026-06-17-26",
       "date": "2026-07-01",
       "type": "work_liability",
