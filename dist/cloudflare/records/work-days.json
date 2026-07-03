@@ -153,15 +153,15 @@
         "Vasil",
         "Tatino"
       ],
-      "ownProjectPercent": 20,
-      "sharedProjectPercent": 80,
-      "ownProjectAmount": 1800,
-      "sharedProjectAmount": 7200,
-      "ourSharedShare": 3600,
-      "neighborSharedShare": 3600,
+      "ownProjectPercent": 25,
+      "sharedProjectPercent": 75,
+      "ownProjectAmount": 2250,
+      "sharedProjectAmount": 6750,
+      "ourSharedShare": 3375,
+      "neighborSharedShare": 3375,
       "status": "logged",
       "project": "Driveway zidka / Tapety",
-      "note": "Plna parta pracovala 80 % dne na driveway zidce jako spolecnem projektu 50/50 s Loffelmanovymi a 20 % dne na nasem projektu Tapety."
+      "note": "Plna parta pracovala 75 % dne na driveway zidce jako spolecnem projektu 50/50 s Loffelmanovymi a 25 % dne na nasem projektu Tapety."
     },
     {
       "id": "work-2026-07-02",
@@ -207,10 +207,10 @@
     "fullDays": 11,
     "reducedDays": 2,
     "totalWork": 111000,
-    "ownProjectAmount": 65100,
-    "sharedProjectAmount": 45900,
-    "ourSharedShare": 22950,
-    "neighborSharedShare": 22950,
-    "ourTotalWorkCost": 88050
+    "ownProjectAmount": 65550,
+    "sharedProjectAmount": 45450,
+    "ourSharedShare": 22725,
+    "neighborSharedShare": 22725,
+    "ourTotalWorkCost": 88275
   }
 }
