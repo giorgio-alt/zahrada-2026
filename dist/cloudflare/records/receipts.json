@@ -252,6 +252,106 @@
         }
       ],
       "note": "Nesdileny naklad. Nepatri do vyuctovani s Loffelmanovymi."
+    },
+    {
+      "id": "receipt-2026-07-02-obi-driveway-wall-material-tl",
+      "date": "2026-07-02",
+      "vendor": "OBI Ceska republika s.r.o.",
+      "amount": 4629,
+      "currency": "CZK",
+      "file": "assets/receipts/IMG_8250.JPG",
+      "status": "verified",
+      "lineItems": [
+        {
+          "title": "Beton hobby - uctenka T+L 2. 7.",
+          "quantity": 6,
+          "unit": "ks",
+          "unitPriceWithVat": 99,
+          "totalWithVat": 594
+        },
+        {
+          "title": "Drat vazaci ZN",
+          "quantity": 1,
+          "unit": "ks",
+          "unitPriceWithVat": 99,
+          "totalWithVat": 99
+        },
+        {
+          "title": "Beton hobby - uctenka T+L 2. 7.",
+          "quantity": 30,
+          "unit": "ks",
+          "unitPriceWithVat": 99,
+          "totalWithVat": 2970
+        },
+        {
+          "title": "Bedneni ztracene",
+          "quantity": 14,
+          "unit": "ks",
+          "unitPriceWithVat": 69,
+          "totalWithVat": 966
+        }
+      ],
+      "linkedRecords": [
+        {
+          "type": "sharedCost",
+          "id": "shared-obi-driveway-wall-2026-07-01"
+        },
+        {
+          "type": "payment",
+          "id": "payment-obi-driveway-wall-material-2026-07-01"
+        }
+      ],
+      "note": "Dve OBI uctenky oznacene T+L z 2. 7. 2026. Sdileny naklad 50/50 s Loffelmanovymi, hrazeno nami ve 100 %. Soucast sloucene polozky Ztracene bedneni a beton - Driveway zidka."
+    },
+    {
+      "id": "receipt-2026-07-03-obi-private-beton-t",
+      "date": "2026-07-03",
+      "vendor": "OBI Ceska republika s.r.o.",
+      "amount": 2475,
+      "currency": "CZK",
+      "file": "assets/receipts/IMG_8250.JPG",
+      "status": "verified",
+      "lineItems": [
+        {
+          "title": "Beton hobby - uctenka T",
+          "quantity": 25,
+          "unit": "ks",
+          "unitPriceWithVat": 99,
+          "totalWithVat": 2475
+        }
+      ],
+      "linkedRecords": [
+        {
+          "type": "payment",
+          "id": "payment-obi-private-material-2026-06-29"
+        }
+      ],
+      "note": "OBI uctenka oznacena pouze T. Soukromy naklad 100 % na nasi strane, mimo vyuctovani s Loffelmanovymi."
+    },
+    {
+      "id": "receipt-2026-07-01-obi-private-metylan-ivan",
+      "date": "2026-07-01",
+      "vendor": "OBI Ceska republika s.r.o.",
+      "amount": 458,
+      "currency": "CZK",
+      "file": "assets/receipts/IMG_8251.JPG",
+      "status": "verified",
+      "lineItems": [
+        {
+          "title": "Metylan instant",
+          "quantity": 2,
+          "unit": "ks",
+          "unitPriceWithVat": 229,
+          "totalWithVat": 458
+        }
+      ],
+      "linkedRecords": [
+        {
+          "type": "payment",
+          "id": "payment-obi-private-material-2026-06-29"
+        }
+      ],
+      "note": "OBI uctenka s poznamkou Ivan / proplatit, proplaceno 3. 7. 2026. Soukromy naklad 100 % na nasi strane, mimo vyuctovani s Loffelmanovymi."
     }
   ],
   "example": {

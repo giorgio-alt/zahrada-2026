@@ -38,16 +38,17 @@
       "category": "material",
       "title": "Ztracene bedneni a beton - Driveway zidka",
       "project": "Driveway zidka",
-      "amount": 7653,
+      "amount": 12282,
       "split": "50/50",
-      "ourShare": 3826.5,
-      "counterpartyShare": 3826.5,
+      "ourShare": 6141,
+      "counterpartyShare": 6141,
       "paidBy": "us",
       "settlementStatus": "reimbursable",
       "receiptIds": [
-        "receipt-2026-07-01-obi-driveway-wall-material"
+        "receipt-2026-07-01-obi-driveway-wall-material",
+        "receipt-2026-07-02-obi-driveway-wall-material-tl"
       ],
-      "note": "Dve OBI uctenky za ztracene bedneni a beton na driveway zidku, hrazene nami ve 100 %. Dve redukce na vozik v celkove hodnote 408 Kc byly vyrazeny z evidence a nejsou soucasti sdilenych nakladu."
+      "note": "OBI uctenky za ztracene bedneni a beton na driveway zidku, hrazene nami ve 100 %. Sdilene jsou pouze uctenky oznacene T+L. Dve redukce na vozik v celkove hodnote 408 Kc byly vyrazeny z evidence a nejsou soucasti sdilenych nakladu."
     },
     {
       "id": "shared-obi-material-prepazeni-2026-06",
@@ -182,10 +183,10 @@
     }
   ],
   "totals": {
-    "knownMaterial": 73007,
+    "knownMaterial": 77636,
     "knownWork": 38700,
-    "knownSharedTotal": 111707,
-    "ourKnownShare": 55853.5,
-    "counterpartyKnownShare": 55853.5
+    "knownSharedTotal": 116336,
+    "ourKnownShare": 58168,
+    "counterpartyKnownShare": 58168
   }
 }

@@ -69,15 +69,16 @@
       "date": "2026-07-01",
       "type": "shared_expense",
       "title": "Ztracene bedneni a beton - Driveway zidka",
-      "amount": 7653,
+      "amount": 12282,
       "paidBy": "us",
       "paidTo": "OBI",
       "status": "paid",
       "sharedCostId": "shared-obi-driveway-wall-2026-07-01",
       "receiptIds": [
-        "receipt-2026-07-01-obi-driveway-wall-material"
+        "receipt-2026-07-01-obi-driveway-wall-material",
+        "receipt-2026-07-02-obi-driveway-wall-material-tl"
       ],
-      "note": "Dve OBI uctenky hrazene nami ve 100 %, sdilena polozka 50/50 s Loffelmanovymi. Redukce na vozik 229 Kc a 179 Kc byly vyrazeny z evidence."
+      "note": "OBI uctenky hrazene nami ve 100 %, sdilena polozka 50/50 s Loffelmanovymi. Zahrnuje pouze uctenky oznacene T+L; redukce na vozik 229 Kc a 179 Kc byly vyrazeny z evidence."
     },
     {
       "id": "payment-obi-material-prepazeni-2026-06",
@@ -101,15 +102,17 @@
       "id": "payment-obi-private-material-2026-06-29",
       "date": "2026-06-29",
       "type": "private_expense",
-      "title": "OBI - chranicka, armovaci tkanina a lepidlo",
-      "amount": 927,
+      "title": "OBI - nesdileny material",
+      "amount": 3860,
       "paidBy": "us",
       "paidTo": "OBI",
       "status": "paid",
       "receiptIds": [
-        "receipt-2026-06-29-obi-private-material-927"
+        "receipt-2026-06-29-obi-private-material-927",
+        "receipt-2026-07-03-obi-private-beton-t",
+        "receipt-2026-07-01-obi-private-metylan-ivan"
       ],
-      "note": "Nesdileny naklad. Nepatri do vyuctovani s Loffelmanovymi."
+      "note": "Nesdileny OBI material. Zahrnuje puvodni uctenku 927 Kc, beton oznaceny pouze T za 2 475 Kc a proplacenou Ivanovu OBI uctenku za 458 Kc. Nepatri do vyuctovani s Loffelmanovymi."
     },
     {
       "id": "payment-zabradli-akto-2026-06-28",
