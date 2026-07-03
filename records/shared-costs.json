@@ -145,15 +145,15 @@
     {
       "id": "shared-work-2026-07-01",
       "category": "work",
-      "title": "Prace 1. 7. - driveway zidka",
-      "amount": 9000,
+      "title": "Prace 1. 7. - driveway zidka 80 % dne",
+      "amount": 7200,
       "split": "50/50",
-      "ourShare": 4500,
-      "counterpartyShare": 4500,
+      "ourShare": 3600,
+      "counterpartyShare": 3600,
       "paidBy": "pending",
       "settlementStatus": "reimbursable",
       "workDayId": "work-2026-07-01",
-      "note": "Cely den prace na driveway zidce jde do spolecneho projektu 50/50 s Loffelmanovymi."
+      "note": "Driveway zidka tvorila 80 % dne 1. 7. a jde do spolecneho projektu 50/50 s Loffelmanovymi. Zbylych 20 % dne patri do naseho projektu Tapety."
     },
     {
       "id": "shared-work-2026-07-02",
@@ -197,9 +197,9 @@
   ],
   "totals": {
     "knownMaterial": 77636,
-    "knownWork": 47700,
-    "knownSharedTotal": 125336,
-    "ourKnownShare": 62668,
-    "counterpartyKnownShare": 62668
+    "knownWork": 45900,
+    "knownSharedTotal": 123536,
+    "ourKnownShare": 61768,
+    "counterpartyKnownShare": 61768
   }
 }

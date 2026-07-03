@@ -148,15 +148,20 @@
       "id": "work-2026-07-01",
       "date": "2026-07-01",
       "dayRate": 9000,
-      "ownProjectPercent": 0,
-      "sharedProjectPercent": 100,
-      "ownProjectAmount": 0,
-      "sharedProjectAmount": 9000,
-      "ourSharedShare": 4500,
-      "neighborSharedShare": 4500,
+      "workers": [
+        "Ivan",
+        "Vasil",
+        "Tatino"
+      ],
+      "ownProjectPercent": 20,
+      "sharedProjectPercent": 80,
+      "ownProjectAmount": 1800,
+      "sharedProjectAmount": 7200,
+      "ourSharedShare": 3600,
+      "neighborSharedShare": 3600,
       "status": "logged",
-      "project": "Driveway zidka",
-      "note": "Plna parta pracovala cely den na driveway zidce. Cely den jde do spolecneho projektu 50/50 s Loffelmanovymi."
+      "project": "Driveway zidka / Tapety",
+      "note": "Plna parta pracovala 80 % dne na driveway zidce jako spolecnem projektu 50/50 s Loffelmanovymi a 20 % dne na nasem projektu Tapety."
     },
     {
       "id": "work-2026-07-02",
@@ -202,10 +207,10 @@
     "fullDays": 11,
     "reducedDays": 2,
     "totalWork": 111000,
-    "ownProjectAmount": 63300,
-    "sharedProjectAmount": 47700,
-    "ourSharedShare": 23850,
-    "neighborSharedShare": 23850,
-    "ourTotalWorkCost": 87150
+    "ownProjectAmount": 65100,
+    "sharedProjectAmount": 45900,
+    "ourSharedShare": 22950,
+    "neighborSharedShare": 22950,
+    "ourTotalWorkCost": 88050
   }
 }
