@@ -157,17 +157,55 @@
       "status": "logged",
       "project": "Driveway zidka",
       "note": "Plna parta pracovala cely den na driveway zidce. Cely den jde do spolecneho projektu 50/50 s Loffelmanovymi."
+    },
+    {
+      "id": "work-2026-07-02",
+      "date": "2026-07-02",
+      "dayRate": 9000,
+      "workers": [
+        "Ivan",
+        "Vasil",
+        "Tatino"
+      ],
+      "ownProjectPercent": 0,
+      "sharedProjectPercent": 100,
+      "ownProjectAmount": 0,
+      "sharedProjectAmount": 9000,
+      "ourSharedShare": 4500,
+      "neighborSharedShare": 4500,
+      "status": "logged",
+      "project": "Driveway zidka",
+      "note": "Plna parta pracovala cely den na driveway zidce. Cely den jde do spolecneho projektu 50/50 s Loffelmanovymi."
+    },
+    {
+      "id": "work-2026-07-03",
+      "date": "2026-07-03",
+      "dayRate": 9000,
+      "workers": [
+        "Ivan",
+        "Vasil",
+        "Tatino"
+      ],
+      "ownProjectPercent": 100,
+      "sharedProjectPercent": 0,
+      "ownProjectAmount": 9000,
+      "sharedProjectAmount": 0,
+      "ourSharedShare": 0,
+      "neighborSharedShare": 0,
+      "status": "logged",
+      "project": "Vychodni plot",
+      "note": "Cely den se pracovalo na nasem vychodnim plotu: odstraneni puvodniho plotu, rezani puvodni podezdivky a priprava betonu. Nedeli se s Loffelmanovymi."
     }
   ],
   "totals": {
-    "days": 11,
-    "fullDays": 9,
+    "days": 13,
+    "fullDays": 11,
     "reducedDays": 2,
-    "totalWork": 93000,
-    "ownProjectAmount": 54300,
-    "sharedProjectAmount": 38700,
-    "ourSharedShare": 19350,
-    "neighborSharedShare": 19350,
-    "ourTotalWorkCost": 73650
+    "totalWork": 111000,
+    "ownProjectAmount": 63300,
+    "sharedProjectAmount": 47700,
+    "ourSharedShare": 23850,
+    "neighborSharedShare": 23850,
+    "ourTotalWorkCost": 87150
   }
 }

@@ -154,6 +154,19 @@
       "settlementStatus": "reimbursable",
       "workDayId": "work-2026-07-01",
       "note": "Cely den prace na driveway zidce jde do spolecneho projektu 50/50 s Loffelmanovymi."
+    },
+    {
+      "id": "shared-work-2026-07-02",
+      "category": "work",
+      "title": "Prace 2. 7. - driveway zidka",
+      "amount": 9000,
+      "split": "50/50",
+      "ourShare": 4500,
+      "counterpartyShare": 4500,
+      "paidBy": "pending",
+      "settlementStatus": "reimbursable",
+      "workDayId": "work-2026-07-02",
+      "note": "Cely den prace na driveway zidce jde do spolecneho projektu 50/50 s Loffelmanovymi."
     }
   ],
   "openItems": [
@@ -184,9 +197,9 @@
   ],
   "totals": {
     "knownMaterial": 77636,
-    "knownWork": 38700,
-    "knownSharedTotal": 116336,
-    "ourKnownShare": 58168,
-    "counterpartyKnownShare": 58168
+    "knownWork": 47700,
+    "knownSharedTotal": 125336,
+    "ourKnownShare": 62668,
+    "counterpartyKnownShare": 62668
   }
 }
