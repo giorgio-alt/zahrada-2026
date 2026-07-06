@@ -434,6 +434,162 @@ p {
   font-weight: 900;
 }
 
+.timeline-track {
+  --timeline-line-y: 34px;
+  position: relative;
+  margin-top: 20px;
+  padding: 22px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.36), rgba(255, 255, 255, 0.17));
+  backdrop-filter: blur(22px) saturate(135%);
+  box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255, 255, 255, 0.64);
+}
+
+.timeline-track::before {
+  content: "";
+  position: absolute;
+  top: var(--timeline-line-y);
+  right: 30px;
+  left: 30px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(90, 143, 85, 0.18), rgba(185, 130, 40, 0.34), rgba(111, 81, 56, 0.16));
+}
+
+.timeline-flow {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.timeline-flow::before {
+  content: "";
+  position: absolute;
+  top: calc(var(--timeline-line-y) - 1px);
+  left: -90px;
+  width: 90px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.92), transparent);
+  filter: blur(0.2px);
+  animation: timelinePulse 7s ease-in-out infinite;
+}
+
+.timeline-milestones {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+  gap: 16px;
+}
+
+.timeline-item {
+  position: relative;
+  min-height: 146px;
+  padding: 40px 16px 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.54);
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.48), rgba(255, 255, 255, 0.2));
+  box-shadow: 0 14px 34px rgba(70, 49, 30, 0.09), inset 0 1px 0 rgba(255, 255, 255, 0.68);
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 27px;
+  right: 0;
+  left: 0;
+  height: 2px;
+  background: rgba(111, 81, 56, 0.13);
+}
+
+.timeline-node {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 1;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.84);
+  border-radius: 50%;
+  background: var(--wood-light);
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.3), 0 8px 20px rgba(45, 36, 27, 0.12);
+}
+
+.timeline-content {
+  display: grid;
+  gap: 7px;
+}
+
+.timeline-date {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.timeline-content h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.25;
+  font-weight: 950;
+}
+
+.timeline-content p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.timeline-done .timeline-node {
+  background: linear-gradient(135deg, var(--green), #3f7043);
+}
+
+.timeline-progress .timeline-node {
+  background: linear-gradient(135deg, var(--orange), #8f651f);
+}
+
+.timeline-planned .timeline-node {
+  background: linear-gradient(135deg, var(--wood-light), var(--brown));
+}
+
+.timeline-done {
+  border-color: rgba(90, 143, 85, 0.26);
+}
+
+.timeline-progress {
+  border-color: rgba(185, 130, 40, 0.32);
+}
+
+.timeline-planned {
+  border-color: rgba(111, 81, 56, 0.2);
+}
+
+@keyframes timelinePulse {
+  0% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+
+  12%,
+  82% {
+    opacity: 0.92;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(calc(100vw + 180px));
+  }
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -1004,5 +1160,53 @@ tr:last-child td {
 
   .finance-row strong {
     text-align: left;
+  }
+
+  .timeline-track {
+    --timeline-line-y: 29px;
+    padding: 16px;
+    border-radius: 24px;
+  }
+
+  .timeline-track::before {
+    right: 22px;
+    left: 22px;
+  }
+
+  .timeline-milestones {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+    gap: 12px;
+  }
+
+  .timeline-item {
+    min-height: 132px;
+    padding: 35px 13px 14px;
+    border-radius: 18px;
+  }
+
+  .timeline-item::before {
+    top: 24px;
+  }
+
+  .timeline-node {
+    top: 16px;
+    left: 15px;
+    width: 17px;
+    height: 17px;
+    border-width: 2px;
+  }
+
+  .timeline-content h3 {
+    font-size: 15px;
+  }
+
+  .timeline-content p {
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-flow::before {
+    animation: none;
   }
 }

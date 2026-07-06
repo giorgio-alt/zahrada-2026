@@ -502,12 +502,31 @@
 
   function renderTimeline() {
     const section = document.querySelector("#timeline");
-    sectionTitle(section, "📅 Projektová timeline");
-    section.append(
-      grid(data.timeline, ([label, tone, title, body]) =>
-        card({ badge: label, tone, title, body })
-      )
+    sectionTitle(
+      section,
+      "📅 Timeline",
+      "Milníkový přehled hlavních posunů projektu."
     );
+
+    const track = el("div", "timeline-track");
+    track.append(el("div", "timeline-flow"));
+
+    const list = el("div", "timeline-milestones");
+    data.timeline.forEach((item) => {
+      const status = item.status || "planned";
+      const milestone = el("article", `timeline-item timeline-${status}`);
+      milestone.append(el("span", "timeline-node"));
+
+      const content = el("div", "timeline-content");
+      content.append(el("span", "timeline-date", item.date));
+      content.append(el("h3", "", `${item.icon || "•"} ${item.title}`));
+      content.append(el("p", "", item.body));
+      milestone.append(content);
+      list.append(milestone);
+    });
+
+    track.append(list);
+    section.append(track);
   }
 
   function renderMissing() {
