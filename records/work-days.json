@@ -204,10 +204,7 @@
     {
       "id": "work-2026-07-04",
       "date": "2026-07-04",
-      "dayRate": 5625,
-      "baseDayRate": 9000,
-      "hoursWorked": 5,
-      "standardHours": 8,
+      "dayRate": 9000,
       "workers": [
         "Ivan",
         "Vasil",
@@ -215,25 +212,38 @@
       ],
       "ownProjectPercent": 100,
       "sharedProjectPercent": 0,
-      "ownProjectAmount": 5625,
+      "ownProjectAmount": 9000,
       "sharedProjectAmount": 0,
       "ourSharedShare": 0,
       "neighborSharedShare": 0,
       "status": "logged",
-      "project": "Vychodni plot",
-      "note": "Finalizace podhrabovych desek. Pracovalo se 5 hodin z 8: 9 000 Kc x (5 / 8) = 5 625 Kc. Cely den je 100 % nas projekt a nedeli se s Loffelmanovymi."
+      "project": "Vychodni plot / Tapety",
+      "allocations": [
+        {
+          "project": "Vychodni plot",
+          "percent": 75,
+          "amount": 6750,
+          "note": "Finalizace podhrabovych desek."
+        },
+        {
+          "project": "Tapety",
+          "percent": 25,
+          "amount": 2250,
+          "note": "Instalace tapety v detskem pokoji. Loznice zustava otevrena a ceka na dodani / instalaci zbyvajici tapety."
+        }
+      ],
+      "note": "Plna parta pracovala cely den. Standardni sazba 9 000 Kc. Prace se deli mezi nase projekty: 75 % Vychodni plot = 6 750 Kc a 25 % Tapety = 2 250 Kc. Nedeli se s Loffelmanovymi."
     }
   ],
   "totals": {
     "days": 14,
-    "fullDays": 11,
+    "fullDays": 12,
     "reducedDays": 2,
-    "partialDays": 1,
-    "totalWork": 116625,
-    "ownProjectAmount": 71175,
+    "totalWork": 120000,
+    "ownProjectAmount": 74550,
     "sharedProjectAmount": 45450,
     "ourSharedShare": 22725,
     "neighborSharedShare": 22725,
-    "ourTotalWorkCost": 93900
+    "ourTotalWorkCost": 97275
   }
 }

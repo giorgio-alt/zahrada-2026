@@ -172,9 +172,9 @@
       "date": "2026-07-04",
       "type": "work_liability",
       "title": "Prace Ivanovy party 17. 6.-4. 7.",
-      "amount": 116625,
+      "amount": 120000,
       "paidAmount": 72000,
-      "outstandingAmount": 44625,
+      "outstandingAmount": 48000,
       "paidBy": "us",
       "paidTo": "Ivanova parta",
       "status": "partially_paid",
@@ -198,7 +198,7 @@
         "work-2026-07-04"
       ],
       "receiptIds": [],
-      "note": "Evidovano 11 plnych pracovnich dnu x 9 000 Kc, 2 snizene dny x 6 000 Kc a zkraceny den 4. 7. za 5 625 Kc. Dne 30. 6. 2026 probehlo castecne vyrovnani 72 000 Kc, zbyva doplatit 44 625 Kc."
+      "note": "Evidovano 12 plnych pracovnich dnu x 9 000 Kc a 2 snizene dny x 6 000 Kc. Dne 4. 7. byl plny den rozdelen mezi nase projekty: 75 % Vychodni plot a 25 % Tapety. Dne 30. 6. 2026 probehlo castecne vyrovnani 72 000 Kc, zbyva doplatit 48 000 Kc."
     },
     {
       "id": "payment-ivan-partial-settlement-2026-06-30",
