@@ -20,8 +20,8 @@ window.ZAHRADA_DASHBOARD = {
         title: "💰 Celková investice",
         body: "Kolik celý projekt stojí / bude stát?",
         metrics: [
-          ["Potvrzené / objednané", "552 050,10 Kč"],
-          ["Včetně práce a odhadů", "570 250,10 Kč"],
+          ["Potvrzené / objednané", "558 050,10 Kč"],
+          ["Včetně práce a odhadů", "576 250,10 Kč"],
           ["Plánované / odhadované", "18 200 Kč"],
           ["Rozdíl od potvrzeného", "18 200 Kč"],
         ],
@@ -31,7 +31,7 @@ window.ZAHRADA_DASHBOARD = {
         title: "💸 Cashflow",
         body: "Kolik peněz už odešlo a co ještě čeká na platbu?",
         metrics: [
-          ["Zaplaceno", "297 050,10 Kč"],
+          ["Zaplaceno", "303 050,10 Kč"],
           ["Čeká na úhradu", "48 000 Kč"],
           ["Proplaceno Ivanovi", "72 000 Kč"],
           ["Otevřené závazky", "48 000 Kč"],
@@ -63,7 +63,7 @@ window.ZAHRADA_DASHBOARD = {
     cashflow: {
       headers: ["Metrika", "Částka", "Poznámka"],
       rows: [
-        ["Zaplaceno", "297 050,10 Kč", "Uhrazené platby evidované v platbách včetně částečného vyrovnání Ivanovi a podhrabových desek."],
+        ["Zaplaceno", "303 050,10 Kč", "Uhrazené platby evidované v platbách včetně částečného vyrovnání Ivanovi, podhrabových desek a tapety."],
         ["Čeká na úhradu", "48 000 Kč", "Otevřený doplatek Ivanově partě za evidovanou práci."],
         ["Proplaceno Ivanovi", "72 000 Kč", "Částečné vyrovnání ze dne 30. 6. 2026."],
         ["Otevřené závazky", "48 000 Kč", "Zbývající závazek vůči Ivanově partě za evidovanou práci."],
@@ -156,7 +156,7 @@ window.ZAHRADA_DASHBOARD = {
       ["⏳ Odhad", "wait", "🪨 Dlažba pod zahradní domek", "18 200 Kč", "Plánovaná dlažba cca 26 m² pro budoucí zahradní domek."],
       ["✅ Dokončeno", "good", "🪞 Zrcadla", "10 348 Kč", "Zaplaceno a dokončeno 1. 7. 2026."],
       ["✅ Uhrazeno", "good", "🪑 Konzolový stolek", "4 847 Kč", "Samostatná evidovaná položka, zatím bez přiřazení k projektu."],
-      ["⏳ Probíhá", "wait", "🧱 Tapety", "⏳ doplnit", "Dětský pokoj hotový 4. 7. 2026, ložnice čeká na dodání / instalaci zbývající tapety."],
+      ["✅ Uhrazeno", "good", "🧱 Tapeta", "6 000 Kč", "Materiál pro projekt Tapety. Účtenka není k dispozici. 100 % náš náklad mimo vyúčtování s Loffelmanovými."],
     ],
     rows: [
       ["Pergola", "207 000 Kč", "✅ schváleno"],
@@ -175,11 +175,11 @@ window.ZAHRADA_DASHBOARD = {
       ["Dlažba pod zahradní domek cca 26 m²", "18 200 Kč", "⏳ odhad"],
       ["Zrcadla", "10 348 Kč", "✅ zaplaceno a dokončeno 1. 7. 2026"],
       ["Konzolový stolek", "4 847 Kč", "✅ zaplaceno 1. 7. 2026, samostatná evidovaná položka"],
-      ["Tapety", "⏳ doplnit", "Probíhá; dětský pokoj hotový, ložnice otevřená"],
+      ["Tapeta", "6 000 Kč", "✅ materiál pořízen / uhrazen; projekt Tapety; účtenka není k dispozici; 100 % náš náklad mimo vyúčtování s Loffelmanovými"],
     ],
     totals: [
-      ["Nákladový součet včetně práce a odhadu", "570 250,10 Kč"],
-      ["Potvrzené / objednané bez odhadu dlažby", "552 050,10 Kč"],
+      ["Nákladový součet včetně práce a odhadu", "576 250,10 Kč"],
+      ["Potvrzené / objednané bez odhadu dlažby", "558 050,10 Kč"],
       ["Z vyúčtované práce uhrazeno Ivanovi", "72 000 Kč"],
       ["Zbývá doplatit Ivanovi", "48 000 Kč"],
     ],
@@ -526,7 +526,7 @@ window.ZAHRADA_DASHBOARD = {
     ["🏊 Bazén", "Čeká budget a finální plán."],
     ["🧱 Zábradlí", ["✅ Realizace dokončena", "✅ Namontováno", "✅ Uhrazeno", "✅ Projekt uzavřen", "🔒 100 % soukromý náklad, mimo sdílené vyúčtování"], "Dokončeno", "good"],
     ["🪞 Zrcadla", ["✅ Cena doplněna: 10 348 Kč", "✅ Výška umístění schválena", "✅ Montáž dokončena", "✅ Projekt dokončen 1. 7. 2026"], "Dokončeno", "good"],
-    ["🧱 Tapety", ["✅ Práce 1. 7. - 25 % dne", "✅ Tapeta - dětský pokoj", "⏳ Tapeta - ložnice", "⏳ Doplnit cenu"], "Probíhá", "wait"],
+    ["🧱 Tapety", ["✅ Tapeta - materiál pořízen / uhrazeno: 6 000 Kč", "✅ Práce 1. 7. - 25 % dne", "✅ Tapeta v dětském pokoji hotová", "⏳ Tapeta v ložnici čeká na dodání / instalaci"], "Probíhá", "wait"],
     ["💡 Osvětlení", ["⏳ Světlo - šatna Lucie", "Poznámka: čeká na předání / dovoz od Tondy.", "⏳ Světlo nad kuchyňský ostrůvek", "⏳ Světlo - chodba 2NP", "⏳ Dodělat LED track - chodba 1NP"], "Probíhá", "wait"],
   ],
   plan: [
@@ -558,6 +558,7 @@ window.ZAHRADA_DASHBOARD = {
     {
       title: "🤝 Vyúčtování",
       items: [
+        ["podpis-sousedky-plot", "Podpis sousedky k výměně plotu a podhrabovkám máme", true],
         ["prace-23-sdilena", "Práce 23. 6. sdílená 50 % dne", true],
         ["prace-24-sdilena", "Práce 24. 6. sdílená 75 % dne", true],
         ["prace-25-sdilena", "Práce 25. 6. sdílená 75 % dne", true],
@@ -596,10 +597,10 @@ window.ZAHRADA_DASHBOARD = {
     {
       title: "🧱 Tapety",
       items: [
-        ["tapety-cena", "Doplnit cenu", false],
+        ["tapety-material", "Tapeta - materiál pořízen / uhrazeno: 6 000 Kč", true],
         ["tapety-prace-1-7", "Práce na tapetách 1. 7. - 25 % dne", true],
-        ["tapety-detsky-pokoj", "Tapeta - dětský pokoj", true],
-        ["tapety-loznice", "Tapeta - ložnice", false],
+        ["tapety-detsky-pokoj", "Tapeta v dětském pokoji hotová", true],
+        ["tapety-loznice", "Tapeta v ložnici čeká na dodání / instalaci", false],
       ],
     },
     {
@@ -629,20 +630,20 @@ window.ZAHRADA_DASHBOARD = {
     ["✅ Pokročilo", "good", "3. 7. 2026", "Východní plot - vrty pro sloupky, betonování sloupků, osazení panelů a montáž plotu; zbývají podhrabové desky cca na 3 polích"],
     ["✅ Pokročilo", "good", "4. 7. 2026", "Plný pracovní den: východní plot 75 % a tapety 25 %; práce na východním plotu výrazně pokročily, zbývají podhrabové desky cca na 3 polích; podhrabové desky uhrazeny a dodány za 1 500 Kč"],
     ["⏳ Plánováno", "wait", "Doplnit", "Dlažba pod zahradní domek cca 26 m²"],
-    ["⏳ Čeká", "wait", "Doplnit", "Tapety - cena a instalace"],
+    ["✅ Hotovo", "good", "Doplněno", "Podpis sousedky k výměně plotu a podhrabovkám máme."],
+    ["⏳ Čeká", "wait", "Doplnit", "Tapety - dokončit ložnici po dodání zbývající tapety"],
     ["⏳ Čeká", "wait", "Doplnit", "Omítka zahradního přepažení"],
     ["⏳ Čeká", "wait", "Doplnit", "Pergola - termín realizace"],
     ["⚠️ Řešit", "risk", "Doplnit", "Elektro bez ztráty 11 kW nabíjení"],
   ],
   missing: [
     "Termín realizace pergoly.",
-    "Podpis sousedky k výměně plotu a podhrabovek.",
     "Táta: návrh elektro řešení bez ztráty 11 kW nabíjení.",
     "Doplnit termín realizace dlažby pod zahradní domek cca 26 m².",
     "Kluci: spočítat dlažbu a práci pro sousedy.",
     "Doúčtovat fasádu, spojovací materiál a případnou navazující práci k zahradnímu přepažení.",
     "Dokončit omítku zahradního přepažení - Mistral silikon 1,5H TB.",
-    "Tapety: doplnit cenu a dokončit ložnici po dodání zbývající tapety.",
+    "Tapety: dokončit ložnici po dodání zbývající tapety.",
     "Osvětlení: převzít světlo do šatny od Tondy, namontovat světlo nad ostrůvek, světlo v chodbě 2NP a dokončit LED track v chodbě 1NP.",
   ],
 };

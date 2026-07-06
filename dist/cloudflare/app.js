@@ -164,6 +164,7 @@
 
     section.append(
       financeDetail("💸 Detail cashflow", [
+        financeCashflowCards(data.finance.cashflow.rows),
         table(data.finance.cashflow.headers, data.finance.cashflow.rows, data.finance.cashflow.total),
       ])
     );
@@ -191,11 +192,12 @@
   }
 
   function financeOverviewCard(item) {
-    const node = el("article", "finance-summary-card");
-    node.append(badge(item.title.split(" ")[0], item.tone));
-    node.append(el("h3", "", item.title));
-    node.append(el("p", "finance-card-question", item.body));
-    node.append(metricList(item.metrics));
+    const { icon, label } = splitFinanceIconLabel(item.title);
+    const node = financeSummaryShell(item.tone, icon, label);
+    const body = el("div", "finance-summary-body");
+    body.append(el("p", "finance-card-question", item.body));
+    body.append(metricList(item.metrics));
+    node.append(body);
     return node;
   }
 
@@ -212,25 +214,77 @@
   function totalsGrid(items) {
     const totals = el("div", "finance-metric-grid");
     items.forEach(([label, amount]) => {
-      const item = el("div", "finance-metric-box");
-      item.append(el("span", "", label));
-      item.append(el("strong", "", amount));
-      totals.append(item);
+      totals.append(financeSummaryCard([label, toneForFinanceLabel(label), "Souhrn", amount]));
     });
     return totals;
   }
 
   function financeTupleMetrics(items) {
     const wrap = el("div", "finance-metric-grid");
-    items.forEach(([label, tone, title, amount, body]) => {
-      const item = el("div", "finance-metric-box");
-      item.append(badge(label, tone));
-      item.append(el("strong", "", title));
-      if (amount) item.append(el("span", "finance-metric-amount", amount));
-      if (body) item.append(paragraphs(body));
-      wrap.append(item);
+    items.forEach((item) => wrap.append(financeSummaryCard(item)));
+    return wrap;
+  }
+
+  function financeCashflowCards(rows) {
+    const wrap = el("div", "finance-metric-grid");
+    rows.forEach(([label, amount, body]) => {
+      wrap.append(financeSummaryCard([label, toneForFinanceLabel(label), "Cashflow", amount, body]));
     });
     return wrap;
+  }
+
+  function financeSummaryCard(tuple) {
+    const [label, tone, title, amount, body, icon] = tuple;
+    const node = financeSummaryShell(tone, icon || defaultFinanceIcon(label, tone), label);
+    const bodyNode = el("div", "finance-summary-body");
+    bodyNode.append(el("h3", "", title));
+    if (amount) bodyNode.append(el("p", "amount", amount));
+    if (body) bodyNode.append(paragraphs(body));
+    node.append(bodyNode);
+    return node;
+  }
+
+  function financeSummaryShell(tone, icon, label) {
+    const normalizedTone = tone || "neutral";
+    const node = el("article", `finance-summary-card ${normalizedTone} tone-${normalizedTone}`.trim());
+    const header = el("div", "finance-summary-header");
+    header.append(el("span", "finance-summary-icon", icon || defaultFinanceIcon(label, normalizedTone)));
+    header.append(el("span", "finance-summary-label", label));
+    node.append(header);
+    return node;
+  }
+
+  function splitFinanceIconLabel(title) {
+    const value = text(title).trim();
+    const match = value.match(/^(\p{Extended_Pictographic}|\S)\s+(.+)$/u);
+    if (!match) return { icon: defaultFinanceIcon(value), label: value };
+    return { icon: match[1], label: match[2] };
+  }
+
+  function defaultFinanceIcon(label, tone) {
+    const value = text(label).toLowerCase();
+    if (value.includes("celkem") || value.includes("investice")) return "▦";
+    if (value.includes("cashflow") || value.includes("zaplaceno")) return "💸";
+    if (value.includes("společ") || value.includes("sdílen") || value.includes("vyúčtování")) return "👥";
+    if (value.includes("podíl")) return "◔";
+    if (value.includes("soused")) return "🤝";
+    if (value.includes("náš projekt")) return "⌂";
+    if (value.includes("ivan")) return "👷";
+    if (value.includes("reálně") || value.includes("náklad")) return "▣";
+    if (value.includes("čeká") || value.includes("otevřené")) return "!";
+    if (tone === "split") return "👥";
+    if (tone === "wait") return "!";
+    if (tone === "risk") return "!";
+    return "▦";
+  }
+
+  function toneForFinanceLabel(label) {
+    const value = text(label).toLowerCase();
+    if (value.includes("čeká") || value.includes("otevřené") || value.includes("plánované") || value.includes("rozdíl") || value.includes("zbývá")) return "wait";
+    if (value.includes("společ") || value.includes("sdílen") || value.includes("soused") || value.includes("löffelman")) return "split";
+    if (value.includes("riziko")) return "risk";
+    if (value.includes("zaplaceno") || value.includes("uhrazeno") || value.includes("potvrzené") || value.includes("celkem")) return "good";
+    return "neutral";
   }
 
   function financeDetail(label, children, intro) {

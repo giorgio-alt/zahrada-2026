@@ -211,14 +211,13 @@ p {
 
 .finance-overview-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 22px;
   margin-top: 24px;
 }
 
 .finance-summary-card,
-.finance-detail,
-.finance-metric-box {
+.finance-detail {
   border: 1px solid var(--line);
   background: linear-gradient(145deg, var(--glass-strong), var(--glass-soft));
   backdrop-filter: blur(20px) saturate(130%);
@@ -226,24 +225,94 @@ p {
 }
 
 .finance-summary-card {
-  display: grid;
-  align-content: start;
-  gap: 14px;
-  min-height: 278px;
-  padding: 22px;
-  border-radius: 28px;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 24px;
 }
 
-.finance-summary-card h3 {
-  margin: 0;
+.finance-summary-header {
+  min-height: 76px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #fff;
   font-size: 22px;
+  font-weight: 950;
+  letter-spacing: 0;
+}
+
+.finance-summary-icon {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border-radius: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(30, 30, 30, 0.84);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.68), 0 10px 18px rgba(45, 36, 27, 0.12);
+  font-size: 22px;
+  line-height: 1;
+}
+
+.finance-summary-label {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.finance-summary-body {
+  padding: 22px 24px 26px;
+}
+
+.finance-summary-body h3 {
+  margin: 0 0 18px;
+  color: var(--ink);
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 900;
+}
+
+.finance-summary-card .amount {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(34px, 4vw, 50px);
+  line-height: 1;
+  font-weight: 950;
+  letter-spacing: 0;
+}
+
+.finance-summary-card.good .finance-summary-header,
+.finance-summary-card.tone-good .finance-summary-header {
+  background: linear-gradient(135deg, var(--green), #3f7043);
+}
+
+.finance-summary-card.split .finance-summary-header,
+.finance-summary-card.tone-split .finance-summary-header {
+  background: linear-gradient(135deg, var(--blue-gray), #365965);
+}
+
+.finance-summary-card.wait .finance-summary-header,
+.finance-summary-card.tone-wait .finance-summary-header {
+  background: linear-gradient(135deg, var(--orange), #8f651f);
+}
+
+.finance-summary-card.risk .finance-summary-header,
+.finance-summary-card.tone-risk .finance-summary-header {
+  background: linear-gradient(135deg, var(--red), #7c382f);
+}
+
+.finance-summary-card.neutral .finance-summary-header,
+.finance-summary-card.tone-neutral .finance-summary-header {
+  background: linear-gradient(135deg, var(--brown), var(--brown-deep));
 }
 
 .finance-card-question {
   margin: 0;
   color: var(--muted);
-  font-size: 14px;
-  line-height: 1.45;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 .metric-list {
@@ -325,52 +394,9 @@ p {
 
 .finance-metric-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 22px;
   margin-top: 18px;
-}
-
-.finance-metric-box {
-  display: grid;
-  gap: 10px;
-  align-content: start;
-  min-height: 112px;
-  padding: 18px;
-  border-radius: 22px;
-}
-
-.finance-metric-box .badge {
-  width: 100%;
-  justify-content: center;
-  min-height: 44px;
-  border-radius: 16px;
-  color: #fff;
-  font-size: 17px;
-  font-weight: 950;
-  letter-spacing: 0;
-  text-align: center;
-}
-
-.finance-metric-box > span:first-child {
-  color: var(--muted);
-  font-size: 13px;
-  font-weight: 850;
-}
-
-.finance-metric-box > strong {
-  display: block;
-  font-size: 24px;
-  line-height: 1.18;
-}
-
-.finance-metric-box .badge + strong {
-  font-size: 18px;
-}
-
-.finance-metric-amount {
-  color: var(--ink);
-  font-size: 23px;
-  font-weight: 950;
 }
 
 .card p:last-child,
@@ -1030,8 +1056,8 @@ window.ZAHRADA_DASHBOARD = {
         title: "💰 Celková investice",
         body: "Kolik celý projekt stojí / bude stát?",
         metrics: [
-          ["Potvrzené / objednané", "552 050,10 Kč"],
-          ["Včetně práce a odhadů", "570 250,10 Kč"],
+          ["Potvrzené / objednané", "558 050,10 Kč"],
+          ["Včetně práce a odhadů", "576 250,10 Kč"],
           ["Plánované / odhadované", "18 200 Kč"],
           ["Rozdíl od potvrzeného", "18 200 Kč"],
         ],
@@ -1041,7 +1067,7 @@ window.ZAHRADA_DASHBOARD = {
         title: "💸 Cashflow",
         body: "Kolik peněz už odešlo a co ještě čeká na platbu?",
         metrics: [
-          ["Zaplaceno", "297 050,10 Kč"],
+          ["Zaplaceno", "303 050,10 Kč"],
           ["Čeká na úhradu", "48 000 Kč"],
           ["Proplaceno Ivanovi", "72 000 Kč"],
           ["Otevřené závazky", "48 000 Kč"],
@@ -1073,7 +1099,7 @@ window.ZAHRADA_DASHBOARD = {
     cashflow: {
       headers: ["Metrika", "Částka", "Poznámka"],
       rows: [
-        ["Zaplaceno", "297 050,10 Kč", "Uhrazené platby evidované v platbách včetně částečného vyrovnání Ivanovi a podhrabových desek."],
+        ["Zaplaceno", "303 050,10 Kč", "Uhrazené platby evidované v platbách včetně částečného vyrovnání Ivanovi, podhrabových desek a tapety."],
         ["Čeká na úhradu", "48 000 Kč", "Otevřený doplatek Ivanově partě za evidovanou práci."],
         ["Proplaceno Ivanovi", "72 000 Kč", "Částečné vyrovnání ze dne 30. 6. 2026."],
         ["Otevřené závazky", "48 000 Kč", "Zbývající závazek vůči Ivanově partě za evidovanou práci."],
@@ -1166,7 +1192,7 @@ window.ZAHRADA_DASHBOARD = {
       ["⏳ Odhad", "wait", "🪨 Dlažba pod zahradní domek", "18 200 Kč", "Plánovaná dlažba cca 26 m² pro budoucí zahradní domek."],
       ["✅ Dokončeno", "good", "🪞 Zrcadla", "10 348 Kč", "Zaplaceno a dokončeno 1. 7. 2026."],
       ["✅ Uhrazeno", "good", "🪑 Konzolový stolek", "4 847 Kč", "Samostatná evidovaná položka, zatím bez přiřazení k projektu."],
-      ["⏳ Probíhá", "wait", "🧱 Tapety", "⏳ doplnit", "Dětský pokoj hotový 4. 7. 2026, ložnice čeká na dodání / instalaci zbývající tapety."],
+      ["✅ Uhrazeno", "good", "🧱 Tapeta", "6 000 Kč", "Materiál pro projekt Tapety. Účtenka není k dispozici. 100 % náš náklad mimo vyúčtování s Loffelmanovými."],
     ],
     rows: [
       ["Pergola", "207 000 Kč", "✅ schváleno"],
@@ -1185,11 +1211,11 @@ window.ZAHRADA_DASHBOARD = {
       ["Dlažba pod zahradní domek cca 26 m²", "18 200 Kč", "⏳ odhad"],
       ["Zrcadla", "10 348 Kč", "✅ zaplaceno a dokončeno 1. 7. 2026"],
       ["Konzolový stolek", "4 847 Kč", "✅ zaplaceno 1. 7. 2026, samostatná evidovaná položka"],
-      ["Tapety", "⏳ doplnit", "Probíhá; dětský pokoj hotový, ložnice otevřená"],
+      ["Tapeta", "6 000 Kč", "✅ materiál pořízen / uhrazen; projekt Tapety; účtenka není k dispozici; 100 % náš náklad mimo vyúčtování s Loffelmanovými"],
     ],
     totals: [
-      ["Nákladový součet včetně práce a odhadu", "570 250,10 Kč"],
-      ["Potvrzené / objednané bez odhadu dlažby", "552 050,10 Kč"],
+      ["Nákladový součet včetně práce a odhadu", "576 250,10 Kč"],
+      ["Potvrzené / objednané bez odhadu dlažby", "558 050,10 Kč"],
       ["Z vyúčtované práce uhrazeno Ivanovi", "72 000 Kč"],
       ["Zbývá doplatit Ivanovi", "48 000 Kč"],
     ],
@@ -1536,7 +1562,7 @@ window.ZAHRADA_DASHBOARD = {
     ["🏊 Bazén", "Čeká budget a finální plán."],
     ["🧱 Zábradlí", ["✅ Realizace dokončena", "✅ Namontováno", "✅ Uhrazeno", "✅ Projekt uzavřen", "🔒 100 % soukromý náklad, mimo sdílené vyúčtování"], "Dokončeno", "good"],
     ["🪞 Zrcadla", ["✅ Cena doplněna: 10 348 Kč", "✅ Výška umístění schválena", "✅ Montáž dokončena", "✅ Projekt dokončen 1. 7. 2026"], "Dokončeno", "good"],
-    ["🧱 Tapety", ["✅ Práce 1. 7. - 25 % dne", "✅ Tapeta - dětský pokoj", "⏳ Tapeta - ložnice", "⏳ Doplnit cenu"], "Probíhá", "wait"],
+    ["🧱 Tapety", ["✅ Tapeta - materiál pořízen / uhrazeno: 6 000 Kč", "✅ Práce 1. 7. - 25 % dne", "✅ Tapeta v dětském pokoji hotová", "⏳ Tapeta v ložnici čeká na dodání / instalaci"], "Probíhá", "wait"],
     ["💡 Osvětlení", ["⏳ Světlo - šatna Lucie", "Poznámka: čeká na předání / dovoz od Tondy.", "⏳ Světlo nad kuchyňský ostrůvek", "⏳ Světlo - chodba 2NP", "⏳ Dodělat LED track - chodba 1NP"], "Probíhá", "wait"],
   ],
   plan: [
@@ -1568,6 +1594,7 @@ window.ZAHRADA_DASHBOARD = {
     {
       title: "🤝 Vyúčtování",
       items: [
+        ["podpis-sousedky-plot", "Podpis sousedky k výměně plotu a podhrabovkám máme", true],
         ["prace-23-sdilena", "Práce 23. 6. sdílená 50 % dne", true],
         ["prace-24-sdilena", "Práce 24. 6. sdílená 75 % dne", true],
         ["prace-25-sdilena", "Práce 25. 6. sdílená 75 % dne", true],
@@ -1606,10 +1633,10 @@ window.ZAHRADA_DASHBOARD = {
     {
       title: "🧱 Tapety",
       items: [
-        ["tapety-cena", "Doplnit cenu", false],
+        ["tapety-material", "Tapeta - materiál pořízen / uhrazeno: 6 000 Kč", true],
         ["tapety-prace-1-7", "Práce na tapetách 1. 7. - 25 % dne", true],
-        ["tapety-detsky-pokoj", "Tapeta - dětský pokoj", true],
-        ["tapety-loznice", "Tapeta - ložnice", false],
+        ["tapety-detsky-pokoj", "Tapeta v dětském pokoji hotová", true],
+        ["tapety-loznice", "Tapeta v ložnici čeká na dodání / instalaci", false],
       ],
     },
     {
@@ -1639,20 +1666,20 @@ window.ZAHRADA_DASHBOARD = {
     ["✅ Pokročilo", "good", "3. 7. 2026", "Východní plot - vrty pro sloupky, betonování sloupků, osazení panelů a montáž plotu; zbývají podhrabové desky cca na 3 polích"],
     ["✅ Pokročilo", "good", "4. 7. 2026", "Plný pracovní den: východní plot 75 % a tapety 25 %; práce na východním plotu výrazně pokročily, zbývají podhrabové desky cca na 3 polích; podhrabové desky uhrazeny a dodány za 1 500 Kč"],
     ["⏳ Plánováno", "wait", "Doplnit", "Dlažba pod zahradní domek cca 26 m²"],
-    ["⏳ Čeká", "wait", "Doplnit", "Tapety - cena a instalace"],
+    ["✅ Hotovo", "good", "Doplněno", "Podpis sousedky k výměně plotu a podhrabovkám máme."],
+    ["⏳ Čeká", "wait", "Doplnit", "Tapety - dokončit ložnici po dodání zbývající tapety"],
     ["⏳ Čeká", "wait", "Doplnit", "Omítka zahradního přepažení"],
     ["⏳ Čeká", "wait", "Doplnit", "Pergola - termín realizace"],
     ["⚠️ Řešit", "risk", "Doplnit", "Elektro bez ztráty 11 kW nabíjení"],
   ],
   missing: [
     "Termín realizace pergoly.",
-    "Podpis sousedky k výměně plotu a podhrabovek.",
     "Táta: návrh elektro řešení bez ztráty 11 kW nabíjení.",
     "Doplnit termín realizace dlažby pod zahradní domek cca 26 m².",
     "Kluci: spočítat dlažbu a práci pro sousedy.",
     "Doúčtovat fasádu, spojovací materiál a případnou navazující práci k zahradnímu přepažení.",
     "Dokončit omítku zahradního přepažení - Mistral silikon 1,5H TB.",
-    "Tapety: doplnit cenu a dokončit ložnici po dodání zbývající tapety.",
+    "Tapety: dokončit ložnici po dodání zbývající tapety.",
     "Osvětlení: převzít světlo do šatny od Tondy, namontovat světlo nad ostrůvek, světlo v chodbě 2NP a dokončit LED track v chodbě 1NP.",
   ],
 };
@@ -1825,6 +1852,7 @@ window.ZAHRADA_DASHBOARD = {
 
     section.append(
       financeDetail("💸 Detail cashflow", [
+        financeCashflowCards(data.finance.cashflow.rows),
         table(data.finance.cashflow.headers, data.finance.cashflow.rows, data.finance.cashflow.total),
       ])
     );
@@ -1852,11 +1880,12 @@ window.ZAHRADA_DASHBOARD = {
   }
 
   function financeOverviewCard(item) {
-    const node = el("article", "finance-summary-card");
-    node.append(badge(item.title.split(" ")[0], item.tone));
-    node.append(el("h3", "", item.title));
-    node.append(el("p", "finance-card-question", item.body));
-    node.append(metricList(item.metrics));
+    const { icon, label } = splitFinanceIconLabel(item.title);
+    const node = financeSummaryShell(item.tone, icon, label);
+    const body = el("div", "finance-summary-body");
+    body.append(el("p", "finance-card-question", item.body));
+    body.append(metricList(item.metrics));
+    node.append(body);
     return node;
   }
 
@@ -1873,25 +1902,77 @@ window.ZAHRADA_DASHBOARD = {
   function totalsGrid(items) {
     const totals = el("div", "finance-metric-grid");
     items.forEach(([label, amount]) => {
-      const item = el("div", "finance-metric-box");
-      item.append(el("span", "", label));
-      item.append(el("strong", "", amount));
-      totals.append(item);
+      totals.append(financeSummaryCard([label, toneForFinanceLabel(label), "Souhrn", amount]));
     });
     return totals;
   }
 
   function financeTupleMetrics(items) {
     const wrap = el("div", "finance-metric-grid");
-    items.forEach(([label, tone, title, amount, body]) => {
-      const item = el("div", "finance-metric-box");
-      item.append(badge(label, tone));
-      item.append(el("strong", "", title));
-      if (amount) item.append(el("span", "finance-metric-amount", amount));
-      if (body) item.append(paragraphs(body));
-      wrap.append(item);
+    items.forEach((item) => wrap.append(financeSummaryCard(item)));
+    return wrap;
+  }
+
+  function financeCashflowCards(rows) {
+    const wrap = el("div", "finance-metric-grid");
+    rows.forEach(([label, amount, body]) => {
+      wrap.append(financeSummaryCard([label, toneForFinanceLabel(label), "Cashflow", amount, body]));
     });
     return wrap;
+  }
+
+  function financeSummaryCard(tuple) {
+    const [label, tone, title, amount, body, icon] = tuple;
+    const node = financeSummaryShell(tone, icon || defaultFinanceIcon(label, tone), label);
+    const bodyNode = el("div", "finance-summary-body");
+    bodyNode.append(el("h3", "", title));
+    if (amount) bodyNode.append(el("p", "amount", amount));
+    if (body) bodyNode.append(paragraphs(body));
+    node.append(bodyNode);
+    return node;
+  }
+
+  function financeSummaryShell(tone, icon, label) {
+    const normalizedTone = tone || "neutral";
+    const node = el("article", `finance-summary-card ${normalizedTone} tone-${normalizedTone}`.trim());
+    const header = el("div", "finance-summary-header");
+    header.append(el("span", "finance-summary-icon", icon || defaultFinanceIcon(label, normalizedTone)));
+    header.append(el("span", "finance-summary-label", label));
+    node.append(header);
+    return node;
+  }
+
+  function splitFinanceIconLabel(title) {
+    const value = text(title).trim();
+    const match = value.match(/^(\p{Extended_Pictographic}|\S)\s+(.+)$/u);
+    if (!match) return { icon: defaultFinanceIcon(value), label: value };
+    return { icon: match[1], label: match[2] };
+  }
+
+  function defaultFinanceIcon(label, tone) {
+    const value = text(label).toLowerCase();
+    if (value.includes("celkem") || value.includes("investice")) return "▦";
+    if (value.includes("cashflow") || value.includes("zaplaceno")) return "💸";
+    if (value.includes("společ") || value.includes("sdílen") || value.includes("vyúčtování")) return "👥";
+    if (value.includes("podíl")) return "◔";
+    if (value.includes("soused")) return "🤝";
+    if (value.includes("náš projekt")) return "⌂";
+    if (value.includes("ivan")) return "👷";
+    if (value.includes("reálně") || value.includes("náklad")) return "▣";
+    if (value.includes("čeká") || value.includes("otevřené")) return "!";
+    if (tone === "split") return "👥";
+    if (tone === "wait") return "!";
+    if (tone === "risk") return "!";
+    return "▦";
+  }
+
+  function toneForFinanceLabel(label) {
+    const value = text(label).toLowerCase();
+    if (value.includes("čeká") || value.includes("otevřené") || value.includes("plánované") || value.includes("rozdíl") || value.includes("zbývá")) return "wait";
+    if (value.includes("společ") || value.includes("sdílen") || value.includes("soused") || value.includes("löffelman")) return "split";
+    if (value.includes("riziko")) return "risk";
+    if (value.includes("zaplaceno") || value.includes("uhrazeno") || value.includes("potvrzené") || value.includes("celkem")) return "good";
+    return "neutral";
   }
 
   function financeDetail(label, children, intro) {

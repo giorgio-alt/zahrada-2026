@@ -128,6 +128,19 @@
       "note": "Uhrazeno a dodano. Projekt Vychodni plot. 100 % nas naklad, nepatri do vyuctovani s Loffelmanovymi."
     },
     {
+      "id": "payment-tapeta-material-2026-07",
+      "date": null,
+      "type": "private_expense",
+      "title": "Tapeta",
+      "amount": 6000,
+      "paidBy": "us",
+      "paidTo": null,
+      "status": "paid",
+      "project": "Tapety",
+      "receiptIds": [],
+      "note": "Material pro projekt Tapety. Uctenka neni k dispozici. 100 % nas naklad, nepatri do vyuctovani s Loffelmanovymi."
+    },
+    {
       "id": "payment-zabradli-akto-2026-06-28",
       "date": "2026-06-28",
       "type": "private_expense",
