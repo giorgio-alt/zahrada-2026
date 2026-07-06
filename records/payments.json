@@ -115,6 +115,19 @@
       "note": "Nesdileny OBI material. Zahrnuje puvodni uctenku 927 Kc, beton oznaceny pouze T za 2 475 Kc a proplacenou Ivanovu OBI uctenku za 458 Kc. Nepatri do vyuctovani s Loffelmanovymi."
     },
     {
+      "id": "payment-podhrabove-desky-2026-07-04",
+      "date": "2026-07-04",
+      "type": "private_expense",
+      "title": "Podhrabove desky",
+      "amount": 1500,
+      "paidBy": "us",
+      "paidTo": null,
+      "status": "ordered",
+      "project": "Vychodni plot",
+      "receiptIds": [],
+      "note": "Objednano 4. 7. 2026. Uctenka zatim neni k dispozici. 100 % nas naklad, nepatri do vyuctovani s Loffelmanovymi."
+    },
+    {
       "id": "payment-zabradli-akto-2026-06-28",
       "date": "2026-06-28",
       "type": "private_expense",
@@ -156,12 +169,12 @@
     },
     {
       "id": "liability-ivan-work-2026-06-17-26",
-      "date": "2026-07-03",
+      "date": "2026-07-04",
       "type": "work_liability",
-      "title": "Prace Ivanovy party 17. 6.-3. 7.",
-      "amount": 111000,
+      "title": "Prace Ivanovy party 17. 6.-4. 7.",
+      "amount": 116625,
       "paidAmount": 72000,
-      "outstandingAmount": 39000,
+      "outstandingAmount": 44625,
       "paidBy": "us",
       "paidTo": "Ivanova parta",
       "status": "partially_paid",
@@ -181,10 +194,11 @@
         "work-2026-06-30",
         "work-2026-07-01",
         "work-2026-07-02",
-        "work-2026-07-03"
+        "work-2026-07-03",
+        "work-2026-07-04"
       ],
       "receiptIds": [],
-      "note": "Evidovano 11 plnych pracovnich dnu x 9 000 Kc a 2 snizene dny x 6 000 Kc. Dne 30. 6. 2026 probehlo castecne vyrovnani 72 000 Kc, zbyva doplatit 39 000 Kc."
+      "note": "Evidovano 11 plnych pracovnich dnu x 9 000 Kc, 2 snizene dny x 6 000 Kc a zkraceny den 4. 7. za 5 625 Kc. Dne 30. 6. 2026 probehlo castecne vyrovnani 72 000 Kc, zbyva doplatit 44 625 Kc."
     },
     {
       "id": "payment-ivan-partial-settlement-2026-06-30",

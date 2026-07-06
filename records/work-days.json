@@ -199,18 +199,41 @@
       "neighborSharedShare": 0,
       "status": "logged",
       "project": "Vychodni plot",
-      "note": "Cely den se pracovalo na nasem vychodnim plotu: odstraneni puvodniho plotu, rezani puvodni podezdivky a priprava betonu. Nedeli se s Loffelmanovymi."
+      "note": "Cely den se pracovalo pouze na nasem vychodnim plotu: vrty pro sloupky, betonovani sloupku, erekce / osazeni plotovych panelu a montaz plotu. Pracovali Ivan, Vasil a Tatino. Nedeli se s Loffelmanovymi."
+    },
+    {
+      "id": "work-2026-07-04",
+      "date": "2026-07-04",
+      "dayRate": 5625,
+      "baseDayRate": 9000,
+      "hoursWorked": 5,
+      "standardHours": 8,
+      "workers": [
+        "Ivan",
+        "Vasil",
+        "Tatino"
+      ],
+      "ownProjectPercent": 100,
+      "sharedProjectPercent": 0,
+      "ownProjectAmount": 5625,
+      "sharedProjectAmount": 0,
+      "ourSharedShare": 0,
+      "neighborSharedShare": 0,
+      "status": "logged",
+      "project": "Vychodni plot",
+      "note": "Finalizace podhrabovych desek. Pracovalo se 5 hodin z 8: 9 000 Kc x (5 / 8) = 5 625 Kc. Cely den je 100 % nas projekt a nedeli se s Loffelmanovymi."
     }
   ],
   "totals": {
-    "days": 13,
+    "days": 14,
     "fullDays": 11,
     "reducedDays": 2,
-    "totalWork": 111000,
-    "ownProjectAmount": 65550,
+    "partialDays": 1,
+    "totalWork": 116625,
+    "ownProjectAmount": 71175,
     "sharedProjectAmount": 45450,
     "ourSharedShare": 22725,
     "neighborSharedShare": 22725,
-    "ourTotalWorkCost": 88275
+    "ourTotalWorkCost": 93900
   }
 }
