@@ -202,6 +202,170 @@ p {
   box-shadow: 0 22px 58px rgba(70, 49, 30, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.76);
 }
 
+.finance-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.finance-summary-card,
+.finance-detail,
+.finance-metric-box {
+  border: 1px solid var(--line);
+  background: linear-gradient(145deg, var(--glass-strong), var(--glass-soft));
+  backdrop-filter: blur(20px) saturate(130%);
+  box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255, 255, 255, 0.62);
+}
+
+.finance-summary-card {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+  min-height: 278px;
+  padding: 22px;
+  border-radius: 28px;
+}
+
+.finance-summary-card h3 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.finance-card-question {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.metric-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.metric-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: baseline;
+  padding: 11px 0;
+  border-top: 1px solid var(--line-dark);
+}
+
+.metric-row dt {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.metric-row dd {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 950;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.finance-detail {
+  margin-top: 18px;
+  overflow: hidden;
+  border-radius: 28px;
+}
+
+.finance-detail summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 66px;
+  padding: 20px 24px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 950;
+  list-style: none;
+}
+
+.finance-detail summary::-webkit-details-marker {
+  display: none;
+}
+
+.finance-detail summary::after {
+  content: "⌄";
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.28);
+  transition: transform 180ms ease;
+}
+
+.finance-detail[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.finance-detail-body {
+  padding: 0 24px 24px;
+}
+
+.finance-detail-body .section-intro {
+  margin: 0 0 18px;
+}
+
+.finance-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.finance-metric-box {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  min-height: 112px;
+  padding: 18px;
+  border-radius: 22px;
+}
+
+.finance-metric-box .badge {
+  width: 100%;
+  justify-content: center;
+  min-height: 44px;
+  border-radius: 16px;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 950;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.finance-metric-box > span:first-child {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.finance-metric-box > strong {
+  display: block;
+  font-size: 24px;
+  line-height: 1.18;
+}
+
+.finance-metric-box .badge + strong {
+  font-size: 18px;
+}
+
+.finance-metric-amount {
+  color: var(--ink);
+  font-size: 23px;
+  font-weight: 950;
+}
+
 .card p:last-child,
 .section p:last-child {
   margin-bottom: 0;
@@ -474,12 +638,12 @@ tr:last-child td {
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: clamp(7px, 1vw, 13px);
+  gap: clamp(4px, 0.6vw, 7px);
 }
 
 .calendar-weekday {
   color: var(--muted);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 900;
   text-align: center;
   text-transform: uppercase;
@@ -489,12 +653,12 @@ tr:last-child td {
   position: relative;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  gap: 6px;
+  gap: 3px;
   min-width: 0;
-  min-height: 104px;
-  padding: 12px;
+  min-height: 58px;
+  padding: 7px 8px;
   border: 1px solid rgba(255, 255, 255, 0.58);
-  border-radius: 24px;
+  border-radius: 18px;
   color: var(--ink);
   background: rgba(255, 255, 255, 0.24);
   box-shadow: 0 12px 28px rgba(70, 49, 30, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.62);
@@ -557,7 +721,7 @@ tr:last-child td {
 .calendar-date {
   position: relative;
   z-index: 1;
-  font-size: clamp(17px, 1.5vw, 23px);
+  font-size: clamp(13px, 1.1vw, 17px);
   font-weight: 900;
 }
 
@@ -566,20 +730,21 @@ tr:last-child td {
   z-index: 1;
   align-self: center;
   justify-self: center;
-  font-size: clamp(18px, 2vw, 28px);
+  font-size: clamp(16px, 1.4vw, 20px);
   line-height: 1;
 }
 
 .calendar-short {
   position: relative;
   z-index: 1;
-  min-height: 18px;
+  min-height: 13px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 850;
-  line-height: 1.25;
+  line-height: 1.15;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .calendar-legend {
@@ -683,6 +848,12 @@ tr:last-child td {
   white-space: nowrap;
 }
 
+@media (max-width: 1180px) {
+  .finance-overview-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 760px) {
   main {
     width: min(100% - 24px, 1500px);
@@ -714,10 +885,40 @@ tr:last-child td {
   }
 
   .card,
+  .finance-summary-card,
+  .finance-detail,
   .progress-panel,
   .total-box,
   .missing-list li {
     border-radius: 24px;
+  }
+
+  .finance-overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .finance-summary-card {
+    min-height: auto;
+  }
+
+  .metric-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .metric-row dd {
+    text-align: left;
+    white-space: normal;
+  }
+
+  .finance-detail summary {
+    min-height: 58px;
+    padding: 16px 18px;
+    font-size: 16px;
+  }
+
+  .finance-detail-body {
+    padding: 0 16px 18px;
   }
 
   .progress-panel {
@@ -737,29 +938,32 @@ tr:last-child td {
   }
 
   .calendar-grid {
-    gap: 6px;
+    gap: 4px;
   }
 
   .calendar-weekday {
-    font-size: 11px;
+    font-size: 10px;
   }
 
   .calendar-day {
-    min-height: 66px;
-    padding: 8px 6px;
-    border-radius: 18px;
+    min-height: 54px;
+    padding: 6px 4px;
+    border-radius: 14px;
   }
 
   .calendar-date {
-    font-size: 16px;
+    font-size: 12px;
   }
 
   .calendar-marker {
-    font-size: 17px;
+    font-size: 15px;
   }
 
   .calendar-short {
-    display: none;
+    display: block;
+    min-height: 11px;
+    font-size: 9px;
+    line-height: 1.1;
   }
 
   .calendar-detail,

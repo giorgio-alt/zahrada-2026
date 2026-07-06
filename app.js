@@ -150,27 +150,97 @@
     );
   }
 
-  function renderBudget() {
-    const section = document.querySelector("#budget");
-    sectionTitle(section, "💰 Rozpočet a známé náklady");
-    section.append(grid(data.budget.cards, summaryCard));
-    section.append(table(["Položka", "Částka", "Stav"], data.budget.rows, data.budget.totals[0]));
+  function renderFinance() {
+    const section = document.querySelector("#finance");
+    sectionTitle(section, "💰 Finance", "Rychlý přehled klíčových finančních pohledů. Detail každé oblasti je sbalený níže.");
+    section.append(financeOverviewGrid(data.finance.overview));
 
-    const totals = el("div", "totals");
-    data.budget.totals.forEach(([label, amount]) => {
-      const item = el("div", "total-box");
+    section.append(
+      financeDetail("💰 Detail celkové investice", [
+        totalsGrid(data.budget.totals),
+        table(["Položka", "Částka", "Stav"], data.budget.rows, data.budget.totals[0]),
+      ])
+    );
+
+    section.append(
+      financeDetail("💸 Detail cashflow", [
+        table(data.finance.cashflow.headers, data.finance.cashflow.rows, data.finance.cashflow.total),
+      ])
+    );
+
+    section.append(
+      financeDetail("🤝 Detail vyúčtování s Löffelmanovými", [
+        financeTupleMetrics(data.settlement.cards),
+        table(data.settlement.headers, data.settlement.rows, data.settlement.total),
+        financeTupleMetrics(data.settlement.breakdown),
+      ])
+    );
+
+    section.append(
+      financeDetail("👷 Detail Ivanovy party", [
+        financeTupleMetrics(data.workCosts.cards),
+        table(data.workCosts.headers, data.workCosts.rows, data.workCosts.total),
+      ], data.workCosts.note)
+    );
+  }
+
+  function financeOverviewGrid(items) {
+    const node = el("div", "finance-overview-grid");
+    items.forEach((item) => node.append(financeOverviewCard(item)));
+    return node;
+  }
+
+  function financeOverviewCard(item) {
+    const node = el("article", "finance-summary-card");
+    node.append(badge(item.title.split(" ")[0], item.tone));
+    node.append(el("h3", "", item.title));
+    node.append(el("p", "finance-card-question", item.body));
+    node.append(metricList(item.metrics));
+    return node;
+  }
+
+  function metricList(metrics) {
+    const list = el("dl", "metric-list");
+    metrics.forEach(([label, value]) => {
+      const group = el("div", "metric-row");
+      group.append(el("dt", "", label), el("dd", "", value));
+      list.append(group);
+    });
+    return list;
+  }
+
+  function totalsGrid(items) {
+    const totals = el("div", "finance-metric-grid");
+    items.forEach(([label, amount]) => {
+      const item = el("div", "finance-metric-box");
       item.append(el("span", "", label));
       item.append(el("strong", "", amount));
       totals.append(item);
     });
-    section.append(totals);
+    return totals;
   }
 
-  function renderWorkCosts() {
-    const section = document.querySelector("#work-costs");
-    sectionTitle(section, "👷 Kompletní výpočet práce Ivanovy party", data.workCosts.note);
-    section.append(grid(data.workCosts.cards, summaryCard));
-    section.append(table(data.workCosts.headers, data.workCosts.rows, data.workCosts.total));
+  function financeTupleMetrics(items) {
+    const wrap = el("div", "finance-metric-grid");
+    items.forEach(([label, tone, title, amount, body]) => {
+      const item = el("div", "finance-metric-box");
+      item.append(badge(label, tone));
+      item.append(el("strong", "", title));
+      if (amount) item.append(el("span", "finance-metric-amount", amount));
+      if (body) item.append(paragraphs(body));
+      wrap.append(item);
+    });
+    return wrap;
+  }
+
+  function financeDetail(label, children, intro) {
+    const details = el("details", "finance-detail");
+    details.append(el("summary", "", label));
+    const body = el("div", "finance-detail-body");
+    if (intro) body.append(el("p", "section-intro", intro));
+    children.forEach((child) => body.append(child));
+    details.append(body);
+    return details;
   }
 
   function renderWorklog() {
@@ -301,14 +371,6 @@
     return day.id || `${day.detail?.date || ""}-${day.day}`;
   }
 
-  function renderSettlement() {
-    const section = document.querySelector("#settlement");
-    sectionTitle(section, "🤝 Společné náklady s Lofflemanovými", data.settlement.intro);
-    section.append(grid(data.settlement.cards, summaryCard));
-    section.append(table(data.settlement.headers, data.settlement.rows, data.settlement.total));
-    section.append(grid(data.settlement.breakdown, summaryCard));
-  }
-
   function renderProjects() {
     const section = document.querySelector("#projects");
     sectionTitle(section, "✅ Projektové sekce");
@@ -434,10 +496,8 @@
     renderNav();
     renderOverview();
     renderDocuments();
-    renderBudget();
-    renderWorkCosts();
+    renderFinance();
     renderWorklog();
-    renderSettlement();
     renderProjects();
     renderPlan();
     renderElectricity();

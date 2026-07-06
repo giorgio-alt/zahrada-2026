@@ -122,10 +122,10 @@
       "amount": 1500,
       "paidBy": "us",
       "paidTo": null,
-      "status": "ordered",
+      "status": "paid",
       "project": "Vychodni plot",
       "receiptIds": [],
-      "note": "Objednano 4. 7. 2026. Uctenka zatim neni k dispozici. 100 % nas naklad, nepatri do vyuctovani s Loffelmanovymi."
+      "note": "Uhrazeno a dodano. Projekt Vychodni plot. 100 % nas naklad, nepatri do vyuctovani s Loffelmanovymi."
     },
     {
       "id": "payment-zabradli-akto-2026-06-28",
