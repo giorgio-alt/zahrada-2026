@@ -167,6 +167,19 @@
       "settlementStatus": "reimbursable",
       "workDayId": "work-2026-07-02",
       "note": "Cely den prace na driveway zidce jde do spolecneho projektu 50/50 s Loffelmanovymi."
+    },
+    {
+      "id": "shared-work-2026-07-07",
+      "category": "work",
+      "title": "Prace 7. 7. - armovaci sterka a priprava na omitku",
+      "amount": 6000,
+      "split": "50/50",
+      "ourShare": 3000,
+      "counterpartyShare": 3000,
+      "paidBy": "pending",
+      "settlementStatus": "reimbursable",
+      "workDayId": "work-2026-07-07",
+      "note": "Armovaci sterka na driveway zidce a podezdivce pod WPC, priprava na finalni silikonovou omitku Mistral silikon 1,5H TB. Pracovali Tatino a Vasil, Ivan tento den nepracoval."
     }
   ],
   "openItems": [
@@ -197,9 +210,9 @@
   ],
   "totals": {
     "knownMaterial": 77636,
-    "knownWork": 45450,
-    "knownSharedTotal": 123086,
-    "ourKnownShare": 61543,
-    "counterpartyKnownShare": 61543
+    "knownWork": 51450,
+    "knownSharedTotal": 129086,
+    "ourKnownShare": 64543,
+    "counterpartyKnownShare": 64543
   }
 }

@@ -182,12 +182,12 @@
     },
     {
       "id": "liability-ivan-work-2026-06-17-26",
-      "date": "2026-07-04",
+      "date": "2026-07-07",
       "type": "work_liability",
-      "title": "Prace Ivanovy party 17. 6.-4. 7.",
-      "amount": 120000,
+      "title": "Prace Ivanovy party 17. 6.-7. 7.",
+      "amount": 126000,
       "paidAmount": 72000,
-      "outstandingAmount": 48000,
+      "outstandingAmount": 54000,
       "paidBy": "us",
       "paidTo": "Ivanova parta",
       "status": "partially_paid",
@@ -208,10 +208,11 @@
         "work-2026-07-01",
         "work-2026-07-02",
         "work-2026-07-03",
-        "work-2026-07-04"
+        "work-2026-07-04",
+        "work-2026-07-07"
       ],
       "receiptIds": [],
-      "note": "Evidovano 12 plnych pracovnich dnu x 9 000 Kc a 2 snizene dny x 6 000 Kc. Dne 4. 7. byl plny den rozdelen mezi nase projekty: 75 % Vychodni plot a 25 % Tapety. Dne 30. 6. 2026 probehlo castecne vyrovnani 72 000 Kc, zbyva doplatit 48 000 Kc."
+      "note": "Evidovano 12 plnych pracovnich dnu x 9 000 Kc a 3 snizene dny x 6 000 Kc. Dne 4. 7. byl plny den rozdelen mezi nase projekty: 75 % Vychodni plot a 25 % Tapety. Dne 7. 7. pracovali Tatino a Vasil na sdilene priprave zidek na finalni omitku. Dne 30. 6. 2026 probehlo castecne vyrovnani 72 000 Kc, zbyva doplatit 54 000 Kc."
     },
     {
       "id": "payment-ivan-partial-settlement-2026-06-30",

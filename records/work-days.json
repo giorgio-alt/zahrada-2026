@@ -199,7 +199,7 @@
       "neighborSharedShare": 0,
       "status": "logged",
       "project": "Vychodni plot",
-      "note": "Cely den se pracovalo pouze na nasem vychodnim plotu: vrty pro sloupky, betonovani sloupku, erekce / osazeni plotovych panelu a montaz plotu. Pracovali Ivan, Vasil a Tatino. Prace na vychodnim plotu vyrazne pokrocily; zbyva doplnit podhrabove desky priblizne na trech polich. Nedeli se s Loffelmanovymi."
+      "note": "Cely den se pracovalo pouze na nasem vychodnim plotu: vrty pro sloupky, betonovani sloupku, erekce / osazeni plotovych panelu a montaz plotu. Pracovali Ivan, Vasil a Tatino. Prace na vychodnim plotu vyrazne pokrocily a navazujici dokonceni probehlo 4. 7. Nedeli se s Loffelmanovymi."
     },
     {
       "id": "work-2026-07-04",
@@ -223,7 +223,7 @@
           "project": "Vychodni plot",
           "percent": 75,
           "amount": 6750,
-          "note": "Prace na podhrabovych deskach vyrazne pokrocily; zbyva doplnit cca 3 pole."
+          "note": "Vychodni plot byl kompletne dokoncen vcetne podhrabovych desek."
         },
         {
           "project": "Tapety",
@@ -232,18 +232,36 @@
           "note": "Instalace tapety v detskem pokoji. Loznice zustava otevrena a ceka na dodani / instalaci zbyvajici tapety."
         }
       ],
-      "note": "Plna parta pracovala cely den. Standardni sazba 9 000 Kc. Prace se deli mezi nase projekty: 75 % Vychodni plot = 6 750 Kc a 25 % Tapety = 2 250 Kc. Na vychodnim plotu zbyva doplnit podhrabove desky priblizne na trech polich. Nedeli se s Loffelmanovymi."
+      "note": "Plna parta pracovala cely den. Standardni sazba 9 000 Kc. Prace se deli mezi nase projekty: 75 % Vychodni plot = 6 750 Kc a 25 % Tapety = 2 250 Kc. Vychodni plot byl kompletne dokoncen. Nedeli se s Loffelmanovymi."
+    },
+    {
+      "id": "work-2026-07-07",
+      "date": "2026-07-07",
+      "dayRate": 6000,
+      "workers": [
+        "Tatino",
+        "Vasil"
+      ],
+      "ownProjectPercent": 0,
+      "sharedProjectPercent": 100,
+      "ownProjectAmount": 0,
+      "sharedProjectAmount": 6000,
+      "ourSharedShare": 3000,
+      "neighborSharedShare": 3000,
+      "status": "logged",
+      "project": "Driveway zidka / Zahradni prepazeni",
+      "note": "Cely den byl venovan priprave zidek na finalni fasadni omitku: armovaci sterka na driveway zidce, armovaci sterka na podezdivce pod WPC a priprava obou zidek na finalni silikonovou omitku Mistral silikon 1,5H TB. Ivan tento den nepracoval. Prace je sdilena 50/50 s Loffelmanovymi."
     }
   ],
   "totals": {
-    "days": 14,
+    "days": 15,
     "fullDays": 12,
-    "reducedDays": 2,
-    "totalWork": 120000,
+    "reducedDays": 3,
+    "totalWork": 126000,
     "ownProjectAmount": 74550,
-    "sharedProjectAmount": 45450,
-    "ourSharedShare": 22725,
-    "neighborSharedShare": 22725,
-    "ourTotalWorkCost": 97275
+    "sharedProjectAmount": 51450,
+    "ourSharedShare": 25725,
+    "neighborSharedShare": 25725,
+    "ourTotalWorkCost": 100275
   }
 }
