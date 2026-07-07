@@ -8,7 +8,7 @@ const distDir = "dist";
 const cloudflareDir = `${distDir}/cloudflare`;
 const standaloneHtmlPath = `${distDir}/zahradni-dashboard-standalone.html`;
 const cloudflareZipPath = `${distDir}/zahradni-dashboard-cloudflare.zip`;
-const shouldCreateZip = !process.argv.includes("--no-zip");
+const shouldCreateZip = process.argv.includes("--zip");
 
 function inlineAssets(html, css, dataJs, appJs) {
   return html

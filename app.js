@@ -310,10 +310,9 @@
     panel.append(header);
 
     const calendarGrid = el("div", "calendar-grid");
-    calendar.weekdays.forEach((weekday) => calendarGrid.append(el("div", "calendar-weekday", weekday)));
 
     const detail = el("article", "calendar-detail");
-    const days = calendar.days || [];
+    const days = projectCalendarDays(calendar.days || []);
     const selectedDay = days.find((day) => day.selected) || days.find((day) => day.type !== "off") || days[0];
 
     function selectDay(day) {
@@ -325,7 +324,16 @@
       renderWorklogDetail(detail, day);
     }
 
+    let currentMonth = "";
     days.forEach((day) => {
+      const monthLabel = worklogMonthLabel(day);
+      if (!currentMonth) {
+        currentMonth = monthLabel;
+      } else if (monthLabel && monthLabel !== currentMonth) {
+        currentMonth = monthLabel;
+        calendarGrid.append(el("div", "calendar-month-divider", monthLabel));
+      }
+
       const button = document.createElement("button");
       button.type = "button";
       button.className = `calendar-day type-${day.type || "off"}`;
@@ -361,13 +369,19 @@
     if (selectedDay) selectDay(selectedDay);
   }
 
+  function projectCalendarDays(days) {
+    const orderedDays = [...days].sort((a, b) => worklogDateValue(a) - worklogDateValue(b));
+    const firstProjectDay = orderedDays.findIndex((day) => day.type && day.type !== "off");
+    return firstProjectDay >= 0 ? orderedDays.slice(firstProjectDay) : orderedDays;
+  }
+
   function renderWorklogDetail(container, day) {
     const detail = day.detail || {};
     const finance = detail.finance;
     container.replaceChildren();
     container.className = `calendar-detail type-${day.type || "off"}`;
     container.append(badge(`${worklogMarker(day.type)} ${day.title || "Nepracovalo se"}`, worklogTone(day.type)));
-    container.append(el("h3", "", `📅 ${detail.date || `${day.day}. 6. 2026`}`));
+    container.append(el("h3", "", `📅 ${worklogDisplayDate(day)}`));
 
     const detailGrid = el("div", "detail-grid");
     detailGrid.append(detailBlock("👷 Pracovali", listContent(detail.workers, "Nepracovalo se")));
@@ -423,6 +437,35 @@
 
   function worklogDayKey(day) {
     return day.id || `${day.detail?.date || ""}-${day.day}`;
+  }
+
+  function worklogDateValue(day) {
+    const parsed = worklogDateParts(day);
+    return new Date(parsed.year, parsed.month - 1, parsed.day).getTime();
+  }
+
+  function worklogMonthLabel(day) {
+    const { year, month } = worklogDateParts(day);
+    return `${["", "Leden", "Únor", "Březen", "Duben", "Květen", "Červen", "Červenec", "Srpen", "Září", "Říjen", "Listopad", "Prosinec"][month]} ${year}`;
+  }
+
+  function worklogDisplayDate(day) {
+    if (day.detail?.date) return day.detail.date;
+    const { year, month, day: date } = worklogDateParts(day);
+    return `${date}. ${month}. ${year}`;
+  }
+
+  function worklogDateParts(day) {
+    if (day.id) {
+      const [, year, month, date] = day.id.match(/^(\d{4})-(\d{2})-(\d{2})$/) || [];
+      if (year) return { year: Number(year), month: Number(month), day: Number(date) };
+    }
+
+    const dateText = day.detail?.date || "";
+    const [, date, month, year] = dateText.match(/^(\d{1,2})\.\s*(\d{1,2})\.\s*(\d{4})$/) || [];
+    if (year) return { year: Number(year), month: Number(month), day: Number(date) };
+
+    return { year: 2026, month: 6, day: Number(day.day) || 1 };
   }
 
   function renderProjects() {

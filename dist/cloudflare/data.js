@@ -217,7 +217,6 @@ window.ZAHRADA_DASHBOARD = {
   },
   worklog: {
     monthLabel: "Červen / červenec 2026",
-    weekdays: ["Po", "Út", "St", "Čt", "Pá", "So", "Ne"],
     legend: [
       ["🟩", "Náš projekt"],
       ["🟦", "Společný projekt"],
@@ -478,6 +477,8 @@ window.ZAHRADA_DASHBOARD = {
           notes: "Pracovala plná parta: Ivan, Vasil a Tatíno celý pracovní den. Náklad práce: 3 osoby x 3 000 Kč = 9 000 Kč. Práce se dělí mezi naše projekty: 75 % východní plot = 6 750 Kč a 25 % tapety = 2 250 Kč. Východní plot byl kompletně dokončen. Materiál podhrabové desky je uhrazený a dodaný za 1 500 Kč. Práce i materiál jsou 100 % náš náklad mimo vyúčtování s Loffelmanovými.",
         },
       },
+      { id: "2026-07-05", day: 5, label: "5.7.", type: "off", title: "Nepracovalo se" },
+      { id: "2026-07-06", day: 6, label: "6.7.", type: "off", title: "Nepracovalo se" },
       {
         id: "2026-07-07",
         day: 7,

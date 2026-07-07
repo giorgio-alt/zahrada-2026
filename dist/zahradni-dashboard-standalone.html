@@ -827,15 +827,29 @@ tr:last-child td {
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: clamp(4px, 0.6vw, 7px);
+  gap: clamp(5px, 0.65vw, 9px);
 }
 
-.calendar-weekday {
-  color: var(--muted);
+.calendar-month-divider {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 4px 0;
+  color: var(--brown);
   font-size: 12px;
-  font-weight: 900;
-  text-align: center;
+  font-weight: 950;
+  letter-spacing: 0;
   text-transform: uppercase;
+}
+
+.calendar-month-divider::before,
+.calendar-month-divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(111, 81, 56, 0.24), transparent);
 }
 
 .calendar-day {
@@ -1043,6 +1057,12 @@ tr:last-child td {
   }
 }
 
+@media (max-width: 980px) {
+  .calendar-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 760px) {
   main {
     width: min(100% - 24px, 1500px);
@@ -1127,10 +1147,13 @@ tr:last-child td {
   }
 
   .calendar-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 4px;
   }
 
-  .calendar-weekday {
+  .calendar-month-divider {
+    gap: 9px;
+    margin: 2px 0;
     font-size: 10px;
   }
 
@@ -1215,6 +1238,12 @@ tr:last-child td {
 @media (prefers-reduced-motion: reduce) {
   .timeline-flow::before {
     animation: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .calendar-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -1457,7 +1486,6 @@ window.ZAHRADA_DASHBOARD = {
   },
   worklog: {
     monthLabel: "Červen / červenec 2026",
-    weekdays: ["Po", "Út", "St", "Čt", "Pá", "So", "Ne"],
     legend: [
       ["🟩", "Náš projekt"],
       ["🟦", "Společný projekt"],
@@ -1718,6 +1746,8 @@ window.ZAHRADA_DASHBOARD = {
           notes: "Pracovala plná parta: Ivan, Vasil a Tatíno celý pracovní den. Náklad práce: 3 osoby x 3 000 Kč = 9 000 Kč. Práce se dělí mezi naše projekty: 75 % východní plot = 6 750 Kč a 25 % tapety = 2 250 Kč. Východní plot byl kompletně dokončen. Materiál podhrabové desky je uhrazený a dodaný za 1 500 Kč. Práce i materiál jsou 100 % náš náklad mimo vyúčtování s Loffelmanovými.",
         },
       },
+      { id: "2026-07-05", day: 5, label: "5.7.", type: "off", title: "Nepracovalo se" },
+      { id: "2026-07-06", day: 6, label: "6.7.", type: "off", title: "Nepracovalo se" },
       {
         id: "2026-07-07",
         day: 7,
@@ -2289,10 +2319,9 @@ window.ZAHRADA_DASHBOARD = {
     panel.append(header);
 
     const calendarGrid = el("div", "calendar-grid");
-    calendar.weekdays.forEach((weekday) => calendarGrid.append(el("div", "calendar-weekday", weekday)));
 
     const detail = el("article", "calendar-detail");
-    const days = calendar.days || [];
+    const days = projectCalendarDays(calendar.days || []);
     const selectedDay = days.find((day) => day.selected) || days.find((day) => day.type !== "off") || days[0];
 
     function selectDay(day) {
@@ -2304,7 +2333,16 @@ window.ZAHRADA_DASHBOARD = {
       renderWorklogDetail(detail, day);
     }
 
+    let currentMonth = "";
     days.forEach((day) => {
+      const monthLabel = worklogMonthLabel(day);
+      if (!currentMonth) {
+        currentMonth = monthLabel;
+      } else if (monthLabel && monthLabel !== currentMonth) {
+        currentMonth = monthLabel;
+        calendarGrid.append(el("div", "calendar-month-divider", monthLabel));
+      }
+
       const button = document.createElement("button");
       button.type = "button";
       button.className = `calendar-day type-${day.type || "off"}`;
@@ -2340,13 +2378,19 @@ window.ZAHRADA_DASHBOARD = {
     if (selectedDay) selectDay(selectedDay);
   }
 
+  function projectCalendarDays(days) {
+    const orderedDays = [...days].sort((a, b) => worklogDateValue(a) - worklogDateValue(b));
+    const firstProjectDay = orderedDays.findIndex((day) => day.type && day.type !== "off");
+    return firstProjectDay >= 0 ? orderedDays.slice(firstProjectDay) : orderedDays;
+  }
+
   function renderWorklogDetail(container, day) {
     const detail = day.detail || {};
     const finance = detail.finance;
     container.replaceChildren();
     container.className = `calendar-detail type-${day.type || "off"}`;
     container.append(badge(`${worklogMarker(day.type)} ${day.title || "Nepracovalo se"}`, worklogTone(day.type)));
-    container.append(el("h3", "", `📅 ${detail.date || `${day.day}. 6. 2026`}`));
+    container.append(el("h3", "", `📅 ${worklogDisplayDate(day)}`));
 
     const detailGrid = el("div", "detail-grid");
     detailGrid.append(detailBlock("👷 Pracovali", listContent(detail.workers, "Nepracovalo se")));
@@ -2402,6 +2446,35 @@ window.ZAHRADA_DASHBOARD = {
 
   function worklogDayKey(day) {
     return day.id || `${day.detail?.date || ""}-${day.day}`;
+  }
+
+  function worklogDateValue(day) {
+    const parsed = worklogDateParts(day);
+    return new Date(parsed.year, parsed.month - 1, parsed.day).getTime();
+  }
+
+  function worklogMonthLabel(day) {
+    const { year, month } = worklogDateParts(day);
+    return `${["", "Leden", "Únor", "Březen", "Duben", "Květen", "Červen", "Červenec", "Srpen", "Září", "Říjen", "Listopad", "Prosinec"][month]} ${year}`;
+  }
+
+  function worklogDisplayDate(day) {
+    if (day.detail?.date) return day.detail.date;
+    const { year, month, day: date } = worklogDateParts(day);
+    return `${date}. ${month}. ${year}`;
+  }
+
+  function worklogDateParts(day) {
+    if (day.id) {
+      const [, year, month, date] = day.id.match(/^(\d{4})-(\d{2})-(\d{2})$/) || [];
+      if (year) return { year: Number(year), month: Number(month), day: Number(date) };
+    }
+
+    const dateText = day.detail?.date || "";
+    const [, date, month, year] = dateText.match(/^(\d{1,2})\.\s*(\d{1,2})\.\s*(\d{4})$/) || [];
+    if (year) return { year: Number(year), month: Number(month), day: Number(date) };
+
+    return { year: 2026, month: 6, day: Number(day.day) || 1 };
   }
 
   function renderProjects() {
