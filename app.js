@@ -3,6 +3,7 @@
   const checklistStorageKey = "zahrada-checklist-v1";
 
   const savedChecklist = readSavedChecklist();
+  let activeProjectId = null;
 
   function text(value) {
     return String(value ?? "");
@@ -115,8 +116,10 @@
     data.nav.forEach(([id, label]) => {
       const link = el("a", "", label);
       link.href = `#${id}`;
+      link.dataset.section = id;
       nav.append(link);
     });
+    setupActiveNav();
   }
 
   function renderOverview() {
@@ -127,7 +130,23 @@
     titleWrap.append(el("h1", "", data.title));
     titleWrap.append(el("p", "hero-intro", data.intro));
     section.append(titleWrap);
+    section.append(projectFilterBar());
+    section.append(globalProgressPanel());
     section.append(grid(data.overview, card));
+  }
+
+  function renderRecentChanges() {
+    const section = document.querySelector("#recent");
+    sectionTitle(section, "🆕 Co se změnilo", "Rychlý přehled posledních důležitých posunů v projektu.");
+    section.append(
+      grid(data.recentChanges || [], (item) => {
+        const node = el("article", "card recent-card");
+        node.append(badge(item.date, "good"));
+        node.append(el("h3", "", item.title));
+        node.append(el("p", "", item.body));
+        return node;
+      })
+    );
   }
 
   function renderDocuments() {
@@ -312,7 +331,7 @@
     const calendarGrid = el("div", "calendar-grid");
 
     const detail = el("article", "calendar-detail");
-    const days = projectCalendarDays(calendar.days || []);
+    const days = filteredWorklogDays(projectCalendarDays(calendar.days || []));
     const selectedDay = days.find((day) => day.selected) || days.find((day) => day.type !== "off") || days[0];
 
     function selectDay(day) {
@@ -354,6 +373,10 @@
     });
 
     panel.append(calendarGrid);
+    if (!days.length) {
+      const empty = el("p", "filter-empty", "Pro vybraný projekt zatím nejsou v deníku žádné odpovídající záznamy.");
+      panel.append(empty);
+    }
     layout.append(panel);
 
     const legend = el("div", "calendar-legend");
@@ -367,6 +390,7 @@
     section.append(layout);
 
     if (selectedDay) selectDay(selectedDay);
+    else renderWorklogDetail(detail, { type: "off", title: "Bez záznamu", detail: { notes: "Vybraný projekt zatím nemá samostatný záznam v kalendáři." } });
   }
 
   function projectCalendarDays(days) {
@@ -470,22 +494,35 @@
 
   function renderProjects() {
     const section = document.querySelector("#projects");
-    sectionTitle(section, "✅ Projektové sekce");
-    section.append(
-      grid(data.projects, (item) => {
-        const node = el("article", "card");
-        node.append(el("h3", "", item[0]));
-        if (Array.isArray(item[1])) {
-          const list = el("ul", "clean-list");
-          item[1].forEach((line) => list.append(el("li", "", line)));
-          node.append(list);
-          node.append(badge(item[2], item[3]));
-        } else {
-          node.append(el("p", "", item[1]));
-        }
-        return node;
-      })
-    );
+    sectionTitle(section, "✅ Projekty", "Stavový přehled projektu. Kliknutím na kartu zapneš filtr napříč deníkem a timeline.");
+    section.append(projectFilterBar());
+
+    const board = el("div", "kanban-board");
+    const columns = data.projectHub?.columns || [];
+    columns.forEach(([status, label]) => {
+      const column = el("section", "kanban-column");
+      column.append(el("h3", "", label));
+      const list = el("div", "kanban-list");
+      projectHubItems()
+        .filter((project) => project.status === status)
+        .forEach((project) => list.append(projectKanbanCard(project)));
+      column.append(list);
+      board.append(column);
+    });
+    section.append(board);
+
+    section.onclick = (event) => {
+      const cardNode = event.target.closest(".kanban-card");
+      if (!cardNode || event.target.closest("summary")) return;
+      setProjectFilter(cardNode.dataset.projectId);
+    };
+    section.onkeydown = (event) => {
+      if (!["Enter", " "].includes(event.key)) return;
+      const cardNode = event.target.closest(".kanban-card");
+      if (!cardNode) return;
+      event.preventDefault();
+      setProjectFilter(cardNode.dataset.projectId);
+    };
   }
 
   function renderPlan() {
@@ -555,7 +592,8 @@
     track.append(el("div", "timeline-flow"));
 
     const list = el("div", "timeline-milestones");
-    data.timeline.forEach((item) => {
+    const items = filteredTimelineItems(data.timeline || []);
+    items.forEach((item) => {
       const status = item.status || "planned";
       const milestone = el("article", `timeline-item timeline-${status}`);
       milestone.append(el("span", "timeline-node"));
@@ -567,6 +605,7 @@
       milestone.append(content);
       list.append(milestone);
     });
+    if (!items.length) list.append(el("p", "filter-empty", "Pro vybraný projekt zatím nejsou v timeline žádné odpovídající milníky."));
 
     track.append(list);
     section.append(track);
@@ -580,6 +619,184 @@
     section.append(list);
   }
 
+  function globalProgressPanel() {
+    const progress = calculateProgress();
+    const panel = el("div", "global-progress-panel");
+
+    const main = el("div", "global-progress-main");
+    main.append(el("p", "eyebrow", "Celkový stav"));
+    main.append(el("h3", "", `${progress.percent} % hotovo`));
+    const track = el("div", "progress-track global-progress-track");
+    const fill = el("div", "progress-fill global-progress-fill");
+    fill.style.width = `${progress.percent}%`;
+    track.append(fill);
+    main.append(track);
+    main.append(el("p", "progress-text global-progress-text", `${progress.doneTasks} / ${progress.totalTasks} checklist úkolů dokončeno`));
+    panel.append(main);
+
+    const metrics = el("div", "global-progress-metrics");
+    [
+      ["✅ Hotovo", `${progress.doneProjects} projektů`],
+      ["🔨 Probíhá", `${progress.progressProjects} projekty`],
+      ["⏳ Čeká", `${progress.waitingProjects} projekty`],
+      ["📒 Poslední den", progress.lastWorkDay],
+    ].forEach(([label, value]) => {
+      const item = el("div", "progress-kpi");
+      item.append(el("span", "", label), el("strong", "", value));
+      metrics.append(item);
+    });
+    panel.append(metrics);
+    return panel;
+  }
+
+  function projectFilterBar() {
+    const bar = el("div", "project-filter-bar");
+    bar.dataset.filterBar = "project";
+    updateFilterBarNode(bar);
+    return bar;
+  }
+
+  function updateFilterBars() {
+    document.querySelectorAll('[data-filter-bar="project"]').forEach(updateFilterBarNode);
+  }
+
+  function updateFilterBarNode(bar) {
+    const project = activeProject();
+    bar.replaceChildren();
+    bar.classList.toggle("is-active", Boolean(project));
+    if (!project) {
+      bar.append(el("span", "filter-muted", "Filtr projektu není aktivní."));
+      return;
+    }
+    bar.append(el("span", "filter-label", `Aktivní filtr: ${project.emoji} ${project.title}`));
+    const clear = el("button", "filter-clear", "Zrušit filtr");
+    clear.type = "button";
+    clear.addEventListener("click", clearProjectFilter);
+    bar.append(clear);
+  }
+
+  function projectKanbanCard(project) {
+    const node = el("article", `kanban-card project-status-${project.status}`);
+    node.tabIndex = 0;
+    node.role = "button";
+    node.dataset.projectId = project.id;
+    node.classList.toggle("is-active", activeProjectId === project.id);
+    node.append(badge(project.status === "done" ? "Hotovo" : project.status === "progress" ? "Probíhá" : "Čeká", toneForProjectStatus(project.status)));
+    node.append(el("h4", "", `${project.emoji} ${project.title}`));
+    node.append(el("p", "", project.summary));
+    if (project.nextStep) node.append(el("p", "next-step", `Další krok: ${project.nextStep}`));
+
+    const source = projectSource(project);
+    if (source && Array.isArray(source[1])) {
+      const details = el("details", "project-card-detail");
+      details.append(el("summary", "", "Detail"));
+      const list = el("ul", "clean-list");
+      source[1].forEach((line) => list.append(el("li", "", line)));
+      details.append(list);
+      node.append(details);
+    }
+    return node;
+  }
+
+  function projectHubItems() {
+    return data.projectHub?.items || [];
+  }
+
+  function activeProject() {
+    return projectHubItems().find((project) => project.id === activeProjectId);
+  }
+
+  function setProjectFilter(projectId) {
+    activeProjectId = projectId;
+    renderOverview();
+    renderWorklog();
+    renderProjects();
+    renderTimeline();
+    updateFilterBars();
+  }
+
+  function clearProjectFilter() {
+    setProjectFilter(null);
+  }
+
+  function toneForProjectStatus(status) {
+    return { done: "good", progress: "wait", waiting: "split" }[status] || "";
+  }
+
+  function projectSource(project) {
+    const normalizedTitle = normalizeText(project.title);
+    return (data.projects || []).find(([title]) => normalizeText(title).includes(normalizedTitle));
+  }
+
+  function filteredWorklogDays(days) {
+    const project = activeProject();
+    if (!project) return days;
+    return days.filter((day) => matchesProject(day, project));
+  }
+
+  function filteredTimelineItems(items) {
+    const project = activeProject();
+    if (!project) return items;
+    return items.filter((item) => matchesProject(item, project));
+  }
+
+  function matchesProject(item, project) {
+    const haystack = normalizeText(JSON.stringify(item));
+    return projectSearchTerms(project).some((term) => haystack.includes(term));
+  }
+
+  function projectSearchTerms(project) {
+    return [project.title, ...(project.aliases || [])].map(normalizeText).filter(Boolean);
+  }
+
+  function normalizeText(value) {
+    return text(value)
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+  }
+
+  function calculateProgress() {
+    const groups = data.plan || [];
+    const tasks = groups.flatMap((group) => group.items || []);
+    const doneTasks = tasks.filter(([id, , checked]) => savedChecklist[id] ?? checked).length;
+    const totalTasks = tasks.length;
+    const projects = projectHubItems();
+    const lastWorkDay = [...(data.worklog?.days || [])]
+      .filter((day) => day.type && day.type !== "off")
+      .sort((a, b) => worklogDateValue(a) - worklogDateValue(b))
+      .map(worklogDisplayDate)
+      .pop() || "Bez záznamu";
+
+    return {
+      doneTasks,
+      totalTasks,
+      percent: totalTasks ? Math.round((doneTasks / totalTasks) * 100) : 0,
+      doneProjects: projects.filter((project) => project.status === "done").length,
+      progressProjects: projects.filter((project) => project.status === "progress").length,
+      waitingProjects: projects.filter((project) => project.status === "waiting").length,
+      lastWorkDay,
+    };
+  }
+
+  function setupActiveNav() {
+    const links = Array.from(document.querySelectorAll("#mainNav a"));
+    const sections = links.map((link) => document.getElementById(link.dataset.section)).filter(Boolean);
+    if (!sections.length || !("IntersectionObserver" in window)) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (!visible) return;
+        links.forEach((link) => link.classList.toggle("is-active", link.dataset.section === visible.target.id));
+      },
+      { rootMargin: "-18% 0px -62% 0px", threshold: [0.05, 0.2, 0.4] }
+    );
+    sections.forEach((section) => observer.observe(section));
+  }
+
   function updateProgress() {
     const plan = document.querySelector("#plan");
     const inputs = Array.from(plan.querySelectorAll('input[type="checkbox"]'));
@@ -590,6 +807,15 @@
     plan.querySelector(".progress-fill").style.width = `${pct}%`;
     plan.querySelector(".progress-text").textContent = `${checked} / ${total} úkolů dokončeno`;
     plan.querySelector(".progress-number").textContent = `${pct} %`;
+
+    const overviewProgress = document.querySelector(".global-progress-fill");
+    const overviewText = document.querySelector(".global-progress-text");
+    const overviewHeading = document.querySelector(".global-progress-main h3");
+    if (overviewProgress && overviewText && overviewHeading) {
+      overviewProgress.style.width = `${pct}%`;
+      overviewText.textContent = `${checked} / ${total} checklist úkolů dokončeno`;
+      overviewHeading.textContent = `${pct} % hotovo`;
+    }
   }
 
   function readSavedChecklist() {
@@ -611,6 +837,7 @@
   function render() {
     renderNav();
     renderOverview();
+    renderRecentChanges();
     renderDocuments();
     renderFinance();
     renderWorklog();

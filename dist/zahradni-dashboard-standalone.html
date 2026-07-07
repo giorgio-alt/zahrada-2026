@@ -87,6 +87,13 @@ body {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 10px 28px rgba(70, 49, 30, 0.1);
 }
 
+.nav a.is-active {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.82);
+  background: linear-gradient(135deg, var(--brown), var(--brown-deep));
+  box-shadow: 0 12px 30px rgba(70, 49, 30, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.32);
+}
+
 main {
   width: min(1500px, calc(100% - 44px));
   margin: 0 auto;
@@ -207,6 +214,201 @@ p {
   border-color: rgba(255, 255, 255, 0.74);
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.22));
   box-shadow: 0 22px 58px rgba(70, 49, 30, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.76);
+}
+
+.global-progress-panel,
+.project-filter-bar {
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: linear-gradient(145deg, var(--glass-strong), var(--glass-soft));
+  backdrop-filter: blur(20px) saturate(130%);
+  box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255, 255, 255, 0.62);
+}
+
+.global-progress-panel {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.4fr);
+  gap: 22px;
+  align-items: center;
+  padding: 22px;
+}
+
+.global-progress-main h3 {
+  margin: 0 0 14px;
+  font-size: clamp(26px, 3vw, 42px);
+  line-height: 1;
+}
+
+.global-progress-main .eyebrow {
+  margin-bottom: 10px;
+}
+
+.global-progress-track {
+  height: 18px;
+}
+
+.global-progress-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.progress-kpi {
+  min-height: 86px;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.46);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.54);
+}
+
+.progress-kpi span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.progress-kpi strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 950;
+}
+
+.project-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 54px;
+  padding: 13px 16px;
+  color: var(--muted);
+  font-weight: 850;
+}
+
+.project-filter-bar.is-active {
+  color: var(--ink);
+  border-color: rgba(90, 143, 85, 0.28);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.52), rgba(90, 143, 85, 0.14));
+}
+
+.filter-label {
+  font-weight: 950;
+}
+
+.filter-clear {
+  min-height: 36px;
+  padding: 8px 13px;
+  border: 1px solid rgba(111, 81, 56, 0.22);
+  border-radius: 999px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--brown), var(--brown-deep));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.24);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.filter-empty {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.46);
+  border-radius: 20px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.22);
+  font-weight: 850;
+}
+
+.recent-card {
+  min-height: 148px;
+}
+
+.kanban-board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.kanban-column {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.16));
+  backdrop-filter: blur(20px) saturate(130%);
+  box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.kanban-column h3 {
+  margin: 0 0 16px;
+  font-size: 20px;
+}
+
+.kanban-list {
+  display: grid;
+  gap: 12px;
+}
+
+.kanban-card {
+  min-height: 150px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.52);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.24);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.56);
+  cursor: pointer;
+  transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.kanban-card:hover,
+.kanban-card:focus-visible,
+.kanban-card.is-active {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.44);
+  box-shadow: 0 18px 42px rgba(70, 49, 30, 0.13), inset 0 1px 0 rgba(255, 255, 255, 0.78);
+  outline: 0;
+}
+
+.kanban-card.is-active {
+  border-color: rgba(90, 143, 85, 0.42);
+  box-shadow: 0 18px 42px rgba(90, 143, 85, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.78);
+}
+
+.kanban-card h4 {
+  margin: 14px 0 8px;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.kanban-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.kanban-card .next-step {
+  margin-top: 10px;
+  color: var(--ink);
+  font-weight: 850;
+}
+
+.project-card-detail {
+  margin-top: 12px;
+}
+
+.project-card-detail summary {
+  cursor: pointer;
+  color: var(--brown);
+  font-size: 13px;
+  font-weight: 950;
 }
 
 .finance-overview-grid {
@@ -1055,6 +1257,15 @@ tr:last-child td {
   .finance-overview-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .global-progress-panel,
+  .kanban-board {
+    grid-template-columns: 1fr;
+  }
+
+  .global-progress-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 980px) {
@@ -1104,6 +1315,20 @@ tr:last-child td {
 
   .finance-overview-grid {
     grid-template-columns: 1fr;
+  }
+
+  .global-progress-panel,
+  .kanban-column {
+    border-radius: 24px;
+  }
+
+  .global-progress-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .project-filter-bar {
+    display: grid;
+    justify-content: stretch;
   }
 
   .finance-summary-card {
@@ -1256,6 +1481,7 @@ tr:last-child td {
 
   <main>
     <section id="overview" class="section hero-section"></section>
+    <section id="recent" class="section"></section>
     <section id="docs" class="section"></section>
     <section id="finance" class="section finance-section"></section>
     <section id="worklog" class="section"></section>
@@ -1273,6 +1499,7 @@ window.ZAHRADA_DASHBOARD = {
     "Konsolidovaná verze s kompletním výpočtem práce, deníkem 23. 6.-7. 7., vyúčtováním se sousedy a aktuálními novinkami.",
   nav: [
     ["overview", "🏡 Přehled"],
+    ["recent", "🆕 Změny"],
     ["docs", "🔗 Dokumenty"],
     ["finance", "💰 Finance"],
     ["worklog", "📒 Deník"],
@@ -1451,6 +1678,143 @@ window.ZAHRADA_DASHBOARD = {
       ["Potvrzené / objednané bez odhadu dlažby", "564 050,10 Kč"],
       ["Z vyúčtované práce uhrazeno Ivanovi", "72 000 Kč"],
       ["Zbývá doplatit Ivanovi", "54 000 Kč"],
+    ],
+  },
+  recentChanges: [
+    {
+      date: "7. 7. 2026",
+      title: "Příprava na finální omítku",
+      body: "Dokončena armovací stěrka na driveway zídce a podezdívce pod WPC jako sdílená práce s Löffelmanovými.",
+      projectIds: ["driveway-wall", "garden-partition"],
+    },
+    {
+      date: "4. 7. 2026",
+      title: "Východní plot dokončen",
+      body: "Po montáži panelů a podhrabových desek byl východní plot kompletně dokončen.",
+      projectIds: ["east-fence"],
+    },
+    {
+      date: "4. 7. 2026",
+      title: "Tapety v dětském pokoji",
+      body: "Dětský pokoj je hotový, ložnice zůstává otevřená po dodání zbývající tapety.",
+      projectIds: ["wallpaper"],
+    },
+  ],
+  projectHub: {
+    columns: [
+      ["waiting", "⏳ Čeká"],
+      ["progress", "🔨 Probíhá"],
+      ["done", "✅ Hotovo"],
+    ],
+    items: [
+      {
+        id: "pergola",
+        emoji: "🪵",
+        title: "Pergola",
+        status: "waiting",
+        summary: "Rozpočet schválen, čeká termín realizace.",
+        nextStep: "Doplnit termín realizace.",
+        aliases: ["pergola"],
+      },
+      {
+        id: "pool",
+        emoji: "🏊",
+        title: "Bazén",
+        status: "waiting",
+        summary: "Čeká budget a finální plán.",
+        nextStep: "Doplnit finální rozpočet.",
+        aliases: ["bazén", "bazen"],
+      },
+      {
+        id: "garden-house",
+        emoji: "🌳",
+        title: "Zahradní domek",
+        status: "waiting",
+        summary: "Plánovaná navazující etapa.",
+        nextStep: "Doplnit termín dlažby pod domek.",
+        aliases: ["zahradní domek", "zahradni domek", "domek"],
+      },
+      {
+        id: "electricity",
+        emoji: "⚡",
+        title: "Elektro",
+        status: "waiting",
+        summary: "Kabel bez kolize, řeší se zachování 11 kW nabíjení.",
+        nextStep: "Najít řešení s tátou.",
+        aliases: ["elektro", "nabíjení", "nabijeni", "11 kW"],
+      },
+      {
+        id: "driveway-wall",
+        emoji: "🚗",
+        title: "Driveway zídka",
+        status: "progress",
+        summary: "Sdílený projekt s Löffelmanovými.",
+        nextStep: "Finální silikonová omítka Mistral 1,5H TB.",
+        aliases: ["driveway", "driveway zídka", "driveway zidka"],
+      },
+      {
+        id: "garden-partition",
+        emoji: "🪵",
+        title: "Zahradní přepažení",
+        status: "progress",
+        summary: "WPC hotové, armovací stěrka hotová.",
+        nextStep: "Finální silikonová omítka Mistral 1,5H TB.",
+        aliases: ["zahradní přepažení", "zahradni prepazeni", "wpc", "podezdívka", "podezdivka"],
+      },
+      {
+        id: "wallpaper",
+        emoji: "🏠",
+        title: "Tapety",
+        status: "progress",
+        summary: "Dětský pokoj hotový.",
+        nextStep: "Ložnice čeká na dodání / instalaci.",
+        aliases: ["tapety", "tapeta", "dětský pokoj", "detsky pokoj", "ložnice", "loznice"],
+      },
+      {
+        id: "lighting",
+        emoji: "💡",
+        title: "Osvětlení",
+        status: "progress",
+        summary: "Více světel čeká na převzetí a montáž.",
+        nextStep: "Převzít světlo do šatny a dokončit montáže.",
+        aliases: ["osvětlení", "osvetleni", "světlo", "svetlo", "led"],
+      },
+      {
+        id: "south-fence",
+        emoji: "🧱",
+        title: "Jižní plot",
+        status: "done",
+        summary: "Dokončen 26. 6. 2026 bez podhrabovek.",
+        nextStep: null,
+        aliases: ["jižní plot", "jizni plot"],
+      },
+      {
+        id: "east-fence",
+        emoji: "🧱",
+        title: "Východní plot",
+        status: "done",
+        summary: "Kompletně dokončen 4. 7. 2026.",
+        nextStep: null,
+        aliases: ["východní plot", "vychodni plot"],
+      },
+      {
+        id: "railing",
+        emoji: "🧱",
+        title: "Zábradlí",
+        status: "done",
+        summary: "Realizace dokončena, namontováno a uhrazeno.",
+        nextStep: null,
+        aliases: ["zábradlí", "zabradli"],
+      },
+      {
+        id: "mirrors",
+        emoji: "🪞",
+        title: "Zrcadla",
+        status: "done",
+        summary: "Montáž dokončena 1. 7. 2026.",
+        nextStep: null,
+        aliases: ["zrcadla", "zrcadlo"],
+      },
     ],
   },
   workCosts: {
@@ -2012,6 +2376,7 @@ window.ZAHRADA_DASHBOARD = {
   const checklistStorageKey = "zahrada-checklist-v1";
 
   const savedChecklist = readSavedChecklist();
+  let activeProjectId = null;
 
   function text(value) {
     return String(value ?? "");
@@ -2124,8 +2489,10 @@ window.ZAHRADA_DASHBOARD = {
     data.nav.forEach(([id, label]) => {
       const link = el("a", "", label);
       link.href = `#${id}`;
+      link.dataset.section = id;
       nav.append(link);
     });
+    setupActiveNav();
   }
 
   function renderOverview() {
@@ -2136,7 +2503,23 @@ window.ZAHRADA_DASHBOARD = {
     titleWrap.append(el("h1", "", data.title));
     titleWrap.append(el("p", "hero-intro", data.intro));
     section.append(titleWrap);
+    section.append(projectFilterBar());
+    section.append(globalProgressPanel());
     section.append(grid(data.overview, card));
+  }
+
+  function renderRecentChanges() {
+    const section = document.querySelector("#recent");
+    sectionTitle(section, "🆕 Co se změnilo", "Rychlý přehled posledních důležitých posunů v projektu.");
+    section.append(
+      grid(data.recentChanges || [], (item) => {
+        const node = el("article", "card recent-card");
+        node.append(badge(item.date, "good"));
+        node.append(el("h3", "", item.title));
+        node.append(el("p", "", item.body));
+        return node;
+      })
+    );
   }
 
   function renderDocuments() {
@@ -2321,7 +2704,7 @@ window.ZAHRADA_DASHBOARD = {
     const calendarGrid = el("div", "calendar-grid");
 
     const detail = el("article", "calendar-detail");
-    const days = projectCalendarDays(calendar.days || []);
+    const days = filteredWorklogDays(projectCalendarDays(calendar.days || []));
     const selectedDay = days.find((day) => day.selected) || days.find((day) => day.type !== "off") || days[0];
 
     function selectDay(day) {
@@ -2363,6 +2746,10 @@ window.ZAHRADA_DASHBOARD = {
     });
 
     panel.append(calendarGrid);
+    if (!days.length) {
+      const empty = el("p", "filter-empty", "Pro vybraný projekt zatím nejsou v deníku žádné odpovídající záznamy.");
+      panel.append(empty);
+    }
     layout.append(panel);
 
     const legend = el("div", "calendar-legend");
@@ -2376,6 +2763,7 @@ window.ZAHRADA_DASHBOARD = {
     section.append(layout);
 
     if (selectedDay) selectDay(selectedDay);
+    else renderWorklogDetail(detail, { type: "off", title: "Bez záznamu", detail: { notes: "Vybraný projekt zatím nemá samostatný záznam v kalendáři." } });
   }
 
   function projectCalendarDays(days) {
@@ -2479,22 +2867,35 @@ window.ZAHRADA_DASHBOARD = {
 
   function renderProjects() {
     const section = document.querySelector("#projects");
-    sectionTitle(section, "✅ Projektové sekce");
-    section.append(
-      grid(data.projects, (item) => {
-        const node = el("article", "card");
-        node.append(el("h3", "", item[0]));
-        if (Array.isArray(item[1])) {
-          const list = el("ul", "clean-list");
-          item[1].forEach((line) => list.append(el("li", "", line)));
-          node.append(list);
-          node.append(badge(item[2], item[3]));
-        } else {
-          node.append(el("p", "", item[1]));
-        }
-        return node;
-      })
-    );
+    sectionTitle(section, "✅ Projekty", "Stavový přehled projektu. Kliknutím na kartu zapneš filtr napříč deníkem a timeline.");
+    section.append(projectFilterBar());
+
+    const board = el("div", "kanban-board");
+    const columns = data.projectHub?.columns || [];
+    columns.forEach(([status, label]) => {
+      const column = el("section", "kanban-column");
+      column.append(el("h3", "", label));
+      const list = el("div", "kanban-list");
+      projectHubItems()
+        .filter((project) => project.status === status)
+        .forEach((project) => list.append(projectKanbanCard(project)));
+      column.append(list);
+      board.append(column);
+    });
+    section.append(board);
+
+    section.onclick = (event) => {
+      const cardNode = event.target.closest(".kanban-card");
+      if (!cardNode || event.target.closest("summary")) return;
+      setProjectFilter(cardNode.dataset.projectId);
+    };
+    section.onkeydown = (event) => {
+      if (!["Enter", " "].includes(event.key)) return;
+      const cardNode = event.target.closest(".kanban-card");
+      if (!cardNode) return;
+      event.preventDefault();
+      setProjectFilter(cardNode.dataset.projectId);
+    };
   }
 
   function renderPlan() {
@@ -2564,7 +2965,8 @@ window.ZAHRADA_DASHBOARD = {
     track.append(el("div", "timeline-flow"));
 
     const list = el("div", "timeline-milestones");
-    data.timeline.forEach((item) => {
+    const items = filteredTimelineItems(data.timeline || []);
+    items.forEach((item) => {
       const status = item.status || "planned";
       const milestone = el("article", `timeline-item timeline-${status}`);
       milestone.append(el("span", "timeline-node"));
@@ -2576,6 +2978,7 @@ window.ZAHRADA_DASHBOARD = {
       milestone.append(content);
       list.append(milestone);
     });
+    if (!items.length) list.append(el("p", "filter-empty", "Pro vybraný projekt zatím nejsou v timeline žádné odpovídající milníky."));
 
     track.append(list);
     section.append(track);
@@ -2589,6 +2992,184 @@ window.ZAHRADA_DASHBOARD = {
     section.append(list);
   }
 
+  function globalProgressPanel() {
+    const progress = calculateProgress();
+    const panel = el("div", "global-progress-panel");
+
+    const main = el("div", "global-progress-main");
+    main.append(el("p", "eyebrow", "Celkový stav"));
+    main.append(el("h3", "", `${progress.percent} % hotovo`));
+    const track = el("div", "progress-track global-progress-track");
+    const fill = el("div", "progress-fill global-progress-fill");
+    fill.style.width = `${progress.percent}%`;
+    track.append(fill);
+    main.append(track);
+    main.append(el("p", "progress-text global-progress-text", `${progress.doneTasks} / ${progress.totalTasks} checklist úkolů dokončeno`));
+    panel.append(main);
+
+    const metrics = el("div", "global-progress-metrics");
+    [
+      ["✅ Hotovo", `${progress.doneProjects} projektů`],
+      ["🔨 Probíhá", `${progress.progressProjects} projekty`],
+      ["⏳ Čeká", `${progress.waitingProjects} projekty`],
+      ["📒 Poslední den", progress.lastWorkDay],
+    ].forEach(([label, value]) => {
+      const item = el("div", "progress-kpi");
+      item.append(el("span", "", label), el("strong", "", value));
+      metrics.append(item);
+    });
+    panel.append(metrics);
+    return panel;
+  }
+
+  function projectFilterBar() {
+    const bar = el("div", "project-filter-bar");
+    bar.dataset.filterBar = "project";
+    updateFilterBarNode(bar);
+    return bar;
+  }
+
+  function updateFilterBars() {
+    document.querySelectorAll('[data-filter-bar="project"]').forEach(updateFilterBarNode);
+  }
+
+  function updateFilterBarNode(bar) {
+    const project = activeProject();
+    bar.replaceChildren();
+    bar.classList.toggle("is-active", Boolean(project));
+    if (!project) {
+      bar.append(el("span", "filter-muted", "Filtr projektu není aktivní."));
+      return;
+    }
+    bar.append(el("span", "filter-label", `Aktivní filtr: ${project.emoji} ${project.title}`));
+    const clear = el("button", "filter-clear", "Zrušit filtr");
+    clear.type = "button";
+    clear.addEventListener("click", clearProjectFilter);
+    bar.append(clear);
+  }
+
+  function projectKanbanCard(project) {
+    const node = el("article", `kanban-card project-status-${project.status}`);
+    node.tabIndex = 0;
+    node.role = "button";
+    node.dataset.projectId = project.id;
+    node.classList.toggle("is-active", activeProjectId === project.id);
+    node.append(badge(project.status === "done" ? "Hotovo" : project.status === "progress" ? "Probíhá" : "Čeká", toneForProjectStatus(project.status)));
+    node.append(el("h4", "", `${project.emoji} ${project.title}`));
+    node.append(el("p", "", project.summary));
+    if (project.nextStep) node.append(el("p", "next-step", `Další krok: ${project.nextStep}`));
+
+    const source = projectSource(project);
+    if (source && Array.isArray(source[1])) {
+      const details = el("details", "project-card-detail");
+      details.append(el("summary", "", "Detail"));
+      const list = el("ul", "clean-list");
+      source[1].forEach((line) => list.append(el("li", "", line)));
+      details.append(list);
+      node.append(details);
+    }
+    return node;
+  }
+
+  function projectHubItems() {
+    return data.projectHub?.items || [];
+  }
+
+  function activeProject() {
+    return projectHubItems().find((project) => project.id === activeProjectId);
+  }
+
+  function setProjectFilter(projectId) {
+    activeProjectId = projectId;
+    renderOverview();
+    renderWorklog();
+    renderProjects();
+    renderTimeline();
+    updateFilterBars();
+  }
+
+  function clearProjectFilter() {
+    setProjectFilter(null);
+  }
+
+  function toneForProjectStatus(status) {
+    return { done: "good", progress: "wait", waiting: "split" }[status] || "";
+  }
+
+  function projectSource(project) {
+    const normalizedTitle = normalizeText(project.title);
+    return (data.projects || []).find(([title]) => normalizeText(title).includes(normalizedTitle));
+  }
+
+  function filteredWorklogDays(days) {
+    const project = activeProject();
+    if (!project) return days;
+    return days.filter((day) => matchesProject(day, project));
+  }
+
+  function filteredTimelineItems(items) {
+    const project = activeProject();
+    if (!project) return items;
+    return items.filter((item) => matchesProject(item, project));
+  }
+
+  function matchesProject(item, project) {
+    const haystack = normalizeText(JSON.stringify(item));
+    return projectSearchTerms(project).some((term) => haystack.includes(term));
+  }
+
+  function projectSearchTerms(project) {
+    return [project.title, ...(project.aliases || [])].map(normalizeText).filter(Boolean);
+  }
+
+  function normalizeText(value) {
+    return text(value)
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+  }
+
+  function calculateProgress() {
+    const groups = data.plan || [];
+    const tasks = groups.flatMap((group) => group.items || []);
+    const doneTasks = tasks.filter(([id, , checked]) => savedChecklist[id] ?? checked).length;
+    const totalTasks = tasks.length;
+    const projects = projectHubItems();
+    const lastWorkDay = [...(data.worklog?.days || [])]
+      .filter((day) => day.type && day.type !== "off")
+      .sort((a, b) => worklogDateValue(a) - worklogDateValue(b))
+      .map(worklogDisplayDate)
+      .pop() || "Bez záznamu";
+
+    return {
+      doneTasks,
+      totalTasks,
+      percent: totalTasks ? Math.round((doneTasks / totalTasks) * 100) : 0,
+      doneProjects: projects.filter((project) => project.status === "done").length,
+      progressProjects: projects.filter((project) => project.status === "progress").length,
+      waitingProjects: projects.filter((project) => project.status === "waiting").length,
+      lastWorkDay,
+    };
+  }
+
+  function setupActiveNav() {
+    const links = Array.from(document.querySelectorAll("#mainNav a"));
+    const sections = links.map((link) => document.getElementById(link.dataset.section)).filter(Boolean);
+    if (!sections.length || !("IntersectionObserver" in window)) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (!visible) return;
+        links.forEach((link) => link.classList.toggle("is-active", link.dataset.section === visible.target.id));
+      },
+      { rootMargin: "-18% 0px -62% 0px", threshold: [0.05, 0.2, 0.4] }
+    );
+    sections.forEach((section) => observer.observe(section));
+  }
+
   function updateProgress() {
     const plan = document.querySelector("#plan");
     const inputs = Array.from(plan.querySelectorAll('input[type="checkbox"]'));
@@ -2599,6 +3180,15 @@ window.ZAHRADA_DASHBOARD = {
     plan.querySelector(".progress-fill").style.width = `${pct}%`;
     plan.querySelector(".progress-text").textContent = `${checked} / ${total} úkolů dokončeno`;
     plan.querySelector(".progress-number").textContent = `${pct} %`;
+
+    const overviewProgress = document.querySelector(".global-progress-fill");
+    const overviewText = document.querySelector(".global-progress-text");
+    const overviewHeading = document.querySelector(".global-progress-main h3");
+    if (overviewProgress && overviewText && overviewHeading) {
+      overviewProgress.style.width = `${pct}%`;
+      overviewText.textContent = `${checked} / ${total} checklist úkolů dokončeno`;
+      overviewHeading.textContent = `${pct} % hotovo`;
+    }
   }
 
   function readSavedChecklist() {
@@ -2620,6 +3210,7 @@ window.ZAHRADA_DASHBOARD = {
   function render() {
     renderNav();
     renderOverview();
+    renderRecentChanges();
     renderDocuments();
     renderFinance();
     renderWorklog();
