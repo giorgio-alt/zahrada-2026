@@ -1682,6 +1682,12 @@ window.ZAHRADA_DASHBOARD = {
   },
   recentChanges: [
     {
+      date: "8. 7. 2026",
+      title: "Tapety dokončeny",
+      body: "Dokončena ložnice. Součástí dne byla i práce výhradně pro Löffelmanovy mimo naše a sdílené náklady.",
+      projectIds: ["wallpaper"],
+    },
+    {
       date: "7. 7. 2026",
       title: "Příprava na finální omítku",
       body: "Dokončena armovací stěrka na driveway zídce a podezdívce pod WPC jako sdílená práce s Löffelmanovými.",
@@ -1696,7 +1702,7 @@ window.ZAHRADA_DASHBOARD = {
     {
       date: "4. 7. 2026",
       title: "Tapety v dětském pokoji",
-      body: "Dětský pokoj je hotový, ložnice zůstává otevřená po dodání zbývající tapety.",
+      body: "Dětský pokoj byl hotový, ložnice tehdy čekala na dodání zbývající tapety.",
       projectIds: ["wallpaper"],
     },
   ],
@@ -1765,9 +1771,9 @@ window.ZAHRADA_DASHBOARD = {
         id: "wallpaper",
         emoji: "🏠",
         title: "Tapety",
-        status: "progress",
-        summary: "Dětský pokoj hotový.",
-        nextStep: "Ložnice čeká na dodání / instalaci.",
+        status: "done",
+        summary: "Projekt Tapety dokončen 8. 7. 2026.",
+        nextStep: null,
         aliases: ["tapety", "tapeta", "dětský pokoj", "detsky pokoj", "ložnice", "loznice"],
       },
       {
@@ -2104,7 +2110,7 @@ window.ZAHRADA_DASHBOARD = {
         detail: {
           date: "4. 7. 2026",
           workers: ["Ivan", "Vasil", "Tatíno"],
-          done: ["Východní plot byl kompletně dokončen", "Montáž podhrabových desek dokončena", "Tapety - dětský pokoj dokončen", "Tapety - ložnice zůstává otevřená, čeká na dodání / instalaci zbývající tapety", "Podhrabové desky za 1 500 Kč uhrazeny a dodány"],
+          done: ["Východní plot byl kompletně dokončen", "Montáž podhrabových desek dokončena", "Tapety - dětský pokoj dokončen", "Tapety - ložnice navázala dokončením 8. 7.", "Podhrabové desky za 1 500 Kč uhrazeny a dodány"],
           finance: { total: 9000, ownPercent: 100, sharedPercent: 0, ownAmount: 9000, sharedAmount: 0, ourSharedShare: 0, neighborSharedShare: 0, ourCost: 9000, extraRows: [["Východní plot 75 %", "6 750 Kč"], ["Tapety 25 %", "2 250 Kč"], ["Materiál - podhrabové desky", "1 500 Kč"]] },
           projects: ["🧱 Východní plot", "🧱 Ploty a zeď", "🏠 Tapety"],
           notes: "Pracovala plná parta: Ivan, Vasil a Tatíno celý pracovní den. Náklad práce: 3 osoby x 3 000 Kč = 9 000 Kč. Práce se dělí mezi naše projekty: 75 % východní plot = 6 750 Kč a 25 % tapety = 2 250 Kč. Východní plot byl kompletně dokončen. Materiál podhrabové desky je uhrazený a dodaný za 1 500 Kč. Práce i materiál jsou 100 % náš náklad mimo vyúčtování s Loffelmanovými.",
@@ -2129,6 +2135,35 @@ window.ZAHRADA_DASHBOARD = {
           notes: "Ivan tento den nepracoval. Celý den pracovali Tatíno a Vasil, sazba dne je 2 osoby x 3 000 Kč = 6 000 Kč. Nejedná se o finální omítku. Proběhla armovací vrstva jako podklad pod finální silikonovou omítku Mistral silikon 1,5H TB. Práce je sdílený náklad s Loffelmanovými a dělí se 50 / 50.",
         },
       },
+      {
+        id: "2026-07-08",
+        day: 8,
+        label: "8.7.",
+        type: "mixed",
+        title: "Tapety + zídka + sousedé",
+        short: "Tapety/Zídka",
+        tooltip: "8.7. Tapety, společná zídka a dlažba u Loffelmanových / Tatíno, Vasil / 5 h",
+        detail: {
+          date: "8. 7. 2026",
+          workers: ["Tatíno", "Vasil"],
+          done: ["Tapety - dokončení ložnice", "Společná zídka - navazující práce", "Finalizace dlažby u Loffelmanových"],
+          finance: {
+            total: 3750,
+            ownPercent: 30,
+            sharedPercent: 30,
+            ownAmount: 1125,
+            sharedAmount: 1125,
+            ourSharedShare: 562.5,
+            neighborSharedShare: 562.5,
+            ourCost: 1687.5,
+            extraRows: [["Projekt Loffelmanových 100 %", "2 h / 1 500 Kč mimo náš i sdílený rozpočet"], ["Tapety 100 % náš projekt", "1,5 h / 1 125 Kč"], ["Společná zídka 50 / 50", "1,5 h / 1 125 Kč"]],
+          },
+          projects: ["🏠 Tapety", "🪵 Zahradní přepažení", "🟣 Projekt Loffelmanovi"],
+          notes: "Tatíno a Vasil pracovali 5 hodin. Rozdělení dne: 2 h finalizace dlažby u Loffelmanových jako 100 % jejich projekt, 1,5 h společná zídka 50 / 50 a 1,5 h Tapety jako 100 % náš projekt. Součástí dne byla také přibližně dvouhodinová finalizace dlažby u Löffelmanových. Jednalo se o práci výhradně pro sousedy a není součástí našeho ani sdíleného projektu.",
+        },
+      },
+      { id: "2026-07-09", day: 9, label: "9.7.", type: "off", title: "Nepracovalo se" },
+      { id: "2026-07-10", day: 10, label: "10.7.", type: "off", title: "Nepracovalo se" },
     ],
   },
   settlement: {
@@ -2179,7 +2214,7 @@ window.ZAHRADA_DASHBOARD = {
     ["🏊 Bazén", "Čeká budget a finální plán."],
     ["🧱 Zábradlí", ["✅ Realizace dokončena", "✅ Namontováno", "✅ Uhrazeno", "✅ Projekt uzavřen", "🔒 100 % soukromý náklad, mimo sdílené vyúčtování"], "Dokončeno", "good"],
     ["🪞 Zrcadla", ["✅ Cena doplněna: 10 348 Kč", "✅ Výška umístění schválena", "✅ Montáž dokončena", "✅ Projekt dokončen 1. 7. 2026"], "Dokončeno", "good"],
-    ["🧱 Tapety", ["✅ Tapeta - materiál pořízen / uhrazeno: 6 000 Kč", "✅ Práce 1. 7. - 25 % dne", "✅ Tapeta v dětském pokoji hotová", "⏳ Tapeta v ložnici čeká na dodání / instalaci"], "Probíhá", "wait"],
+    ["🧱 Tapety", ["✅ Tapeta - materiál pořízen / uhrazeno: 6 000 Kč", "✅ Práce 1. 7. - 25 % dne", "✅ Tapeta v dětském pokoji hotová", "✅ Tapeta v ložnici hotová", "✅ Projekt Tapety dokončen 8. 7. 2026"], "Hotovo", "good"],
     ["💡 Osvětlení", ["⏳ Světlo - šatna Lucie", "Poznámka: čeká na předání / dovoz od Tondy.", "⏳ Světlo nad kuchyňský ostrůvek", "⏳ Světlo - chodba 2NP", "⏳ Dodělat LED track - chodba 1NP"], "Probíhá", "wait"],
   ],
   plan: [
@@ -2259,7 +2294,8 @@ window.ZAHRADA_DASHBOARD = {
         ["tapety-material", "Tapeta - materiál pořízen / uhrazeno: 6 000 Kč", true],
         ["tapety-prace-1-7", "Práce na tapetách 1. 7. - 25 % dne", true],
         ["tapety-detsky-pokoj", "Tapeta v dětském pokoji hotová", true],
-        ["tapety-loznice", "Tapeta v ložnici čeká na dodání / instalaci", false],
+        ["tapety-loznice", "Tapeta v ložnici hotová", true],
+        ["tapety-dokonceno-8-7", "Projekt Tapety dokončen 8. 7. 2026", true],
       ],
     },
     {
@@ -2333,7 +2369,7 @@ window.ZAHRADA_DASHBOARD = {
       status: "done",
       icon: "🏠",
       title: "Tapety",
-      body: "Dětský pokoj hotový, ložnice čeká.",
+      body: "Dětský pokoj hotový, ložnice čekala na dokončení.",
     },
     {
       date: "7. 7. 2026",
@@ -2341,6 +2377,13 @@ window.ZAHRADA_DASHBOARD = {
       icon: "🧱",
       title: "Příprava na finální omítku",
       body: "Dokončena armovací stěrka na driveway zídce i podezdívce pod WPC jako sdílená práce s Löffelmanovými.",
+    },
+    {
+      date: "8. 7. 2026",
+      status: "done",
+      icon: "🏠",
+      title: "Tapety dokončeny",
+      body: "Po dokončení ložnice je projekt Tapety hotový. Část dne proběhla výhradně pro Löffelmanovy mimo naše a sdílené náklady.",
     },
     {
       date: "Budoucí",
@@ -2364,7 +2407,6 @@ window.ZAHRADA_DASHBOARD = {
     "Kluci: spočítat dlažbu a práci pro sousedy.",
     "Doúčtovat fasádu, spojovací materiál a případnou navazující práci k zahradnímu přepažení.",
     "Dokončit omítku zahradního přepažení - Mistral silikon 1,5H TB.",
-    "Tapety: dokončit ložnici po dodání zbývající tapety.",
     "Osvětlení: převzít světlo do šatny od Tondy, namontovat světlo nad ostrůvek, světlo v chodbě 2NP a dokončit LED track v chodbě 1NP.",
   ],
 };
