@@ -352,6 +352,28 @@
         }
       ],
       "note": "OBI uctenka s poznamkou Ivan / proplatit, proplaceno 3. 7. 2026. Soukromy naklad 100 % na nasi strane, mimo vyuctovani s Loffelmanovymi."
+    },
+    {
+      "id": "receipt-2026-07-04-ploty-podhrabove-desky",
+      "date": "2026-07-04",
+      "vendor": "Ploty Dobry & Urbanek",
+      "amount": 1859,
+      "currency": "CZK",
+      "file": "assets/receipts/IMG_8602.JPG",
+      "status": "verified",
+      "lineItems": [
+        {
+          "title": "Betonove podhrabove desky, drzaky a spojovaci material",
+          "totalWithVat": 1859
+        }
+      ],
+      "linkedRecords": [
+        {
+          "type": "payment",
+          "id": "payment-podhrabove-desky-2026-07-04"
+        }
+      ],
+      "note": "100 % nas naklad pro projekt Vychodni plot, mimo vyuctovani s Loffelmanovymi."
     }
   ],
   "example": {

@@ -518,11 +518,12 @@ p {
 
 .metric-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(86px, 0.8fr) minmax(0, 1.2fr);
   gap: 12px;
   align-items: baseline;
   padding: 11px 0;
   border-top: 1px solid var(--line-dark);
+  min-width: 0;
 }
 
 .metric-row dt {
@@ -536,7 +537,9 @@ p {
   font-size: 16px;
   font-weight: 950;
   text-align: right;
-  white-space: nowrap;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
 }
 
 .finance-detail {

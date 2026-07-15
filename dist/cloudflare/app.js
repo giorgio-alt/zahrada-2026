@@ -449,9 +449,15 @@
       return wrap;
     }
 
-    wrap.append(financeRow("Celkem", formatMoney(finance.total)));
+    if (finance.grossTotal !== undefined) {
+      wrap.append(financeRow("Práce Ivanovy party za den", formatMoney(finance.grossTotal)));
+      wrap.append(financeRow("Z toho náš / sdílený rozpočet", formatMoney(finance.total)));
+    } else {
+      wrap.append(financeRow("Celkem", formatMoney(finance.total)));
+    }
     if (finance.sharedPercent) wrap.append(financeRow("Společný projekt", `${finance.sharedPercent} % / ${formatMoney(finance.sharedAmount)}`));
     if (finance.ownPercent) wrap.append(financeRow("Náš projekt", `${finance.ownPercent} % / ${formatMoney(finance.ownAmount)}`));
+    if (finance.loffelmanAmount !== undefined) wrap.append(financeRow("Z toho 100 % Loffelmanovi", formatMoney(finance.loffelmanAmount)));
     if (finance.ourSharedShare !== undefined) wrap.append(financeRow("Náš podíl ze společné části", formatMoney(finance.ourSharedShare)));
     if (finance.neighborSharedShare !== undefined) wrap.append(financeRow("Podíl Lofflemanových", formatMoney(finance.neighborSharedShare)));
     if (finance.ourCost !== undefined) wrap.append(financeRow("Náš reálný náklad", formatMoney(finance.ourCost)));

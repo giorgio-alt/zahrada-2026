@@ -525,11 +525,12 @@ p {
 
 .metric-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(86px, 0.8fr) minmax(0, 1.2fr);
   gap: 12px;
   align-items: baseline;
   padding: 11px 0;
   border-top: 1px solid var(--line-dark);
+  min-width: 0;
 }
 
 .metric-row dt {
@@ -543,7 +544,9 @@ p {
   font-size: 16px;
   font-weight: 950;
   text-align: right;
-  white-space: nowrap;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
 }
 
 .finance-detail {
@@ -1516,8 +1519,8 @@ window.ZAHRADA_DASHBOARD = {
         title: "💰 Celková investice",
         body: "Kolik celý projekt stojí / bude stát?",
         metrics: [
-          ["Potvrzené / objednané", "589 730,10 Kč"],
-          ["Včetně práce a odhadů", "607 930,10 Kč"],
+          ["Potvrzené / objednané", "591 230,10 Kč"],
+          ["Včetně práce a odhadů", "609 430,10 Kč"],
           ["Plánované / odhadované", "18 200 Kč"],
           ["Rozdíl od potvrzeného", "18 200 Kč"],
         ],
@@ -1527,10 +1530,10 @@ window.ZAHRADA_DASHBOARD = {
         title: "💸 Cashflow",
         body: "Kolik peněz už odešlo a co ještě čeká na platbu?",
         metrics: [
-          ["Zaplaceno", "311 048,10 Kč"],
-          ["Čeká na úhradu", "76 824 Kč"],
-          ["Proplaceno Ivanovi", "72 000 Kč"],
-          ["Otevřené závazky", "76 824 Kč"],
+          ["Zaplaceno", "373 048,10 Kč"],
+          ["Čeká na úhradu", "14 824 Kč"],
+          ["Proplaceno Ivanovi", "134 000 Kč"],
+          ["Otevřené závazky", "14 824 Kč"],
         ],
       },
       {
@@ -1561,9 +1564,9 @@ window.ZAHRADA_DASHBOARD = {
         title: "👷 Ivanova parta",
         body: "Kolik už Ivanova parta odpracovala a kolik jim ještě dlužíme?",
         metrics: [
-          ["Celková práce", "143 250 Kč"],
-          ["Vyplaceno", "72 000 Kč"],
-          ["Zbývá doplatit", "71 250 Kč"],
+          ["Celková práce", "144 750 Kč"],
+          ["Vyplaceno na práci", "129 926 Kč"],
+          ["Zbývá doplatit", "14 824 Kč"],
           ["Dny", "13 plných + 4 dvoučlenné + 1 částečný"],
         ],
       },
@@ -1571,14 +1574,15 @@ window.ZAHRADA_DASHBOARD = {
     cashflow: {
       headers: ["Metrika", "Částka", "Poznámka"],
       rows: [
-        ["Zaplaceno", "311 048,10 Kč", "Uhrazené platby evidované v platbách včetně částečného vyrovnání Ivanovi, podhrabových desek, tapety a sdílených účtenek T+L."],
-        ["Čeká na úhradu", "76 824 Kč", "Otevřený doplatek Ivanově partě za evidovanou práci a účtenky hrazené Ivanem."],
-        ["Proplaceno Ivanovi", "72 000 Kč", "Částečné vyrovnání ze dne 30. 6. 2026."],
-        ["Práce k doplacení Ivanově partě", "71 250 Kč", "Zbývající závazek za evidovanou práci."],
-        ["Proplacení účtenek Ivanovi", "5 574 Kč", "⏳ k proplacení; cashflow položka, projektové náklady už jsou evidované v jednotlivých účtenkách. Batch IMG_8604.JPG."],
-        ["Otevřené závazky", "76 824 Kč", "Zbývající závazek vůči Ivanovi včetně práce a proplacení účtenek."],
+        ["Zaplaceno", "373 048,10 Kč", "Uhrazené platby evidované v platbách včetně vyrovnání Ivanovi, podhrabových desek, tapety a sdílených účtenek T+L."],
+        ["Čeká na úhradu", "14 824 Kč", "Zbývající doplatek za práci Ivanovy party po platbě 62 000 Kč dne 15. 7. 2026."],
+        ["Proplaceno Ivanovi", "134 000 Kč", "72 000 Kč dne 30. 6. a 62 000 Kč dne 15. 7. 2026."],
+        ["Práce k doplacení Ivanově partě", "14 824 Kč", "Původních 72 750 Kč sníženo o 57 926 Kč z platby 15. 7."],
+        ["Proplacení účtenek Ivanovi", "4 074 Kč", "✅ uhrazeno platbou 15. 7.; původní batch IMG_8604.JPG 5 574 Kč snížen o hotově předaných 1 500 Kč."],
+        ["Platba Ivanovi 15. 7.", "62 000 Kč", "✅ uhrazeno; 4 074 Kč šlo na účtenky a 57 926 Kč proti závazku za práci."],
+        ["Otevřené závazky", "14 824 Kč", "Zbývající závazek vůči Ivanovi za práci. Účtenky jsou uhrazené."],
       ],
-      total: ["Celkem otevřeno", "76 824 Kč", "Práce 71 250 Kč + účtenky Ivanovi 5 574 Kč"],
+      total: ["Celkem otevřeno", "14 824 Kč", "Zbývá pouze doplatek za práci Ivanovy party"],
     },
   },
   overview: [
@@ -1604,7 +1608,7 @@ window.ZAHRADA_DASHBOARD = {
       badge: "✅ 13 + 4 + část",
       tone: "good",
       title: "👷 Práce Ivanovy party",
-      body: "Celkem evidovaná práce v našem a sdíleném rozpočtu je 143 250 Kč. Dne 30. 6. vyplaceno Ivanovi 72 000 Kč, zbývá doplatit 71 250 Kč.",
+      body: "Celkem evidovaná práce Ivanovy party k úhradě je 144 750 Kč. Na práci je započteno 129 926 Kč, zbývá doplatit 14 824 Kč.",
     },
   ],
   documents: [
@@ -1662,9 +1666,10 @@ window.ZAHRADA_DASHBOARD = {
       ["✅ Uhrazeno + dodáno", "good", "🧱 Podhrabové desky", "1 859 Kč", "Dle účtenky Ploty Dobrý & Urbánek z 4. 7. 2026, IMG_8602.JPG. Projekt: Východní plot. 100 % náš náklad, mimo vyúčtování s Loffelmanovými."],
       ["✅ Položeno", "good", "🪨 Dlažba 14 m²", "9 800 Kč", "Zakoupeno, zaplaceno a položeno. Z toho cca 2 m² / 1 400 Kč patří Loffelmanovým a je vedeno jako 100 % jejich náklad hrazený námi."],
       ["✅ Uhrazeno", "good", "🧱 Ivan - cement", "5 644 Kč"],
-      ["✅ Evidováno", "good", "👷 Práce Ivanovy party", "143 250 Kč", "Evidovaná práce v našem a sdíleném rozpočtu. Dne 15. 7. pracovala plná parta na sdílených projektech 50 / 50."],
-      ["✅ Uhrazeno", "good", "💸 Částečné vyrovnání Ivanovi", "72 000 Kč", "Vyplaceno 30. 6. 2026 proti evidované práci Ivanovy party. Zbývá doplatit 71 250 Kč."],
-      ["⏳ K proplacení", "wait", "💸 Proplacení účtenek Ivanovi", "5 574 Kč", "Cashflow vůči Ivanovi za účtenky v batchi IMG_8604.JPG. Nezvyšuje znovu projektové náklady."],
+      ["✅ Evidováno", "good", "👷 Práce Ivanovy party", "144 750 Kč", "Evidovaná práce k úhradě Ivanově partě. Zahrnuje také 1 500 Kč práce 8. 7. pro Loffelmanovy, která není náš ani sdílený náklad."],
+      ["✅ Uhrazeno", "good", "💸 Částečné vyrovnání Ivanovi", "72 000 Kč", "Vyplaceno 30. 6. 2026 proti evidované práci Ivanovy party."],
+      ["✅ Uhrazeno", "good", "💸 Platba Ivanovi 15. 7.", "62 000 Kč", "Cashflow platba vůči Ivanovi. Z toho 4 074 Kč na účtenky a 57 926 Kč proti práci; nejde o nový projektový náklad."],
+      ["✅ Uhrazeno", "good", "💸 Proplacení účtenek Ivanovi", "4 074 Kč", "Batch IMG_8604.JPG 5 574 Kč po odečtení hotově předaných 1 500 Kč. Nezvyšuje znovu projektové náklady."],
       ["✅ Uhrazeno", "good", "🧱 Zábradlí", "80 109,12 Kč"],
       ["⏳ Odhad", "wait", "🪨 Dlažba pod zahradní domek", "18 200 Kč", "Plánovaná dlažba cca 26 m² pro budoucí zahradní domek."],
       ["✅ Dokončeno", "good", "🪞 Zrcadla", "10 348 Kč", "Zaplaceno a dokončeno 1. 7. 2026."],
@@ -1684,9 +1689,10 @@ window.ZAHRADA_DASHBOARD = {
       ["Podhrabové desky", "1 859 Kč", "✅ uhrazeno a dodáno; Ploty Dobrý & Urbánek 4. 7. 2026; IMG_8602.JPG; projekt Východní plot; 100 % náš náklad mimo vyúčtování s Loffelmanovými"],
       ["Dlažba 14 m²", "9 800 Kč", "✅ zakoupeno, zaplaceno a položeno; cca 2 m² / 1 400 Kč jsou 100 % náklad Loffelmanových hrazený námi"],
       ["Ivan - cement a materiál", "5 644 Kč", "✅ uhrazeno 20. 6."],
-      ["Práce Ivanovy party", "143 250 Kč", "✅ evidovaná práce v našem a sdíleném rozpočtu; 8. 7. dlažba u Loffelmanových je mimo náš i sdílený rozpočet; 15. 7. plná parta sdíleně 50 / 50; částečně uhrazeno 72 000 Kč dne 30. 6."],
+      ["Práce Ivanovy party", "144 750 Kč", "✅ evidovaná práce k úhradě Ivanově partě; 8. 7. zahrnuje 1 500 Kč práce pro Loffelmanovy mimo náš i sdílený rozpočet; na práci uhrazeno 129 926 Kč, zbývá 14 824 Kč"],
       ["Částečné vyrovnání Ivanovi", "72 000 Kč", "✅ uhrazeno 30. 6. 2026, platba proti závazku práce"],
-      ["Proplacení účtenek Ivanovi", "5 574 Kč", "⏳ cashflow k proplacení; batch IMG_8604.JPG; jednotlivé účtenky už jsou v nákladech započítané"],
+      ["Platba Ivanovi 15. 7.", "62 000 Kč", "✅ uhrazeno; 4 074 Kč účtenky Ivanovi a 57 926 Kč proti závazku za práci; nezvyšuje projektové náklady"],
+      ["Proplacení účtenek Ivanovi", "4 074 Kč", "✅ uhrazeno; batch IMG_8604.JPG 5 574 Kč minus hotově předaných 1 500 Kč; jednotlivé účtenky už jsou v nákladech započítané"],
       ["Zábradlí", "80 109,12 Kč", "✅ dokončeno, namontováno a uhrazeno - 100 % náš náklad"],
       ["Dlažba pod zahradní domek cca 26 m²", "18 200 Kč", "⏳ odhad"],
       ["Zrcadla", "10 348 Kč", "✅ zaplaceno a dokončeno 1. 7. 2026"],
@@ -1694,10 +1700,10 @@ window.ZAHRADA_DASHBOARD = {
       ["Tapeta", "6 000 Kč", "✅ materiál pořízen / uhrazen; projekt Tapety; účtenka není k dispozici; 100 % náš náklad mimo vyúčtování s Loffelmanovými"],
     ],
     totals: [
-      ["Nákladový součet včetně práce a odhadu", "607 930,10 Kč"],
-      ["Potvrzené / objednané bez odhadu dlažby", "589 730,10 Kč"],
-      ["Z vyúčtované práce uhrazeno Ivanovi", "72 000 Kč"],
-      ["Zbývá doplatit Ivanovi", "76 824 Kč"],
+      ["Nákladový součet včetně práce a odhadu", "609 430,10 Kč"],
+      ["Potvrzené / objednané bez odhadu dlažby", "591 230,10 Kč"],
+      ["Z vyúčtované práce uhrazeno Ivanovi", "129 926 Kč"],
+      ["Zbývá doplatit Ivanovi", "14 824 Kč"],
     ],
   },
   recentChanges: [
@@ -1866,37 +1872,38 @@ window.ZAHRADA_DASHBOARD = {
   },
   workCosts: {
     note:
-      "Standardní denní sazba plné party: 9 000 Kč / den. Evidováno 13 plných dnů plné party, 4 dvoučlenné dny po 6 000 Kč a částečný den 8. 7. v našem/sdíleném rozpočtu za 2 250 Kč. Dne 15. 7. pracovala plná parta na sdílených projektech 50 / 50.",
+      "Standardní denní sazba plné party: 9 000 Kč / den. Evidováno 144 750 Kč práce k úhradě Ivanově partě. Dne 8. 7. je z celkových 3 750 Kč jen 2 250 Kč v našem / sdíleném rozpočtu; dalších 1 500 Kč je 100 % náklad Loffelmanových hrazený námi.",
     cards: [
-      ["Celkem", "good", "Veškerá práce", "143 250 Kč"],
+      ["Celkem", "good", "Veškerá práce k úhradě", "144 750 Kč"],
       ["Společný projekt", "split", "Práce k dělení", "67 575 Kč"],
       ["Náš podíl", "split", "Podíl na sdílené práci", "33 787,50 Kč"],
       ["Podíl sousedů", "split", "Loffelmanovi", "33 787,50 Kč"],
       ["Náš projekt", "good", "Samostatná práce", "75 675 Kč"],
+      ["Jen Loffelmanovi", "wait", "100 % jejich práce", "1 500 Kč"],
       ["Reálně naše", "good", "Náš náklad práce", "109 462,50 Kč"],
     ],
-    headers: ["Datum", "Celkem den", "Společný projekt", "Náš projekt", "Náš podíl společně", "Podíl sousedů"],
+    headers: ["Datum", "Celkem k úhradě", "Společný projekt", "Náš projekt", "100 % Loffelmanovi", "Náš podíl společně", "Podíl sousedů"],
     rows: [
-      ["17. 6.", "9 000 Kč", "0 Kč", "9 000 Kč", "0 Kč", "0 Kč"],
-      ["18. 6.", "9 000 Kč", "0 Kč", "9 000 Kč", "0 Kč", "0 Kč"],
-      ["19. 6.", "9 000 Kč", "0 Kč", "9 000 Kč", "0 Kč", "0 Kč"],
-      ["22. 6.", "9 000 Kč", "0 Kč", "9 000 Kč", "0 Kč", "0 Kč"],
-      ["23. 6.", "9 000 Kč", "4 500 Kč", "4 500 Kč", "2 250 Kč", "2 250 Kč"],
-      ["24. 6.", "9 000 Kč", "6 750 Kč", "2 250 Kč", "3 375 Kč", "3 375 Kč"],
-      ["25. 6.", "9 000 Kč", "6 750 Kč", "2 250 Kč", "3 375 Kč", "3 375 Kč"],
-      ["26. 6.", "9 000 Kč", "4 500 Kč", "4 500 Kč", "2 250 Kč", "2 250 Kč"],
-      ["29. 6.", "6 000 Kč", "1 200 Kč", "4 800 Kč", "600 Kč", "600 Kč"],
-      ["30. 6.", "6 000 Kč", "6 000 Kč", "0 Kč", "3 000 Kč", "3 000 Kč"],
-      ["1. 7.", "9 000 Kč", "6 750 Kč", "2 250 Kč", "3 375 Kč", "3 375 Kč"],
-      ["2. 7.", "9 000 Kč", "9 000 Kč", "0 Kč", "4 500 Kč", "4 500 Kč"],
-      ["3. 7.", "9 000 Kč", "0 Kč", "9 000 Kč", "0 Kč", "0 Kč"],
-      ["4. 7.", "9 000 Kč", "0 Kč", "9 000 Kč", "0 Kč", "0 Kč"],
-      ["7. 7.", "6 000 Kč", "6 000 Kč", "0 Kč", "3 000 Kč", "3 000 Kč"],
-      ["8. 7.", "2 250 Kč", "1 125 Kč", "1 125 Kč", "562,50 Kč", "562,50 Kč"],
-      ["11. 7.", "6 000 Kč", "6 000 Kč", "0 Kč", "3 000 Kč", "3 000 Kč"],
-      ["15. 7.", "9 000 Kč", "9 000 Kč", "0 Kč", "4 500 Kč", "4 500 Kč"],
+      ["17. 6.", "9 000 Kč", "0 Kč", "9 000 Kč", "0 Kč", "0 Kč", "0 Kč"],
+      ["18. 6.", "9 000 Kč", "0 Kč", "9 000 Kč", "0 Kč", "0 Kč", "0 Kč"],
+      ["19. 6.", "9 000 Kč", "0 Kč", "9 000 Kč", "0 Kč", "0 Kč", "0 Kč"],
+      ["22. 6.", "9 000 Kč", "0 Kč", "9 000 Kč", "0 Kč", "0 Kč", "0 Kč"],
+      ["23. 6.", "9 000 Kč", "4 500 Kč", "4 500 Kč", "0 Kč", "2 250 Kč", "2 250 Kč"],
+      ["24. 6.", "9 000 Kč", "6 750 Kč", "2 250 Kč", "0 Kč", "3 375 Kč", "3 375 Kč"],
+      ["25. 6.", "9 000 Kč", "6 750 Kč", "2 250 Kč", "0 Kč", "3 375 Kč", "3 375 Kč"],
+      ["26. 6.", "9 000 Kč", "4 500 Kč", "4 500 Kč", "0 Kč", "2 250 Kč", "2 250 Kč"],
+      ["29. 6.", "6 000 Kč", "1 200 Kč", "4 800 Kč", "0 Kč", "600 Kč", "600 Kč"],
+      ["30. 6.", "6 000 Kč", "6 000 Kč", "0 Kč", "0 Kč", "3 000 Kč", "3 000 Kč"],
+      ["1. 7.", "9 000 Kč", "6 750 Kč", "2 250 Kč", "0 Kč", "3 375 Kč", "3 375 Kč"],
+      ["2. 7.", "9 000 Kč", "9 000 Kč", "0 Kč", "0 Kč", "4 500 Kč", "4 500 Kč"],
+      ["3. 7.", "9 000 Kč", "0 Kč", "9 000 Kč", "0 Kč", "0 Kč", "0 Kč"],
+      ["4. 7.", "9 000 Kč", "0 Kč", "9 000 Kč", "0 Kč", "0 Kč", "0 Kč"],
+      ["7. 7.", "6 000 Kč", "6 000 Kč", "0 Kč", "0 Kč", "3 000 Kč", "3 000 Kč"],
+      ["8. 7.", "3 750 Kč", "1 125 Kč", "1 125 Kč", "1 500 Kč", "562,50 Kč", "562,50 Kč"],
+      ["11. 7.", "6 000 Kč", "6 000 Kč", "0 Kč", "0 Kč", "3 000 Kč", "3 000 Kč"],
+      ["15. 7.", "9 000 Kč", "9 000 Kč", "0 Kč", "0 Kč", "4 500 Kč", "4 500 Kč"],
     ],
-    total: ["Součet", "143 250 Kč", "67 575 Kč", "75 675 Kč", "33 787,50 Kč", "33 787,50 Kč"],
+    total: ["Součet", "144 750 Kč", "67 575 Kč", "75 675 Kč", "1 500 Kč", "33 787,50 Kč", "33 787,50 Kč"],
   },
   worklog: {
     monthLabel: "Červen / červenec 2026",
@@ -2192,18 +2199,20 @@ window.ZAHRADA_DASHBOARD = {
           workers: ["Tatíno", "Vasil"],
           done: ["Tapety - dokončení ložnice", "Společná zídka - navazující práce", "Dlažba u Loffelmanových - finalizace cca 2 m²"],
           finance: {
+            grossTotal: 3750,
             total: 2250,
             ownPercent: 50,
             sharedPercent: 50,
             ownAmount: 1125,
             sharedAmount: 1125,
+            loffelmanAmount: 1500,
             ourSharedShare: 562.5,
             neighborSharedShare: 562.5,
             ourCost: 1687.5,
             extraRows: [["🏡 Projekt Loffelmanových", "Pokládka dlažby cca 2 m² / 2 h / 1 500 Kč / uhrazeno Trantinovými / 100 % náklad Loffelmanových"], ["🪨 Materiál dlažby Loffelmanových", "cca 2 m² x 700 Kč = 1 400 Kč / 100 % náklad Loffelmanových"], ["Pohledávka za Loffelmanovými", "2 900 Kč"], ["Tapety 100 % náš projekt", "1,5 h / 1 125 Kč"], ["Společná zídka 50 / 50", "1,5 h / 1 125 Kč"]],
           },
           projects: ["🏠 Tapety", "🪵 Zahradní přepažení", "🏡 Projekt Loffelmanových"],
-          notes: "Tatíno a Vasil pracovali 5 hodin. Rozdělení dne: 2 h pokládka dlažby u Loffelmanových na ploše cca 2 m² jako 100 % jejich projekt, 1,5 h společná zídka 50 / 50 a 1,5 h Tapety jako 100 % náš projekt. Dlažba u Löffelmanových byla uhrazena Trantinovými, nezvyšuje náš projekt ani sdílený projekt a zakládá pohledávku Trantinových vůči Löffelmanovým: práce 1 500 Kč + materiál 1 400 Kč = 2 900 Kč.",
+          notes: "Tatíno a Vasil pracovali 5 hodin, tedy 10 člověkohodin. Sazba odpovídá 750 Kč / hodina celkem za dvojici, celkem k úhradě Ivanově partě 3 750 Kč. Rozdělení dne: 1,5 h Tapety 1 125 Kč jako 100 % náš projekt, 1,5 h společná zídka 1 125 Kč jako 50 / 50 a 2 h pokládka dlažby u Loffelmanových 1 500 Kč jako 100 % jejich projekt. Část práce na dlažbě Löffelmanových je evidována jako pohledávka za Löffelmanovými, nikoli jako náš nebo sdílený náklad. Dlažba u Löffelmanových byla uhrazena Trantinovými a zakládá pohledávku: práce 1 500 Kč + materiál 1 400 Kč = 2 900 Kč.",
         },
       },
       { id: "2026-07-09", day: 9, label: "9.7.", type: "off", title: "Nepracovalo se" },
@@ -3013,9 +3022,15 @@ window.ZAHRADA_DASHBOARD = {
       return wrap;
     }
 
-    wrap.append(financeRow("Celkem", formatMoney(finance.total)));
+    if (finance.grossTotal !== undefined) {
+      wrap.append(financeRow("Práce Ivanovy party za den", formatMoney(finance.grossTotal)));
+      wrap.append(financeRow("Z toho náš / sdílený rozpočet", formatMoney(finance.total)));
+    } else {
+      wrap.append(financeRow("Celkem", formatMoney(finance.total)));
+    }
     if (finance.sharedPercent) wrap.append(financeRow("Společný projekt", `${finance.sharedPercent} % / ${formatMoney(finance.sharedAmount)}`));
     if (finance.ownPercent) wrap.append(financeRow("Náš projekt", `${finance.ownPercent} % / ${formatMoney(finance.ownAmount)}`));
+    if (finance.loffelmanAmount !== undefined) wrap.append(financeRow("Z toho 100 % Loffelmanovi", formatMoney(finance.loffelmanAmount)));
     if (finance.ourSharedShare !== undefined) wrap.append(financeRow("Náš podíl ze společné části", formatMoney(finance.ourSharedShare)));
     if (finance.neighborSharedShare !== undefined) wrap.append(financeRow("Podíl Lofflemanových", formatMoney(finance.neighborSharedShare)));
     if (finance.ourCost !== undefined) wrap.append(financeRow("Náš reálný náklad", formatMoney(finance.ourCost)));
