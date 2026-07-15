@@ -188,8 +188,8 @@
       "type": "work_liability",
       "title": "Prace Ivanovy party 17. 6.-15. 7.",
       "amount": 144750,
-      "paidAmount": 129926,
-      "outstandingAmount": 14824,
+      "paidAmount": 134000,
+      "outstandingAmount": 10750,
       "paidBy": "us",
       "paidTo": "Ivanova parta",
       "status": "partially_paid",
@@ -218,7 +218,7 @@
         "work-2026-07-15"
       ],
       "receiptIds": [],
-      "note": "Evidovana prace Ivanovy party do 15. 7. 2026. Dne 8. 7. je celkem k uhrade Ivanove parte 3 750 Kc: 2 250 Kc patri do naseho / sdileneho rozpoctu a 1 500 Kc je 100 % naklad Loffelmanovych hrazeny nami. Dne 30. 6. 2026 probehlo castecne vyrovnani 72 000 Kc. Dne 15. 7. 2026 bylo Ivanovi uhrazeno 62 000 Kc, z toho 57 926 Kc jde proti praci a 4 074 Kc na proplaceni uctenek. Zbyva doplatit za praci 14 824 Kc."
+      "note": "Cista evidence prace Ivanovy party do 15. 7. 2026 bez materialu a uctenek. Dne 8. 7. je celkem k uhrade Ivanove parte 3 750 Kc: 2 250 Kc patri do naseho / sdileneho rozpoctu a 1 500 Kc je 100 % naklad Loffelmanovych hrazeny nami. Ivanovi bylo realne vyplaceno 72 000 Kc dne 30. 6. a 62 000 Kc dne 15. 7., celkem 134 000 Kc. Zbyva doplatit za praci 10 750 Kc."
     },
     {
       "id": "payment-ivan-partial-settlement-2026-06-30",
@@ -239,36 +239,16 @@
       "type": "cashflow_settlement",
       "title": "Platba Ivanovi 15. 7.",
       "amount": 62000,
-      "workSettlementAmount": 57926,
-      "receiptReimbursementAmount": 4074,
+      "openBalanceReductionAmount": 62000,
+      "remainingBalanceAfterPayment": 10750,
       "paidBy": "us",
       "paidTo": "Ivan",
       "status": "paid",
       "relatedLiabilityIds": [
-        "liability-ivan-work-2026-06-17-26",
-        "liability-ivan-receipts-2026-07-15"
+        "liability-ivan-work-2026-06-17-26"
       ],
       "receiptIds": [],
-      "note": "Cashflow platba Ivanovi. Z castky 62 000 Kc jde 4 074 Kc na doplatek uctenek z batche IMG_8604.JPG po odecteni drive predanych 1 500 Kc hotove a 57 926 Kc proti zavazku za praci. Platba nesmi navysovat projektove naklady ani sdilene vyuctovani."
-    },
-    {
-      "id": "liability-ivan-receipts-2026-07-15",
-      "date": "2026-07-15",
-      "type": "receipt_reimbursement_liability",
-      "title": "Proplaceni uctenek Ivanovi",
-      "amount": 4074,
-      "originalAmount": 5574,
-      "cashAlreadyPaidAmount": 1500,
-      "paidAmount": 4074,
-      "outstandingAmount": 0,
-      "paidBy": "us",
-      "paidTo": "Ivan",
-      "status": "paid",
-      "settlementPaymentIds": [
-        "payment-ivan-settlement-2026-07-15"
-      ],
-      "receiptIds": [],
-      "note": "Cashflow zavazek k proplaceni Ivanovi za batch IMG_8604.JPG: puvodne 5 574 Kc, po odecteni drive predanych 1 500 Kc hotove zbyval doplatek 4 074 Kc. Doplatek byl uhrazen platbou 15. 7. 2026. Tyto jednotlive uctenky jsou uz v projektovych nakladech zaevidovane; tato polozka je pouze cashflow a nesmi znovu navysovat projektove naklady."
+      "note": "Skutecna cashflow platba Ivanovi. Spolu s platbou 72 000 Kc ze dne 30. 6. tvori realne vyplaceno Ivanovi celkem 134 000 Kc. Uctenky hrazene Ivanem jsou vyrovnane a nejsou dale vedeny jako otevreny zavazek. Platba nesmi navysovat projektove naklady ani sdilene vyuctovani."
     }
   ]
 }
