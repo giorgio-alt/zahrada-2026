@@ -197,6 +197,14 @@
     );
 
     section.append(
+      financeDetail("💸 Vyrovnání s Löffelmanovými", [
+        financeTupleMetrics(data.settlementReceivable.cards),
+        totalsGrid(data.settlementReceivable.formula),
+        table(data.settlementReceivable.headers, data.settlementReceivable.rows, data.settlementReceivable.total),
+      ], data.settlementReceivable.note)
+    );
+
+    section.append(
       financeDetail("👷 Detail Ivanovy party", [
         financeTupleMetrics(data.workCosts.cards),
         table(data.workCosts.headers, data.workCosts.rows, data.workCosts.total),
