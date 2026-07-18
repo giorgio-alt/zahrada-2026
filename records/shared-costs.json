@@ -69,6 +69,37 @@
       "note": "Souhrnna polozka za OBI uctenky ve varkach: beton, ztracene bedneni, roxor a kliny."
     },
     {
+      "id": "shared-material-omitka-listy-2026-07",
+      "category": "material",
+      "title": "Omitka, strisky a listy - driveway + WPC",
+      "project": "Driveway zidka / WPC zapadni plot",
+      "amount": 7639,
+      "split": "50/50",
+      "ourShare": 3819.5,
+      "counterpartyShare": 3819.5,
+      "paidBy": "us",
+      "settlementStatus": "reimbursable",
+      "receiptIds": [
+        "receipt-2026-07-14-mistral-obi-omitka-listy-tl"
+      ],
+      "note": "T+L uctenky z IMG_8601.JPG: Mistral omitka 4 356 Kc, OBI 1 039 Kc, OBI 1 404 Kc, strisky a rohove listy 840 Kc."
+    },
+    {
+      "id": "shared-material-tl-doplnkova-2026-07-15",
+      "category": "material",
+      "title": "T+L doplnkova uctenka",
+      "amount": 432,
+      "split": "50/50",
+      "ourShare": 216,
+      "counterpartyShare": 216,
+      "paidBy": "us",
+      "settlementStatus": "reimbursable",
+      "receiptIds": [
+        "receipt-2026-07-15-tl-doplnkova-uctenka"
+      ],
+      "note": "Sdilena doplnkova uctenka podle IMG_8603.JPG."
+    },
+    {
       "id": "shared-work-2026-06-23",
       "category": "work",
       "title": "Prace 23. 6. - sdilena cast 50 % dne",
@@ -180,15 +211,61 @@
       "settlementStatus": "reimbursable",
       "workDayId": "work-2026-07-07",
       "note": "Armovaci sterka na driveway zidce a podezdivce pod WPC, priprava na finalni silikonovou omitku Mistral silikon 1,5H TB. Pracovali Tatino a Vasil, Ivan tento den nepracoval."
+    },
+    {
+      "id": "shared-work-2026-07-08",
+      "category": "work",
+      "title": "Prace 8. 7. - spolecna zidka 1,5 h",
+      "amount": 1125,
+      "split": "50/50",
+      "ourShare": 562.5,
+      "counterpartyShare": 562.5,
+      "paidBy": "pending",
+      "settlementStatus": "reimbursable",
+      "workDayId": "work-2026-07-08",
+      "note": "Pouze sdilena cast dne 8. 7. Prace na dlazbe Loffelmanovych je vedena mimo 50/50 jako 100 % jejich naklad."
+    },
+    {
+      "id": "shared-work-2026-07-11",
+      "category": "work",
+      "title": "Prace 11. 7. - strisky a penetrace zidek",
+      "amount": 6000,
+      "split": "50/50",
+      "ourShare": 3000,
+      "counterpartyShare": 3000,
+      "paidBy": "pending",
+      "settlementStatus": "reimbursable",
+      "workDayId": "work-2026-07-11",
+      "note": "Cely den sdileny projekt 50/50: strisky a penetrace driveway zidky a zapadni zidky pod WPC."
+    },
+    {
+      "id": "shared-work-2026-07-15",
+      "category": "work",
+      "title": "Prace 15. 7. - omitky a plotova pole",
+      "amount": 9000,
+      "split": "50/50",
+      "ourShare": 4500,
+      "counterpartyShare": 4500,
+      "paidBy": "pending",
+      "settlementStatus": "reimbursable",
+      "workDayId": "work-2026-07-15",
+      "note": "Plna parta, sdileny projekt 50/50: omitky / dokoncovaci prace a plotova pole."
+    },
+    {
+      "id": "shared-work-2026-07-17",
+      "category": "work",
+      "title": "Prace 17. 7. - dokonceni driveway zidky",
+      "amount": 9000,
+      "split": "50/50",
+      "ourShare": 4500,
+      "counterpartyShare": 4500,
+      "paidBy": "pending",
+      "settlementStatus": "reimbursable",
+      "workDayId": "work-2026-07-17",
+      "note": "Plna triclenna parta, sdileny projekt 50/50. Dokoncovaci prace prevazne na strane Loffelmanovych nevytvari samostatnou pohledavku mimo sdileny zaklad."
     }
   ],
   "openItems": [
-    {
-      "id": "shared-facade-mistral",
-      "title": "Fasada - Mistral omitka silikon 1,5H TB",
-      "category": "material",
-      "status": "missing_amount"
-    },
     {
       "id": "shared-fasteners",
       "title": "Spojovaci material",
@@ -200,19 +277,13 @@
       "title": "Dlazba u spolecne zidky",
       "category": "material",
       "status": "needs_measurement"
-    },
-    {
-      "id": "shared-paving-work",
-      "title": "Pokladka dlazby",
-      "category": "work",
-      "status": "pending"
     }
   ],
   "totals": {
-    "knownMaterial": 77636,
-    "knownWork": 51450,
-    "knownSharedTotal": 129086,
-    "ourKnownShare": 64543,
-    "counterpartyKnownShare": 64543
+    "knownMaterial": 85707,
+    "knownWork": 76575,
+    "knownSharedTotal": 162282,
+    "ourKnownShare": 81141,
+    "counterpartyKnownShare": 81141
   }
 }

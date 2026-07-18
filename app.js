@@ -69,20 +69,45 @@
     const tbody = document.createElement("tbody");
     rows.forEach((row) => {
       const tr = document.createElement("tr");
-      row.forEach((cell) => tr.append(el("td", "", cell)));
+      row.forEach((cell) => tr.append(tableCell(cell)));
       tbody.append(tr);
     });
 
     if (total) {
       const tr = document.createElement("tr");
       tr.className = "total-row";
-      total.forEach((cell) => tr.append(el("td", "", cell)));
+      total.forEach((cell) => tr.append(tableCell(cell)));
       tbody.append(tr);
     }
 
     tableEl.append(tbody);
     wrap.append(tableEl);
     return wrap;
+  }
+
+  function tableCell(cell) {
+    const td = document.createElement("td");
+    if (cell && typeof cell === "object" && cell.badge) {
+      const tag = cell.href ? el("a", `table-status-badge ${cell.tone || ""}`.trim(), cell.badge) : el("span", `table-status-badge ${cell.tone || ""}`.trim(), cell.badge);
+      if (cell.title) tag.title = cell.title;
+      if (cell.href) {
+        tag.href = cell.href;
+        tag.target = "_blank";
+        tag.rel = "noreferrer";
+      }
+      td.append(tag);
+      return td;
+    }
+    if (cell && typeof cell === "object" && cell.href) {
+      const link = el("a", "table-link", cell.label || "Otevřít ↗");
+      link.href = cell.href;
+      link.target = "_blank";
+      link.rel = "noreferrer";
+      td.append(link);
+      return td;
+    }
+    td.textContent = text(cell);
+    return td;
   }
 
   function formatMoney(value) {

@@ -374,6 +374,76 @@
         }
       ],
       "note": "100 % nas naklad pro projekt Vychodni plot, mimo vyuctovani s Loffelmanovymi."
+    },
+    {
+      "id": "receipt-2026-07-14-mistral-obi-omitka-listy-tl",
+      "date": "2026-07-14",
+      "vendor": "Mistral Paints / OBI / stavebni material",
+      "amount": 7639,
+      "currency": "CZK",
+      "file": "assets/receipts/IMG_8601.JPG",
+      "status": "verified",
+      "lineItems": [
+        {
+          "title": "Mistral omitka silikonova 1,5H TB",
+          "date": "2026-07-14",
+          "totalWithVat": 4356
+        },
+        {
+          "title": "OBI material ke zidkam",
+          "date": "2026-07-11",
+          "totalWithVat": 1039
+        },
+        {
+          "title": "OBI material ke zidkam",
+          "date": "2026-07-10",
+          "totalWithVat": 1404
+        },
+        {
+          "title": "Strisky a rohove listy",
+          "date": "2026-07-11",
+          "totalWithVat": 840
+        }
+      ],
+      "split": {
+        "type": "50/50",
+        "ourShare": 3819.5,
+        "counterpartyShare": 3819.5
+      },
+      "linkedRecords": [
+        {
+          "type": "sharedCost",
+          "id": "shared-material-omitka-listy-2026-07"
+        }
+      ],
+      "note": "Sdileny material 50/50 s Loffelmanovymi pro driveway zidku a WPC zapadni plot. Hrazeno nami."
+    },
+    {
+      "id": "receipt-2026-07-15-tl-doplnkova-uctenka",
+      "date": "2026-07-15",
+      "vendor": "T+L doplnkova uctenka",
+      "amount": 432,
+      "currency": "CZK",
+      "file": "assets/receipts/IMG_8603.JPG",
+      "status": "verified",
+      "lineItems": [
+        {
+          "title": "Doplnkovy sdileny material T+L",
+          "totalWithVat": 432
+        }
+      ],
+      "split": {
+        "type": "50/50",
+        "ourShare": 216,
+        "counterpartyShare": 216
+      },
+      "linkedRecords": [
+        {
+          "type": "sharedCost",
+          "id": "shared-material-tl-doplnkova-2026-07-15"
+        }
+      ],
+      "note": "Sdileny material 50/50 s Loffelmanovymi. Zaevidovano podle IMG_8603.JPG."
     }
   ],
   "example": {
