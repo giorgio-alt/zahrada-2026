@@ -87,6 +87,13 @@
 
   function tableCell(cell) {
     const td = document.createElement("td");
+    if (cell && typeof cell === "object" && cell.party) {
+      const tag = el("span", "table-party-badge", cell.party);
+      if (cell.title) tag.title = cell.title;
+      td.className = "table-party-cell";
+      td.append(tag);
+      return td;
+    }
     if (cell && typeof cell === "object" && cell.badge) {
       const tag = cell.href ? el("a", `table-status-badge ${cell.tone || ""}`.trim(), cell.badge) : el("span", `table-status-badge ${cell.tone || ""}`.trim(), cell.badge);
       if (cell.title) tag.title = cell.title;
