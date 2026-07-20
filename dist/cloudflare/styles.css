@@ -874,6 +874,13 @@ tr:last-child td {
   background: rgba(255, 255, 255, 0.72);
 }
 
+.table-link-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
 .finance-detail-body .table-wrap {
   margin-top: 18px;
   border-radius: 22px;

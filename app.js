@@ -94,6 +94,24 @@
       td.append(tag);
       return td;
     }
+    if (cell && typeof cell === "object" && Array.isArray(cell.links)) {
+      const wrap = el("div", "table-link-list");
+      if (cell.badge || cell.label) {
+        const label = el("span", `table-status-badge ${cell.tone || ""}`.trim(), cell.badge || cell.label);
+        if (cell.title) label.title = cell.title;
+        wrap.append(label);
+      }
+      cell.links.forEach((item) => {
+        const link = el("a", "table-link", item.label || "Otevřít ↗");
+        link.href = item.href;
+        link.target = "_blank";
+        link.rel = "noreferrer";
+        if (item.title) link.title = item.title;
+        wrap.append(link);
+      });
+      td.append(wrap);
+      return td;
+    }
     if (cell && typeof cell === "object" && cell.badge) {
       const tag = cell.href ? el("a", `table-status-badge ${cell.tone || ""}`.trim(), cell.badge) : el("span", `table-status-badge ${cell.tone || ""}`.trim(), cell.badge);
       if (cell.title) tag.title = cell.title;

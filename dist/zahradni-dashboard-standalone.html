@@ -881,6 +881,13 @@ tr:last-child td {
   background: rgba(255, 255, 255, 0.72);
 }
 
+.table-link-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
 .finance-detail-body .table-wrap {
   margin-top: 18px;
   border-radius: 22px;
@@ -2388,7 +2395,7 @@ window.ZAHRADA_DASHBOARD = {
   },
   settlement: {
     intro:
-      "Průběžné vyúčtování položek, které se budou dělit rovným dílem mezi nás a Lofflemanovy. Jméno Loffleman označuje sousedy; projektová položka se jmenuje Zahradní přepažení.",
+      "Průběžný výpis položek, ze kterých vzniká částka k úhradě od Lofflemanových. Řádky 50 / 50 ukazují jejich polovinu, řádky 100 % Loffelmanovi vstupují celé. Jméno Loffleman označuje sousedy; projektová položka se jmenuje Zahradní přepažení.",
     cards: [
       ["Materiál 50 / 50", "split", "🪵 WPC desky + sloupky + příslušenství", "37 669 Kč", "Náš podíl: 18 834,50 Kč\nPodíl Lofflemanových: 18 834,50 Kč"],
       ["Materiál 50 / 50", "split", "🚗 Hliníkové plotové pole driveway", "14 721 Kč", "Náš podíl: 7 360,50 Kč\nPodíl Lofflemanových: 7 360,50 Kč"],
@@ -2400,14 +2407,14 @@ window.ZAHRADA_DASHBOARD = {
       ["Známý základ", "good", "💰 Aktuálně známé sdílené náklady", "162 282 Kč", "Náš podíl: 81 141 Kč\nPodíl Lofflemanových: 81 141 Kč"],
       ["Pohledávka", "wait", "🏡 Pohledávka za Loffelmanovými", "2 900 Kč", "Dlažba u Loffelmanových cca 2 m²: práce 1 500 Kč + materiál 1 400 Kč. Uhrazeno Trantinovými, 100 % náklad Loffelmanových, mimo 50 / 50 základ."],
     ],
-    headers: ["Položka", "👷 Parta", "Celkem", "Dělení", "Náš podíl", "Podíl Lofflemanových", "Stav"],
+    headers: ["Položka", "👷 Parta", "Celkem", "Dělení", "Náš čistý podíl", "K úhradě od Lofflemanových", "Doklad / stav"],
     rows: [
-      ["🪵 WPC desky + sloupky + příslušenství", "—", "37 669 Kč", "50 / 50", "18 834,50 Kč", "18 834,50 Kč", { badge: "Uhrazeno", tone: "good", title: "Zaplaceno / objednáno." }],
-      ["🚗 Hliníkové plotové pole driveway", "—", "14 721 Kč", "50 / 50", "7 360,50 Kč", "7 360,50 Kč", { badge: "Uhrazeno", tone: "good", title: "Zaplaceno námi." }],
-      ["🧱 Ztracené bednění a beton - Driveway zídka", "—", "12 282 Kč", "50 / 50", "6 141 Kč", "6 141 Kč", { badge: "Uhrazeno", tone: "good", title: "Zaplaceno námi. T+L účtenky, redukce na vozík vyřazeny." }],
-      ["🧱 OBI materiál k přepažení - účtenky ve várkách", "—", "12 964 Kč", "50 / 50", "6 482 Kč", "6 482 Kč", { badge: "Uhrazeno", tone: "good", title: "Zaplaceno námi." }],
-      ["🎨 Materiál omítka a lišty - driveway + WPC", "—", "7 639 Kč", "50 / 50", "3 819,50 Kč", "3 819,50 Kč", { badge: "Účtenka ↗", tone: "good", title: "Zaplaceno námi. Otevřít účtenku IMG_8601.JPG.", href: "assets/receipts/IMG_8601.JPG" }],
-      ["🧾 T+L doplňková účtenka", "—", "432 Kč", "50 / 50", "216 Kč", "216 Kč", { badge: "Účtenka ↗", tone: "good", title: "Zaevidováno. Otevřít účtenku IMG_8603.JPG.", href: "assets/receipts/IMG_8603.JPG" }],
+      ["🪵 WPC desky + sloupky + příslušenství", "—", "37 669 Kč", "50 / 50", "18 834,50 Kč", "18 834,50 Kč", { badge: "Doklad doplnit", tone: "wait", title: "Částka je evidovaná, ale v assets zatím není přímý soubor účtenky / objednávky." }],
+      ["🚗 Hliníkové plotové pole driveway", "—", "14 721 Kč", "50 / 50", "7 360,50 Kč", "7 360,50 Kč", { badge: "Doklad doplnit", tone: "wait", title: "Částka je evidovaná, ale v assets zatím není přímý soubor účtenky / objednávky." }],
+      ["🧱 Ztracené bednění a beton - Driveway zídka", "—", "12 282 Kč", "50 / 50", "6 141 Kč", "6 141 Kč", { badge: "Účtenky", tone: "good", title: "Zaplaceno námi. T+L účtenky, redukce na vozík vyřazeny.", links: [{ label: "IMG_8228 ↗", href: "assets/receipts/IMG_8228.JPG" }, { label: "IMG_8250 ↗", href: "assets/receipts/IMG_8250.JPG" }] }],
+      ["🧱 OBI materiál k přepažení - účtenky ve várkách", "—", "12 964 Kč", "50 / 50", "6 482 Kč", "6 482 Kč", { badge: "Účtenky", tone: "good", title: "Zaplaceno námi.", links: [{ label: "IMG_8198 ↗", href: "assets/receipts/IMG_8198.JPG" }, { label: "IMG_8199 ↗", href: "assets/receipts/IMG_8199.JPG" }, { label: "IMG_8200 ↗", href: "assets/receipts/IMG_8200.JPG" }, { label: "IMG_8201 ↗", href: "assets/receipts/IMG_8201.JPG" }] }],
+      ["🎨 Materiál omítka a lišty - driveway + WPC", "—", "7 639 Kč", "50 / 50", "3 819,50 Kč", "3 819,50 Kč", { badge: "Účtenka", tone: "good", title: "Zaplaceno námi. Otevřít účtenku IMG_8601.JPG.", links: [{ label: "IMG_8601 ↗", href: "assets/receipts/IMG_8601.JPG" }] }],
+      ["🧾 T+L doplňková účtenka", "—", "432 Kč", "50 / 50", "216 Kč", "216 Kč", { badge: "Účtenka", tone: "good", title: "Zaevidováno. Otevřít účtenku IMG_8603.JPG.", links: [{ label: "IMG_8603 ↗", href: "assets/receipts/IMG_8603.JPG" }] }],
       ["👷 Práce 23. 6. - sdílená část 50 % dne", { party: "👷×2", title: "2 osoby Ivanovy party" }, "4 500 Kč", "50 / 50", "2 250 Kč", "2 250 Kč", { badge: "Evidováno", tone: "split", title: "Sdílená práce 50 / 50." }],
       ["👷 Práce 24. 6. - sdílená část 75 % dne", { party: "👷×3", title: "3 osoby Ivanovy party" }, "6 750 Kč", "50 / 50", "3 375 Kč", "3 375 Kč", { badge: "Evidováno", tone: "split", title: "Sdílená práce 50 / 50." }],
       ["👷 Práce 25. 6. - sdílená část 75 % dne", { party: "👷×3", title: "3 osoby Ivanovy party" }, "6 750 Kč", "50 / 50", "3 375 Kč", "3 375 Kč", { badge: "Evidováno", tone: "split", title: "Sdílená práce 50 / 50." }],
@@ -2418,13 +2425,13 @@ window.ZAHRADA_DASHBOARD = {
       ["👷 Práce 2. 7. - driveway zídka", { party: "👷×3", title: "3 osoby Ivanovy party" }, "9 000 Kč", "50 / 50", "4 500 Kč", "4 500 Kč", { badge: "Evidováno", tone: "split", title: "Sdílená práce 50 / 50." }],
       ["👷 Práce 7. 7. - armovací stěrka a příprava na omítku", { party: "👷×2", title: "2 osoby Ivanovy party" }, "6 000 Kč", "50 / 50", "3 000 Kč", "3 000 Kč", { badge: "Evidováno", tone: "split", title: "Sdílená práce 50 / 50." }],
       ["👷 Práce 8. 7. - společná zídka 1,5 h", { party: "👷×2", title: "2 osoby Ivanovy party" }, "1 125 Kč", "50 / 50", "562,50 Kč", "562,50 Kč", { badge: "Evidováno", tone: "split", title: "Sdílená část dne, dlažba Loffelmanových je vedena mimo 50 / 50." }],
-      ["🏡 Pokládka dlažby u Löfflemanů", { party: "👷×2", title: "2 osoby Ivanovy party" }, "1 500 Kč", "100 % Loffelmanovi", "0 Kč", "1 500 Kč", { badge: "Pohledávka", tone: "wait", title: "100 % náklad Loffelmanových uhrazený Trantinovými." }],
-      ["🪨 Materiál dlažby Loffelmanových cca 2 m²", "—", "1 400 Kč", "100 % Loffelmanovi", "0 Kč", "1 400 Kč", { badge: "Pohledávka", tone: "wait", title: "100 % náklad Loffelmanových uhrazený Trantinovými." }],
+      ["🏡 Pokládka dlažby u Löfflemanů", { party: "👷×2", title: "2 osoby Ivanovy party" }, "1 500 Kč", "100 % Loffelmanovi", "0 Kč", "1 500 Kč", { badge: "Pohledávka", tone: "wait", title: "100 % náklad Loffelmanových uhrazený Trantinovými. Nezapočítává se do společného základu 50 / 50." }],
+      ["🪨 Materiál dlažby Loffelmanových cca 2 m²", "—", "1 400 Kč", "100 % Loffelmanovi", "0 Kč", "1 400 Kč", { badge: "Odvozeno", tone: "wait", title: "Dopočteno z dlažby 14 m²: cca 2 m² × 700 Kč. 100 % náklad Loffelmanových, mimo společný základ 50 / 50." }],
       ["👷 Práce 11. 7. - stříšky a penetrace zídek", { party: "👷×2", title: "2 osoby Ivanovy party" }, "6 000 Kč", "50 / 50", "3 000 Kč", "3 000 Kč", { badge: "Evidováno", tone: "split", title: "Sdílená práce 50 / 50." }],
       ["👷 Práce 15. 7. - omítky a plotová pole", { party: "👷×3", title: "3 osoby Ivanovy party" }, "9 000 Kč", "50 / 50", "4 500 Kč", "4 500 Kč", { badge: "Evidováno", tone: "split", title: "Sdílená práce 50 / 50." }],
       ["👷 Práce 17. 7. - dokončení driveway zídky", { party: "👷×3", title: "3 osoby Ivanovy party" }, "9 000 Kč", "50 / 50", "4 500 Kč", "4 500 Kč", { badge: "Evidováno", tone: "split", title: "Sdílený projekt bez samostatné pohledávky." }],
     ],
-    total: ["Známý společný základ", "", "162 282 Kč", "", "81 141 Kč", "81 141 Kč", "bez otevřených placeholderů"],
+    total: ["Celkem k úhradě od Loffelmanových", "", "165 182 Kč", "50 / 50 + 100 % L", "81 141 Kč", "84 041 Kč", "součet řádků bez přijatých plateb"],
     breakdown: [
       ["Materiál", "split", "📦 Materiál známý", "85 707 Kč", "Náš podíl: 42 853,50 Kč\nPodíl Lofflemanových: 42 853,50 Kč"],
       ["Práce", "split", "👷 Práce známá", "76 575 Kč", "Náš podíl: 38 287,50 Kč\nPodíl Lofflemanových: 38 287,50 Kč"],
@@ -2811,6 +2818,24 @@ window.ZAHRADA_DASHBOARD = {
       if (cell.title) tag.title = cell.title;
       td.className = "table-party-cell";
       td.append(tag);
+      return td;
+    }
+    if (cell && typeof cell === "object" && Array.isArray(cell.links)) {
+      const wrap = el("div", "table-link-list");
+      if (cell.badge || cell.label) {
+        const label = el("span", `table-status-badge ${cell.tone || ""}`.trim(), cell.badge || cell.label);
+        if (cell.title) label.title = cell.title;
+        wrap.append(label);
+      }
+      cell.links.forEach((item) => {
+        const link = el("a", "table-link", item.label || "Otevřít ↗");
+        link.href = item.href;
+        link.target = "_blank";
+        link.rel = "noreferrer";
+        if (item.title) link.title = item.title;
+        wrap.append(link);
+      });
+      td.append(wrap);
       return td;
     }
     if (cell && typeof cell === "object" && cell.badge) {
