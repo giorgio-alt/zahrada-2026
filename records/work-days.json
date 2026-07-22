@@ -251,17 +251,113 @@
       "status": "logged",
       "project": "Driveway zidka / Zahradni prepazeni",
       "note": "Cely den byl venovan priprave zidek na finalni fasadni omitku: armovaci sterka na driveway zidce, armovaci sterka na podezdivce pod WPC a priprava obou zidek na finalni silikonovou omitku Mistral silikon 1,5H TB. Ivan tento den nepracoval. Prace je sdilena 50/50 s Loffelmanovymi."
+    },
+    {
+      "id": "work-2026-07-08",
+      "date": "2026-07-08",
+      "dayRate": 3750,
+      "workers": [
+        "Tatino",
+        "Vasil"
+      ],
+      "ownProjectPercent": 30,
+      "sharedProjectPercent": 30,
+      "ownProjectAmount": 1125,
+      "sharedProjectAmount": 1125,
+      "loffelmanProjectAmount": 1500,
+      "ourSharedShare": 562.5,
+      "neighborSharedShare": 562.5,
+      "status": "logged",
+      "project": "Tapety / Zahradni prepazeni / Projekt Loffelmanovych",
+      "note": "Tatino a Vasil pracovali 5 hodin. Do naseho a sdileneho rozpoctu patri 2 250 Kc: Tapety 1 125 Kc a spolecna zidka 1 125 Kc. Pokladka dlazby u Loffelmanovych 1 500 Kc je 100 % jejich naklad hrazeny nami a nevstupuje do sdileneho zakladu."
+    },
+    {
+      "id": "work-2026-07-11",
+      "date": "2026-07-11",
+      "dayRate": 6000,
+      "workers": [
+        "Tatino",
+        "Vasil"
+      ],
+      "ownProjectPercent": 0,
+      "sharedProjectPercent": 100,
+      "ownProjectAmount": 0,
+      "sharedProjectAmount": 6000,
+      "ourSharedShare": 3000,
+      "neighborSharedShare": 3000,
+      "status": "logged",
+      "project": "Driveway zidka / Zapadni zidka pod WPC",
+      "note": "Lepeni strisek, penetrace a rezani strisek. Cely den je sdileny 50/50 s Loffelmanovymi."
+    },
+    {
+      "id": "work-2026-07-15",
+      "date": "2026-07-15",
+      "dayRate": 9000,
+      "workers": [
+        "Ivan",
+        "Vasil",
+        "Tatino"
+      ],
+      "ownProjectPercent": 0,
+      "sharedProjectPercent": 100,
+      "ownProjectAmount": 0,
+      "sharedProjectAmount": 9000,
+      "ourSharedShare": 4500,
+      "neighborSharedShare": 4500,
+      "status": "logged",
+      "project": "Driveway zidka / Zapadni zidka pod WPC",
+      "note": "Omitka, dokoncovaci prace a montaz plotovych poli. Cely den je sdileny 50/50 s Loffelmanovymi."
+    },
+    {
+      "id": "work-2026-07-17",
+      "date": "2026-07-17",
+      "dayRate": 9000,
+      "workers": [
+        "Ivan",
+        "Tatino",
+        "Vasil"
+      ],
+      "ownProjectPercent": 0,
+      "sharedProjectPercent": 100,
+      "ownProjectAmount": 0,
+      "sharedProjectAmount": 9000,
+      "ourSharedShare": 4500,
+      "neighborSharedShare": 4500,
+      "status": "logged",
+      "project": "Driveway zidka / Rozvody elektriny",
+      "note": "Dokonceni driveway zidky jako sdileneho projektu 50/50 a zahajeni rozvodu elektriny."
+    },
+    {
+      "id": "work-2026-07-21",
+      "date": "2026-07-21",
+      "dayRate": 9000,
+      "workers": [
+        "Ivan",
+        "Tatino",
+        "Vasil"
+      ],
+      "ownProjectPercent": 100,
+      "sharedProjectPercent": 0,
+      "ownProjectAmount": 9000,
+      "sharedProjectAmount": 0,
+      "ourSharedShare": 0,
+      "neighborSharedShare": 0,
+      "status": "logged",
+      "project": "Rozvody elektriny / Virivka",
+      "note": "Pokracovani vykopu elektroinstalace, pokladka husich krku a terenni upravy pro budouci umisteni virivky. 100 % nas projekt, mimo sdilene vyuctovani."
     }
   ],
   "totals": {
-    "days": 15,
-    "fullDays": 12,
-    "reducedDays": 3,
-    "totalWork": 126000,
-    "ownProjectAmount": 74550,
-    "sharedProjectAmount": 51450,
-    "ourSharedShare": 25725,
-    "neighborSharedShare": 25725,
-    "ourTotalWorkCost": 100275
+    "days": 20,
+    "fullDays": 15,
+    "reducedDays": 4,
+    "partialDays": 1,
+    "totalWork": 162750,
+    "ownProjectAmount": 84675,
+    "sharedProjectAmount": 76575,
+    "loffelmanProjectAmount": 1500,
+    "ourSharedShare": 38287.5,
+    "neighborSharedShare": 38287.5,
+    "ourTotalWorkCost": 122962.5
   }
 }

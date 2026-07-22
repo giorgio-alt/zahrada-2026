@@ -265,20 +265,10 @@
       "note": "Plna triclenna parta, sdileny projekt 50/50. Dokoncovaci prace prevazne na strane Loffelmanovych nevytvari samostatnou pohledavku mimo sdileny zaklad."
     }
   ],
-  "openItems": [
-    {
-      "id": "shared-fasteners",
-      "title": "Spojovaci material",
-      "category": "material",
-      "status": "ongoing"
-    },
-    {
-      "id": "shared-paving-wall",
-      "title": "Dlazba u spolecne zidky",
-      "category": "material",
-      "status": "needs_measurement"
-    }
-  ],
+  "openItems": [],
+  "status": "completed",
+  "completedOn": "2026-07-17",
+  "note": "Spolecny projekt s Loffelmanovymi byl dokoncen 17. 7. 2026. Dalsi prace probiha vyhradne na nasem pozemku.",
   "totals": {
     "knownMaterial": 85707,
     "knownWork": 76575,

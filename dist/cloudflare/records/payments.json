@@ -186,10 +186,10 @@
       "id": "liability-ivan-work-2026-06-17-26",
       "date": "2026-07-15",
       "type": "work_liability",
-      "title": "Prace Ivanovy party 17. 6.-17. 7.",
-      "amount": 153750,
+      "title": "Prace Ivanovy party 17. 6.-21. 7.",
+      "amount": 162750,
       "paidAmount": 134000,
-      "outstandingAmount": 19750,
+      "outstandingAmount": 28750,
       "paidBy": "us",
       "paidTo": "Ivanova parta",
       "status": "partially_paid",
@@ -216,10 +216,11 @@
         "work-2026-07-08",
         "work-2026-07-11",
         "work-2026-07-15",
-        "work-2026-07-17"
+        "work-2026-07-17",
+        "work-2026-07-21"
       ],
       "receiptIds": [],
-      "note": "Cista evidence prace Ivanovy party do 17. 7. 2026 bez materialu a uctenek. Dne 8. 7. je celkem k uhrade Ivanove parte 3 750 Kc: 2 250 Kc patri do naseho / sdileneho rozpoctu a 1 500 Kc je 100 % naklad Loffelmanovych hrazeny nami. Dne 17. 7. pracovala cela triclenna parta za 9 000 Kc na sdilenem projektu 50 / 50 a zahajeni rozvodu elektriny. Ivanovi bylo realne vyplaceno 72 000 Kc dne 30. 6. a 62 000 Kc dne 15. 7., celkem 134 000 Kc. Zbyva doplatit za praci 19 750 Kc."
+      "note": "Cista evidence prace Ivanovy party do 21. 7. 2026 bez materialu a uctenek. Dne 8. 7. je celkem k uhrade Ivanove parte 3 750 Kc: 2 250 Kc patri do naseho / sdileneho rozpoctu a 1 500 Kc je 100 % naklad Loffelmanovych hrazeny nami. Dne 17. 7. pracovala cela triclenna parta za 9 000 Kc na sdilenem projektu 50 / 50 a zahajeni rozvodu elektriny. Dne 21. 7. pracovala cela triclenna parta za 9 000 Kc na nasem projektu Rozvody elektriny / Virivka. Ivanovi bylo realne vyplaceno 72 000 Kc dne 30. 6. a 62 000 Kc dne 15. 7., celkem 134 000 Kc. Zbyva doplatit za praci 28 750 Kc."
     },
     {
       "id": "payment-ivan-partial-settlement-2026-06-30",
@@ -241,7 +242,7 @@
       "title": "Platba Ivanovi 15. 7.",
       "amount": 62000,
       "openBalanceReductionAmount": 62000,
-      "remainingBalanceAfterPayment": 10750,
+      "remainingBalanceAfterPayment": 28750,
       "paidBy": "us",
       "paidTo": "Ivan",
       "status": "paid",
@@ -249,7 +250,7 @@
         "liability-ivan-work-2026-06-17-26"
       ],
       "receiptIds": [],
-      "note": "Skutecna cashflow platba Ivanovi. Spolu s platbou 72 000 Kc ze dne 30. 6. tvori realne vyplaceno Ivanovi celkem 134 000 Kc. Uctenky hrazene Ivanem jsou vyrovnane a nejsou dale vedeny jako otevreny zavazek. Po zaevidovani prace 17. 7. zbyva doplatit za praci 19 750 Kc. Platba nesmi navysovat projektove naklady ani sdilene vyuctovani."
+      "note": "Skutecna cashflow platba Ivanovi. Spolu s platbou 72 000 Kc ze dne 30. 6. tvori realne vyplaceno Ivanovi celkem 134 000 Kc. Uctenky hrazene Ivanem jsou vyrovnane a nejsou dale vedeny jako otevreny zavazek. Po zaevidovani prace do 21. 7. zbyva doplatit za praci 28 750 Kc. Platba nesmi navysovat projektove naklady ani sdilene vyuctovani."
     }
   ]
 }
