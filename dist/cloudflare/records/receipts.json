@@ -444,6 +444,38 @@
         }
       ],
       "note": "Sdileny material 50/50 s Loffelmanovymi. Zaevidovano podle IMG_8603.JPG."
+    },
+    {
+      "id": "receipt-2026-07-27-bauhaus-paving-hot-tub",
+      "date": "2026-07-27",
+      "vendor": "BAUHAUS k.s.",
+      "amount": 20189.4,
+      "currency": "CZK",
+      "file": "assets/receipts/IMG_8699.JPG",
+      "status": "verified",
+      "lineItems": [
+        {
+          "title": "2cm FOG L.GREY 59,3x",
+          "quantity": 76,
+          "unit": "ks",
+          "unitPriceWithVat": 279.65,
+          "totalBeforeDiscountWithVat": 21253.4,
+          "discountWithVat": -1064,
+          "totalWithVat": 20189.4
+        }
+      ],
+      "split": {
+        "type": "private",
+        "ourShare": 20189.4,
+        "counterpartyShare": 0
+      },
+      "linkedRecords": [
+        {
+          "type": "payment",
+          "id": "payment-bauhaus-paving-hot-tub-2026-07-27"
+        }
+      ],
+      "note": "BAUHAUS uctenka z 27. 7. 2026 za dlazbu k projektu Virivka. Hrazeno nami, 100 % soukromy naklad mimo vyuctovani s Loffelmanovymi."
     }
   ],
   "example": {

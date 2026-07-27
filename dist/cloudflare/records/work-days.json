@@ -345,19 +345,57 @@
       "status": "logged",
       "project": "Rozvody elektriny / Virivka",
       "note": "Pokracovani vykopu elektroinstalace, pokladka husich krku a terenni upravy pro budouci umisteni virivky. 100 % nas projekt, mimo sdilene vyuctovani."
+    },
+    {
+      "id": "work-2026-07-25",
+      "date": "2026-07-25",
+      "dayRate": 9000,
+      "workers": [
+        "Ivan",
+        "Tatino",
+        "Vasil"
+      ],
+      "ownProjectPercent": 100,
+      "sharedProjectPercent": 0,
+      "ownProjectAmount": 9000,
+      "sharedProjectAmount": 0,
+      "ourSharedShare": 0,
+      "neighborSharedShare": 0,
+      "status": "logged",
+      "project": "Virivka / Osvetleni",
+      "note": "Pokracovani pripravy podkladu pro budouci virivku: vykop pro sterkove loze a priprava plochy pro budouci dlazbu pod virivkou. Soucasne instalace zavesneho svetla BOMMA v kuchyni. 100 % nas projekt, mimo sdilene vyuctovani."
+    },
+    {
+      "id": "work-2026-07-27",
+      "date": "2026-07-27",
+      "dayRate": 9000,
+      "workers": [
+        "Ivan",
+        "Tatino",
+        "Vasil"
+      ],
+      "ownProjectPercent": 100,
+      "sharedProjectPercent": 0,
+      "ownProjectAmount": 9000,
+      "sharedProjectAmount": 0,
+      "ourSharedShare": 0,
+      "neighborSharedShare": 0,
+      "status": "logged",
+      "project": "Virivka / Osvetleni",
+      "note": "Pokracovani pripravy podkladu pro virivku: pokracovani vykopu, odvoz vytezene zeminy, nakladka a vykladka dlazby. Soucasne instalace svetla v satne. 100 % nas projekt, mimo sdilene vyuctovani."
     }
   ],
   "totals": {
-    "days": 20,
-    "fullDays": 15,
+    "days": 22,
+    "fullDays": 17,
     "reducedDays": 4,
     "partialDays": 1,
-    "totalWork": 162750,
-    "ownProjectAmount": 84675,
+    "totalWork": 180750,
+    "ownProjectAmount": 102675,
     "sharedProjectAmount": 76575,
     "loffelmanProjectAmount": 1500,
     "ourSharedShare": 38287.5,
     "neighborSharedShare": 38287.5,
-    "ourTotalWorkCost": 122962.5
+    "ourTotalWorkCost": 140962.5
   }
 }
