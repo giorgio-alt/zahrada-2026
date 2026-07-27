@@ -469,6 +469,7 @@
     detailGrid.append(detailBlock("👷 Pracovali", listContent(detail.workers, "Nepracovalo se")));
     detailGrid.append(detailBlock("Hotovo", listContent(detail.done, day.title || "Nepracovalo se")));
     detailGrid.append(detailBlock("💰 Finance", financeContent(finance, day.type)));
+    if (finance?.extraRows?.length) detailGrid.append(detailBlock("📋 Souhrn dne", summaryContent(finance.extraRows)));
     detailGrid.append(detailBlock("Dotčené projekty", listContent(detail.projects, "Bez vazby na aktivní projekt")));
     container.append(detailGrid);
 
@@ -511,9 +512,6 @@
     if (finance.ourSharedShare !== undefined) wrap.append(financeRow("Náš podíl ze společné části", formatMoney(finance.ourSharedShare)));
     if (finance.neighborSharedShare !== undefined) wrap.append(financeRow("Podíl Lofflemanových", formatMoney(finance.neighborSharedShare)));
     if (finance.ourCost !== undefined) wrap.append(financeRow("Náš reálný náklad", formatMoney(finance.ourCost)));
-    if (Array.isArray(finance.extraRows)) {
-      finance.extraRows.forEach(([label, value]) => wrap.append(financeRow(label, value)));
-    }
     return wrap;
   }
 
@@ -521,6 +519,16 @@
     const row = el("div", "finance-row");
     row.append(el("span", "", label), el("strong", "", value));
     return row;
+  }
+
+  function summaryContent(rows) {
+    const wrap = el("div", "summary-list");
+    rows.forEach(([label, value]) => {
+      const row = el("div", "summary-row");
+      row.append(el("span", "", label), el("strong", "", value));
+      wrap.append(row);
+    });
+    return wrap;
   }
 
   function worklogDayKey(day) {
