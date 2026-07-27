@@ -34,6 +34,9 @@ Prace:
 - `logged` - zapsano
 - `approved` - odsouhlaseno
 - `paid` - zaplaceno
+- `partial` - castecne zaplaceno
+- `unpaid` - vyslovne nezaplaceno
+- `unallocated` - existuje souhrnna platba, ale neni urceno, ke kteremu dni patri
 
 ## Uctenky a obrazky
 
@@ -71,11 +74,26 @@ U kazdeho dne evidujeme:
 
 - datum
 - denni sazbu
+- pocet pracovniku / velikost party
+- hruby naklad dne k uhrade Ivanove parte
 - podil prace pro nas projekt
 - podil sdilene prace
 - castku pro nas projekt
 - castku sdilenou s Loffelmanovymi
-- stav zaplaceni
+- stav zaplaceni prace
+- pripadne konkretni prirazeni platby
+
+Naklad prace a uhrada prace jsou dve oddelene veci. Pracovni den zvysuje naklad ve chvili, kdy je odpracovany. Platba Ivanovi je cashflow proti zavazku a nesmi znovu navysovat rozpocet.
+
+Platby Ivanovi evidujeme samostatne. Pokud neni dolozeno, ktere konkretni dny platba pokryla, jednotlive pracovni dny musi zustat ve stavu `unallocated`. Dashboard potom muze pravdive ukazat celkem odpracovano, celkem zaplaceno a otevreny zavazek, ale nesmi tvrdit, ze konkretni den je proplaceny.
+
+Material a uctenky hrazene Ivanem jsou treti vrstva evidence. Uctenka patri do materialovych nakladu podle projektu; jeji proplaceni Ivanovi je jen cashflow a nesmi se zapocitat jako nova prace.
+
+## Vlastni, sdilene a sousedske naklady
+
+- Vlastni naklad patri 100 % Trantinovym.
+- Sdileny naklad 50 / 50 patri do spolecneho zakladu s Loffelmanovymi a deli se podle uvedeneho pomeru.
+- Sousedsky naklad hrazeny Trantinovymi patri 100 % Loffelmanovym. Nevstupuje do naseho rozpoctu ani do spolecneho zakladu, ale zvysuje pohledavku za Loffelmanovymi.
 
 ## Zdroj pravdy
 

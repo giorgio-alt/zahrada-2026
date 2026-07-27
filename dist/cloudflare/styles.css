@@ -27,6 +27,21 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 body {
   margin: 0;
   min-width: 320px;
@@ -78,6 +93,15 @@ body {
 .nav a:hover {
   background: rgba(255, 255, 255, 0.52);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 10px 28px rgba(70, 49, 30, 0.1);
+}
+
+.nav a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid rgba(79, 116, 128, 0.62);
+  outline-offset: 3px;
 }
 
 .nav a.is-active {
@@ -590,6 +614,17 @@ p {
   margin: 0 0 18px;
 }
 
+.finance-notice {
+  margin: 18px 0 0;
+  padding: 14px 16px;
+  border: 1px solid rgba(185, 130, 40, 0.24);
+  border-radius: 16px;
+  color: var(--brown-deep);
+  background: rgba(255, 255, 255, 0.34);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.58);
+  font-weight: 750;
+}
+
 .finance-metric-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
@@ -957,6 +992,16 @@ tr:last-child td {
 
 .table-status-badge.split {
   background: linear-gradient(135deg, var(--blue-gray), #365965);
+}
+
+.table-status-badge.neutral {
+  color: var(--brown-deep);
+  background: rgba(255, 255, 255, 0.58);
+  border-color: rgba(93, 68, 47, 0.18);
+}
+
+.table-status-badge.risk {
+  background: linear-gradient(135deg, var(--red), #78352d);
 }
 
 .table-status-badge:hover {
@@ -1371,6 +1416,11 @@ tr:last-child td {
   font-size: 17px;
   text-align: right;
   white-space: normal;
+}
+
+.payment-status-inline {
+  display: inline-flex;
+  justify-content: flex-end;
 }
 
 .summary-list {

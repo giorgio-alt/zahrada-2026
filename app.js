@@ -222,7 +222,7 @@
   function renderFinance() {
     const section = document.querySelector("#finance");
     sectionTitle(section, "💰 Finance", "Rychlý přehled klíčových finančních pohledů. Detail každé oblasti je sbalený níže.");
-    section.append(financeOverviewGrid(data.finance.overview));
+    section.append(financeOverviewGrid(financeOverviewItems()));
 
     section.append(
       financeDetail("💰 Detail celkové investice", [
@@ -239,25 +239,20 @@
     );
 
     section.append(
-      financeDetail("🤝 Detail vyúčtování s Löffelmanovými", [
-        financeTupleMetrics(data.settlement.cards),
-        table(data.settlement.headers, data.settlement.rows, data.settlement.total),
-        financeTupleMetrics(data.settlement.breakdown),
-      ])
-    );
-
-    section.append(
-      financeDetail("💸 Vyrovnání s Löffelmanovými", [
+      financeDetail("🤝 Archiv vyúčtování s Löffelmanovými", [
         financeTupleMetrics(data.settlementReceivable.cards),
         totalsGrid(data.settlementReceivable.formula),
+        table(data.settlement.headers, data.settlement.rows, data.settlement.total),
+        financeTupleMetrics(data.settlement.breakdown),
         table(data.settlementReceivable.headers, data.settlementReceivable.rows, data.settlementReceivable.total),
-      ], data.settlementReceivable.note)
+      ], "Uzavřený historický detail společného projektu dokončeného 17. 7. 2026. Blok zůstává zavřený, aby archiv nepřebíjel aktivní práci.")
     );
 
     section.append(
       financeDetail("👷 Detail Ivanovy party", [
-        financeTupleMetrics(data.workCosts.cards),
-        table(data.workCosts.headers, data.workCosts.rows, data.workCosts.total),
+        financeTupleMetrics(workPaymentSummaryCards()),
+        notice(data.workPaymentLedger?.note || "Platby zatím nejsou přiřazené ke konkrétním pracovním dnům."),
+        table(workPaymentHeaders(), workPaymentRows(), workPaymentTotalRow()),
       ], data.workCosts.note)
     );
   }
@@ -266,6 +261,23 @@
     const node = el("div", "finance-overview-grid");
     items.forEach((item) => node.append(financeOverviewCard(item)));
     return node;
+  }
+
+  function financeOverviewItems() {
+    return (data.finance.overview || []).map((item) => {
+      if (!normalizeText(item.title).includes("ivanova parta")) return item;
+      const summary = calculateWorkTotals();
+      return {
+        ...item,
+        metrics: [
+          ["Celková práce", formatMoney(summary.totalWork)],
+          ["Vyplaceno Ivanovi celkem", formatMoney(summary.paidTotal)],
+          ["Účtenky Ivanovi", "✅ vyrovnáno"],
+          ["Zbývá doplatit za práci", formatMoney(summary.openBalance)],
+          ["Dny", `${summary.workDays} pracovních záznamů`],
+        ],
+      };
+    });
   }
 
   function financeOverviewCard(item) {
@@ -374,6 +386,111 @@
     return details;
   }
 
+  function notice(message) {
+    const node = el("p", "finance-notice", message);
+    return node;
+  }
+
+  function workPaymentHeaders() {
+    return ["Datum", "Práce", "Parta", "Cena dne", "Stav platby", "Platba"];
+  }
+
+  function workPaymentRows() {
+    return workPaymentDays().map(({ day, cost, status, allocation }) => [
+      worklogDisplayDate(day),
+      day.short || day.title || "Pracovní den",
+      { party: `👷×${crewSizeForDay(day)}`, title: `${crewSizeForDay(day)} osob(y) Ivanovy party` },
+      formatMoney(cost),
+      paymentStatusCell(status),
+      allocation ? `${allocation.paymentId} / ${formatMoney(allocation.amount)}` : "—",
+    ]);
+  }
+
+  function workPaymentTotalRow() {
+    const summary = calculateWorkTotals();
+    return ["Kontrola", "celková práce − zaplaceno", "", formatMoney(summary.totalWork), paymentStatusCell(summary.openBalance > 0 ? "partial" : "paid"), formatMoney(summary.openBalance)];
+  }
+
+  function workPaymentSummaryCards() {
+    const summary = calculateWorkTotals();
+    return [
+      ["Práce", "good", "Celková evidovaná práce", formatMoney(summary.totalWork), `${summary.workDays} pracovních záznamů v deníku.`],
+      ["Platby", "good", "Celkem zaplaceno Ivanovi", formatMoney(summary.paidTotal), (data.workPaymentLedger?.payments || []).map((payment) => `${payment.date}: ${formatMoney(payment.amount)}`).join("\n")],
+      ["Přiřazeno", summary.allocatedPaid ? "good" : "neutral", "Práce explicitně proplacená", formatMoney(summary.allocatedPaid), "Pouze částky spárované s konkrétním pracovním dnem."],
+      ["Neproplaceno", summary.explicitUnpaid ? "risk" : "neutral", "Práce explicitně neproplacená", formatMoney(summary.explicitUnpaid), "Nezahrnuje dny, kde platba zatím není spárovaná."],
+      ["Nepřiřazeno", "wait", "Platby bez přiřazení ke dnům", formatMoney(summary.unallocatedPayments), "Souhrnné platby existují, ale nejsou alokované na konkrétní dny."],
+      ["Závazek", summary.openBalance ? "wait" : "good", "Účetní otevřený závazek", formatMoney(summary.openBalance), `${formatMoney(summary.totalWork)} − ${formatMoney(summary.paidTotal)}.`],
+    ];
+  }
+
+  function calculateWorkTotals() {
+    const days = workPaymentDays();
+    const totalWork = days.reduce((sum, item) => sum + item.cost, 0);
+    const payments = data.workPaymentLedger?.payments || [];
+    const paidTotal = payments.reduce((sum, payment) => sum + Number(payment.amount || 0), 0);
+    const allocatedPaid = days.reduce((sum, item) => sum + Number(item.allocation?.amount || 0), 0);
+    const explicitUnpaid = days.filter((item) => item.status === "unpaid").reduce((sum, item) => sum + item.cost, 0);
+    const unallocatedPayments = Math.max(0, paidTotal - allocatedPaid);
+    return {
+      workDays: days.length,
+      totalWork,
+      paidTotal,
+      allocatedPaid,
+      explicitUnpaid,
+      unallocatedPayments,
+      openBalance: totalWork - paidTotal,
+    };
+  }
+
+  function workPaymentDays() {
+    return (data.worklog?.days || [])
+      .filter((day) => day.detail?.finance && workDayCost(day) > 0)
+      .sort((a, b) => worklogDateValue(a) - worklogDateValue(b))
+      .map((day) => {
+        const allocation = calculatePaymentAllocation(day);
+        return {
+          day,
+          cost: workDayCost(day),
+          status: day.detail?.finance?.paymentStatus || (allocation ? "paid" : data.workPaymentLedger?.defaultStatus || "unallocated"),
+          allocation,
+        };
+      });
+  }
+
+  function workDayCost(day) {
+    const finance = day.detail?.finance;
+    if (!finance) return 0;
+    return Number(finance.grossTotal ?? finance.total ?? 0);
+  }
+
+  function crewSizeForDay(day) {
+    return (day.detail?.workers || []).length || 0;
+  }
+
+  function calculatePaymentAllocation(day) {
+    const key = worklogDayKey(day);
+    return (data.workPaymentLedger?.allocations || []).find((allocation) => allocation.workDayId === key || allocation.date === day.detail?.date) || null;
+  }
+
+  function paymentStatusCell(status) {
+    const map = {
+      paid: { badge: "✅ Proplaceno", tone: "good", title: "Pracovní den je plně pokryt konkrétní platbou." },
+      partial: { badge: "🟡 Částečně", tone: "wait", title: "Pracovní den nebo celkový závazek je pokrytý jen částečně." },
+      unpaid: { badge: "🔴 Neproplaceno", tone: "risk", title: "Pracovní den je výslovně označený jako neproplacený." },
+      unallocated: { badge: "⚪ Nepřiřazeno", tone: "neutral", title: "Platby jsou evidované souhrnně, ale tento den není spárovaný s konkrétní platbou." },
+    };
+    return map[status] || map.unallocated;
+  }
+
+  function paymentStatusBadge(status) {
+    const cell = paymentStatusCell(status);
+    const node = el("strong", "payment-status-inline");
+    const tag = el("span", `table-status-badge ${cell.tone || ""}`.trim(), cell.badge);
+    if (cell.title) tag.title = cell.title;
+    node.append(tag);
+    return node;
+  }
+
   function renderWorklog() {
     const section = document.querySelector("#worklog");
     const calendar = data.worklog;
@@ -468,7 +585,7 @@
     const detailGrid = el("div", "detail-grid");
     detailGrid.append(detailBlock("👷 Pracovali", listContent(detail.workers, "Nepracovalo se")));
     detailGrid.append(detailBlock("Hotovo", listContent(detail.done, day.title || "Nepracovalo se")));
-    detailGrid.append(detailBlock("💰 Finance", financeContent(finance, day.type)));
+    detailGrid.append(detailBlock("💰 Finance", financeContent(finance, day.type, day)));
     if (finance?.extraRows?.length) detailGrid.append(detailBlock("📋 Souhrn dne", summaryContent(finance.extraRows)));
     detailGrid.append(detailBlock("Dotčené projekty", listContent(detail.projects, "Bez vazby na aktivní projekt")));
     container.append(detailGrid);
@@ -493,7 +610,7 @@
     return list;
   }
 
-  function financeContent(finance, type) {
+  function financeContent(finance, type, day) {
     const wrap = el("div", "finance-list");
     if (!finance) {
       wrap.append(financeRow("Celkem", type === "off" ? "0 Kč" : "Doplnit"));
@@ -512,6 +629,7 @@
     if (finance.ourSharedShare !== undefined) wrap.append(financeRow("Náš podíl ze společné části", formatMoney(finance.ourSharedShare)));
     if (finance.neighborSharedShare !== undefined) wrap.append(financeRow("Podíl Lofflemanových", formatMoney(finance.neighborSharedShare)));
     if (finance.ourCost !== undefined) wrap.append(financeRow("Náš reálný náklad", formatMoney(finance.ourCost)));
+    wrap.append(paymentStatusRow(day));
     return wrap;
   }
 
@@ -519,6 +637,18 @@
     const row = el("div", "finance-row");
     row.append(el("span", "", label), el("strong", "", value));
     return row;
+  }
+
+  function paymentStatusRow(day) {
+    const row = el("div", "finance-row payment-status-row");
+    const status = paymentStatusForDay(day);
+    row.append(el("span", "", "Stav úhrady práce"), paymentStatusBadge(status));
+    return row;
+  }
+
+  function paymentStatusForDay(day) {
+    if (!day?.detail?.finance || workDayCost(day) <= 0) return "unallocated";
+    return day.detail.finance.paymentStatus || (calculatePaymentAllocation(day) ? "paid" : data.workPaymentLedger?.defaultStatus || "unallocated");
   }
 
   function summaryContent(rows) {
@@ -796,7 +926,7 @@
   }
 
   function projectSource(project) {
-    const normalizedTitle = normalizeText(project.title);
+    const normalizedTitle = normalizeText(project.sourceTitle || project.title);
     return (data.projects || []).find(([title]) => normalizeText(title).includes(normalizedTitle));
   }
 
@@ -818,7 +948,7 @@
   }
 
   function projectSearchTerms(project) {
-    return [project.title, ...(project.aliases || [])].map(normalizeText).filter(Boolean);
+    return [project.id, ...(project.archivedProjectIds || []), project.title, project.sourceTitle, ...(project.aliases || [])].map(normalizeText).filter(Boolean);
   }
 
   function normalizeText(value) {
@@ -910,11 +1040,11 @@
     renderNav();
     renderOverview();
     renderRecentChanges();
-    renderDocuments();
-    renderFinance();
-    renderWorklog();
     renderProjects();
+    renderWorklog();
+    renderFinance();
     renderPlan();
+    renderDocuments();
     renderElectricity();
     renderTimeline();
     renderMissing();
