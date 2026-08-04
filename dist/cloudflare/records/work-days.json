@@ -471,19 +471,41 @@
       "grossTotal": 9000,
       "paymentStatus": "unallocated",
       "paymentAllocation": null
+    },
+    {
+      "id": "work-2026-08-03",
+      "date": "2026-08-03",
+      "dayRate": 6000,
+      "workers": [
+        "Tatino",
+        "Vasil"
+      ],
+      "ownProjectPercent": 100,
+      "sharedProjectPercent": 0,
+      "ownProjectAmount": 6000,
+      "sharedProjectAmount": 0,
+      "ourSharedShare": 0,
+      "neighborSharedShare": 0,
+      "status": "logged",
+      "project": "Virivka / zpevnene plochy",
+      "note": "Dvouclenna parta Tatino a Vasil pokracovala ve vykopovych pracich pod budouci virivkou, navezla a rozprostrela sterk 0/32 a pripravila podklad pro nasledne hutneni. 100 % nas projekt, mimo sdilene vyuctovani.",
+      "crewSize": 2,
+      "grossTotal": 6000,
+      "paymentStatus": "unallocated",
+      "paymentAllocation": null
     }
   ],
   "totals": {
-    "days": 22,
+    "days": 23,
     "fullDays": 17,
-    "reducedDays": 4,
+    "reducedDays": 5,
     "partialDays": 1,
-    "totalWork": 180750,
-    "ownProjectAmount": 102675,
+    "totalWork": 186750,
+    "ownProjectAmount": 108675,
     "sharedProjectAmount": 76575,
     "loffelmanProjectAmount": 1500,
     "ourSharedShare": 38287.5,
     "neighborSharedShare": 38287.5,
-    "ourTotalWorkCost": 140962.5
+    "ourTotalWorkCost": 146962.5
   }
 }
