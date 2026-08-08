@@ -493,19 +493,42 @@
       "grossTotal": 6000,
       "paymentStatus": "unallocated",
       "paymentAllocation": null
+    },
+    {
+      "id": "work-2026-08-08",
+      "date": "2026-08-08",
+      "dayRate": 9000,
+      "workers": [
+        "Ivan",
+        "Tatino",
+        "Vasil"
+      ],
+      "ownProjectPercent": 100,
+      "sharedProjectPercent": 0,
+      "ownProjectAmount": 9000,
+      "sharedProjectAmount": 0,
+      "ourSharedShare": 0,
+      "neighborSharedShare": 0,
+      "status": "logged",
+      "project": "Zpevnene plochy / obrubnikove zaklady",
+      "note": "Plna triclenna parta Ivan, Tatino a Vasil pracovala na tvorbe obrubnikovych zakladu. 100 % nas projekt, mimo sdilene vyuctovani. Ivanovi bylo predano 10 000 Kc v hotovosti, ale jde pouze o poznamku pro budouci vyrovnani zavazku, nikoli ucetni pohyb.",
+      "crewSize": 3,
+      "grossTotal": 9000,
+      "paymentStatus": "unallocated",
+      "paymentAllocation": null
     }
   ],
   "totals": {
-    "days": 23,
-    "fullDays": 17,
+    "days": 24,
+    "fullDays": 18,
     "reducedDays": 5,
     "partialDays": 1,
-    "totalWork": 186750,
-    "ownProjectAmount": 108675,
+    "totalWork": 195750,
+    "ownProjectAmount": 117675,
     "sharedProjectAmount": 76575,
     "loffelmanProjectAmount": 1500,
     "ourSharedShare": 38287.5,
     "neighborSharedShare": 38287.5,
-    "ourTotalWorkCost": 146962.5
+    "ourTotalWorkCost": 155962.5
   }
 }
