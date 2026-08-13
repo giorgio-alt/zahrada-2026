@@ -516,19 +516,65 @@
       "grossTotal": 9000,
       "paymentStatus": "unallocated",
       "paymentAllocation": null
+    },
+    {
+      "id": "work-2026-08-11",
+      "date": "2026-08-11",
+      "dayRate": 4500,
+      "workers": [
+        "Ivan (0,5 dne)",
+        "Tatino (0,5 dne)",
+        "Vasil (0,5 dne)"
+      ],
+      "ownProjectPercent": 100,
+      "sharedProjectPercent": 0,
+      "ownProjectAmount": 4500,
+      "sharedProjectAmount": 0,
+      "ourSharedShare": 0,
+      "neighborSharedShare": 0,
+      "status": "logged",
+      "project": "Virivka / dlazba / elektro",
+      "note": "Puldne cele party: uklid a prace se sterkem, doplneni sterkoveho loze pod virivku, prvni pokladka dlazby a rezani dlazby. Soucasne byla uzavrena navsteva taty kvuli elektrice. 100 % nas projekt, mimo sdilene vyuctovani.",
+      "crewSize": 1.5,
+      "grossTotal": 4500,
+      "paymentStatus": "unallocated",
+      "paymentAllocation": null
+    },
+    {
+      "id": "work-2026-08-13",
+      "date": "2026-08-13",
+      "dayRate": 9000,
+      "workers": [
+        "Ivan",
+        "Tatino",
+        "Vasil"
+      ],
+      "ownProjectPercent": 100,
+      "sharedProjectPercent": 0,
+      "ownProjectAmount": 9000,
+      "sharedProjectAmount": 0,
+      "ourSharedShare": 0,
+      "neighborSharedShare": 0,
+      "status": "logged",
+      "project": "Rozvody elektriny / Virivka",
+      "note": "Plna triclenna parta tahala elektricke rozvody a pokracovala v realizaci venkovni elektroinstalace. Soucasne byl finalizovan podklad dlazby pro virivku. 100 % nas projekt, mimo sdilene vyuctovani.",
+      "crewSize": 3,
+      "grossTotal": 9000,
+      "paymentStatus": "unallocated",
+      "paymentAllocation": null
     }
   ],
   "totals": {
-    "days": 24,
-    "fullDays": 18,
+    "days": 26,
+    "fullDays": 19,
     "reducedDays": 5,
-    "partialDays": 1,
-    "totalWork": 195750,
-    "ownProjectAmount": 117675,
+    "partialDays": 2,
+    "totalWork": 209250,
+    "ownProjectAmount": 131175,
     "sharedProjectAmount": 76575,
     "loffelmanProjectAmount": 1500,
     "ourSharedShare": 38287.5,
     "neighborSharedShare": 38287.5,
-    "ourTotalWorkCost": 155962.5
+    "ourTotalWorkCost": 169462.5
   }
 }

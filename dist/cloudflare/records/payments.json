@@ -115,6 +115,21 @@
       "note": "Nesdileny OBI material. Zahrnuje puvodni uctenku 927 Kc, beton oznaceny pouze T za 2 475 Kc a proplacenou Ivanovu OBI uctenku za 458 Kc. Nepatri do vyuctovani s Loffelmanovymi."
     },
     {
+      "id": "payment-shared-omitka-listy-2026-07",
+      "date": "2026-07-14",
+      "type": "shared_expense",
+      "title": "Omitka, strisky a listy - Driveway + WPC",
+      "amount": 7639,
+      "paidBy": "us",
+      "paidTo": "Mistral Paints / OBI / stavebni material",
+      "status": "paid",
+      "sharedCostId": "shared-material-omitka-listy-2026-07",
+      "receiptIds": [
+        "receipt-2026-07-14-mistral-obi-omitka-listy-tl"
+      ],
+      "note": "T+L uctenky za omitku, strisky a navazujici material pro driveway zidku a WPC zapadni plot. Sdileny naklad 50/50 s Loffelmanovymi, hrazeno nami."
+    },
+    {
       "id": "payment-podhrabove-desky-2026-07-04",
       "date": "2026-07-04",
       "type": "private_expense",
@@ -201,23 +216,68 @@
       "id": "payment-gravel-032-hot-tub-2026-08-03",
       "date": "2026-08-03",
       "type": "private_expense",
-      "title": "Sterk 0/32 - virivka / zpevnene plochy",
-      "amount": 4900,
+      "title": "Sterk 0/32 + 0/8 - virivka / zpevnene plochy",
+      "amount": 8200,
       "paidBy": "us",
       "paidTo": "dodavatel sterku",
       "status": "paid",
       "project": "Virivka / zpevnene plochy",
       "receiptIds": [],
-      "note": "Sterk 0/32 pro projekt Virivka / zpevnene plochy. 100 % nas naklad mimo vyuctovani s Loffelmanovymi. Cena bude pozdeji doplnena o pripadne dalsi dodavky sterku."
+      "note": "4 m3 sterku frakce 0/32 + 0/8 bez dokladu pro projekt Virivka / zpevnene plochy. 100 % nas naklad mimo vyuctovani s Loffelmanovymi. Mnozstvi a cena nejsou dale delene mezi frakce, protoze rozpad neni znamy."
+    },
+    {
+      "id": "payment-kv-elektro-cables-2026-08-13",
+      "date": "2026-08-13",
+      "type": "private_expense",
+      "title": "K&V Elektro - kabely a gelova spojka",
+      "amount": 10684.01,
+      "paidBy": "us",
+      "paidTo": "K&V ELEKTRO a.s.",
+      "status": "paid",
+      "project": "Rozvody elektriny",
+      "receiptIds": [
+        "receipt-2026-08-13-kv-elektro-cables"
+      ],
+      "note": "Faktura c. 9113896869 z 13. 8. 2026. Kabely CYKY-J a gelova spojka pro rozvody elektriny. 100 % nas naklad mimo vyuctovani s Loffelmanovymi."
+    },
+    {
+      "id": "payment-kv-elektro-frame-2026-08-13",
+      "date": "2026-08-13",
+      "type": "private_expense",
+      "title": "K&V Elektro - ABB ramecek",
+      "amount": 115.37,
+      "paidBy": "us",
+      "paidTo": "K&V ELEKTRO a.s.",
+      "status": "paid",
+      "project": "Rozvody elektriny",
+      "receiptIds": [
+        "receipt-2026-08-13-kv-elektro-frame"
+      ],
+      "note": "Faktura c. 9113896846 z 13. 8. 2026 za ABB Zoni ctyrramecek. 100 % nas naklad mimo vyuctovani s Loffelmanovymi."
+    },
+    {
+      "id": "payment-obi-paving-tools-2026-08-13",
+      "date": "2026-08-13",
+      "type": "private_expense",
+      "title": "OBI - pomucky k dlazbe / TBD",
+      "amount": 323,
+      "paidBy": "us",
+      "paidTo": "OBI Ceska republika s.r.o.",
+      "status": "paid",
+      "project": "Virivka / zpevnene plochy / TBD",
+      "receiptIds": [
+        "receipt-2026-08-13-obi-paving-tools"
+      ],
+      "note": "OBI uctenka z 13. 8. 2026. Krizky sparovaci a snura zednicka patri k dlazbe / zpevnenym plocham; polozka za 99 Kc je z fotografie necitelna a zustava TBD - vyzaduje prirazeni."
     },
     {
       "id": "liability-ivan-work-2026-06-17-26",
-      "date": "2026-07-15",
+      "date": "2026-08-13",
       "type": "work_liability",
-      "title": "Prace Ivanovy party 17. 6.-6. 8.",
-      "amount": 195750,
+      "title": "Prace Ivanovy party 17. 6.-13. 8.",
+      "amount": 209250,
       "paidAmount": 134000,
-      "outstandingAmount": 61750,
+      "outstandingAmount": 75250,
       "paidBy": "us",
       "paidTo": "Ivanova parta",
       "status": "partially_paid",
@@ -249,10 +309,12 @@
         "work-2026-07-25",
         "work-2026-07-27",
         "work-2026-08-03",
-        "work-2026-08-06"
+        "work-2026-08-06",
+        "work-2026-08-11",
+        "work-2026-08-13"
       ],
       "receiptIds": [],
-      "note": "Cista evidence prace Ivanovy party do 6. 8. 2026 bez materialu a uctenek. Dne 8. 7. je celkem k uhrade Ivanove parte 3 750 Kc: 2 250 Kc patri do naseho / sdileneho rozpoctu a 1 500 Kc je 100 % naklad Loffelmanovych hrazeny nami. Dne 17. 7. pracovala cela triclenna parta za 9 000 Kc na sdilenem projektu 50 / 50 a zahajeni rozvodu elektriny. Dny 21., 25., 27. 7. a 6. 8. byly vedeny jako 100 % nas projekt, dne 3. 8. pracovala dvouclenna parta za 6 000 Kc take jako 100 % nas projekt. Ivanovi bylo realne vyplaceno 72 000 Kc dne 30. 6. a 62 000 Kc dne 15. 7., celkem 134 000 Kc. Zbyva doplatit za praci 61 750 Kc."
+      "note": "Cista evidence prace Ivanovy party do 13. 8. 2026 bez materialu a uctenek. Dne 8. 7. je celkem k uhrade Ivanove parte 3 750 Kc: 2 250 Kc patri do naseho / sdileneho rozpoctu a 1 500 Kc je 100 % naklad Loffelmanovych hrazeny nami. Dne 17. 7. pracovala cela triclenna parta za 9 000 Kc na sdilenem projektu 50 / 50 a zahajeni rozvodu elektriny. Dny 21., 25., 27. 7., 6. 8., 11. 8. a 13. 8. byly vedeny jako 100 % nas projekt, dne 3. 8. pracovala dvouclenna parta za 6 000 Kc take jako 100 % nas projekt. Ivanovi bylo realne vyplaceno 72 000 Kc dne 30. 6. a 62 000 Kc dne 15. 7., celkem 134 000 Kc. Zbyva doplatit za praci 75 250 Kc."
     },
     {
       "id": "payment-ivan-partial-settlement-2026-06-30",
@@ -274,7 +336,7 @@
       "title": "Platba Ivanovi 15. 7.",
       "amount": 62000,
       "openBalanceReductionAmount": 62000,
-      "remainingBalanceAfterPayment": 61750,
+      "remainingBalanceAfterPayment": 75250,
       "paidBy": "us",
       "paidTo": "Ivan",
       "status": "paid",
@@ -282,7 +344,7 @@
         "liability-ivan-work-2026-06-17-26"
       ],
       "receiptIds": [],
-      "note": "Skutecna cashflow platba Ivanovi. Spolu s platbou 72 000 Kc ze dne 30. 6. tvori realne vyplaceno Ivanovi celkem 134 000 Kc. Uctenky hrazene Ivanem jsou vyrovnane a nejsou dale vedeny jako otevreny zavazek. Po zaevidovani prace do 6. 8. zbyva doplatit za praci 61 750 Kc. Platba nesmi navysovat projektove naklady ani sdilene vyuctovani."
+      "note": "Skutecna cashflow platba Ivanovi. Spolu s platbou 72 000 Kc ze dne 30. 6. tvori realne vyplaceno Ivanovi celkem 134 000 Kc. Uctenky hrazene Ivanem jsou vyrovnane a nejsou dale vedeny jako otevreny zavazek. Po zaevidovani prace do 13. 8. zbyva doplatit za praci 75 250 Kc. Platba nesmi navysovat projektove naklady ani sdilene vyuctovani."
     }
   ]
 }

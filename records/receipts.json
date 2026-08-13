@@ -476,6 +476,166 @@
         }
       ],
       "note": "BAUHAUS uctenka z 27. 7. 2026 za dlazbu k projektu Virivka. Hrazeno nami, 100 % soukromy naklad mimo vyuctovani s Loffelmanovymi."
+    },
+    {
+      "id": "receipt-2026-08-13-kv-elektro-cables",
+      "date": "2026-08-13",
+      "vendor": "K&V ELEKTRO a.s.",
+      "invoiceNumber": "9113896869",
+      "amount": 10684.01,
+      "currency": "CZK",
+      "file": "assets/receipts/IMG_8786.JPG",
+      "status": "verified",
+      "lineItems": [
+        {
+          "title": "Kabel CYKY-J 5x2,5, buben",
+          "quantity": 27,
+          "unit": "m",
+          "unitPriceWithoutVat": 69.9,
+          "totalWithoutVat": 1887.3,
+          "vatRate": 21,
+          "totalWithVat": 2283.63,
+          "project": "Rozvody elektriny"
+        },
+        {
+          "title": "Kabel CYKY-J 5x4, buben",
+          "quantity": 37,
+          "unit": "m",
+          "unitPriceWithoutVat": 111.9,
+          "totalWithoutVat": 4140.3,
+          "vatRate": 21,
+          "totalWithVat": 5009.76,
+          "project": "Rozvody elektriny"
+        },
+        {
+          "title": "Kabel CYKY-J 3x2,5, kruh 50 m",
+          "quantity": 50,
+          "unit": "m",
+          "unitPriceWithoutVat": 42.1,
+          "totalWithoutVat": 2105,
+          "vatRate": 21,
+          "totalWithVat": 2547.05,
+          "project": "Rozvody elektriny"
+        },
+        {
+          "title": "Spojka gelova SHARK 506 svorkovnici 5x",
+          "quantity": 1,
+          "unit": "ks",
+          "unitPriceWithoutVat": 697.16,
+          "totalWithoutVat": 697.16,
+          "vatRate": 21,
+          "totalWithVat": 843.57,
+          "project": "Rozvody elektriny"
+        }
+      ],
+      "totals": {
+        "withoutVat": 8829.76,
+        "vat": 1854.25,
+        "withVat": 10684.01
+      },
+      "split": {
+        "type": "private",
+        "ourShare": 10684.01,
+        "counterpartyShare": 0
+      },
+      "linkedRecords": [
+        {
+          "type": "payment",
+          "id": "payment-kv-elektro-cables-2026-08-13"
+        }
+      ],
+      "note": "Faktura z 13. 8. 2026 za elektro material pro projekt Rozvody elektriny. Hrazeno nami, 100 % soukromy naklad mimo vyuctovani s Loffelmanovymi."
+    },
+    {
+      "id": "receipt-2026-08-13-kv-elektro-frame",
+      "date": "2026-08-13",
+      "vendor": "K&V ELEKTRO a.s.",
+      "invoiceNumber": "9113896846",
+      "amount": 115.37,
+      "currency": "CZK",
+      "file": "assets/receipts/IMG_8785.JPG",
+      "status": "verified",
+      "lineItems": [
+        {
+          "title": "ABB Zoni ctyrramecek matna cerna/bila",
+          "quantity": 1,
+          "unit": "ks",
+          "unitPriceWithoutVat": 95.35,
+          "totalWithoutVat": 95.35,
+          "vatRate": 21,
+          "totalWithVat": 115.37,
+          "project": "Rozvody elektriny"
+        }
+      ],
+      "totals": {
+        "withoutVat": 95.35,
+        "vat": 20.02,
+        "withVat": 115.37
+      },
+      "split": {
+        "type": "private",
+        "ourShare": 115.37,
+        "counterpartyShare": 0
+      },
+      "linkedRecords": [
+        {
+          "type": "payment",
+          "id": "payment-kv-elektro-frame-2026-08-13"
+        }
+      ],
+      "note": "Faktura z 13. 8. 2026 za ABB ramecek. Hrazeno nami, 100 % soukromy naklad mimo vyuctovani s Loffelmanovymi."
+    },
+    {
+      "id": "receipt-2026-08-13-obi-paving-tools",
+      "date": "2026-08-13",
+      "vendor": "OBI Ceska republika s.r.o.",
+      "amount": 323,
+      "currency": "CZK",
+      "file": "assets/receipts/IMG_8785.JPG",
+      "status": "partial_tbd",
+      "lineItems": [
+        {
+          "title": "Krizky sparovaci",
+          "quantity": 3,
+          "unit": "ks",
+          "unitPriceWithVat": 55,
+          "totalWithVat": 165,
+          "project": "Virivka / zpevnene plochy"
+        },
+        {
+          "title": "Necitelna polozka z uctenky",
+          "quantity": 1,
+          "unit": "ks",
+          "totalWithVat": 99,
+          "project": "TBD - vyzaduje prirazeni",
+          "unclearReason": "Nazev polozky na fotografii neni spolehlive citelny."
+        },
+        {
+          "title": "Snura zednicka",
+          "quantity": 1,
+          "unit": "ks",
+          "unitPriceWithVat": 59,
+          "totalWithVat": 59,
+          "project": "Virivka / zpevnene plochy"
+        }
+      ],
+      "totals": {
+        "withVat": 323,
+        "assigned": 224,
+        "tbd": 99
+      },
+      "split": {
+        "type": "private",
+        "ourShare": 323,
+        "counterpartyShare": 0
+      },
+      "linkedRecords": [
+        {
+          "type": "payment",
+          "id": "payment-obi-paving-tools-2026-08-13"
+        }
+      ],
+      "note": "OBI uctenka z 13. 8. 2026. Polozky za 165 Kc a 59 Kc patri k dlazbe / zpevnenym plocham. Polozka za 99 Kc zustava TBD, protoze na fotce neni bezpecne citelna."
     }
   ],
   "example": {
