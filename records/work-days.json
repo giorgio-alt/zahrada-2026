@@ -562,19 +562,41 @@
       "grossTotal": 9000,
       "paymentStatus": "unallocated",
       "paymentAllocation": null
+    },
+    {
+      "id": "work-2026-08-14",
+      "date": "2026-08-14",
+      "dayRate": 6000,
+      "workers": [
+        "Tatino",
+        "Vasil"
+      ],
+      "ownProjectPercent": 100,
+      "sharedProjectPercent": 0,
+      "ownProjectAmount": 6000,
+      "sharedProjectAmount": 0,
+      "ourSharedShare": 0,
+      "neighborSharedShare": 0,
+      "status": "logged",
+      "project": "Rozvody elektriny / Virivka / Domek + pergola + navazujici dlazba",
+      "note": "Dvouclenna parta Tatino a Vasil finalizovala a stabilizovala dlazbu pod virivkou, pokracovala v bagrovani plochy pro dlazbu pod zahradni domek a dokoncila zahradni elektroinstalaci vcetne rozvadece na samostatnem kulu mimo plot. 100 % nas projekt, mimo sdilene vyuctovani.",
+      "crewSize": 2,
+      "grossTotal": 6000,
+      "paymentStatus": "unallocated",
+      "paymentAllocation": null
     }
   ],
   "totals": {
-    "days": 26,
+    "days": 27,
     "fullDays": 19,
-    "reducedDays": 5,
+    "reducedDays": 6,
     "partialDays": 2,
-    "totalWork": 209250,
-    "ownProjectAmount": 131175,
+    "totalWork": 215250,
+    "ownProjectAmount": 137175,
     "sharedProjectAmount": 76575,
     "loffelmanProjectAmount": 1500,
     "ourSharedShare": 38287.5,
     "neighborSharedShare": 38287.5,
-    "ourTotalWorkCost": 169462.5
+    "ourTotalWorkCost": 175462.5
   }
 }

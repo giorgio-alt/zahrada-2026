@@ -272,18 +272,19 @@
     },
     {
       "id": "liability-ivan-work-2026-06-17-26",
-      "date": "2026-08-13",
+      "date": "2026-08-14",
       "type": "work_liability",
-      "title": "Prace Ivanovy party 17. 6.-13. 8.",
-      "amount": 209250,
-      "paidAmount": 134000,
-      "outstandingAmount": 75250,
+      "title": "Prace Ivanovy party 17. 6.-14. 8.",
+      "amount": 215250,
+      "paidAmount": 179000,
+      "outstandingAmount": 36250,
       "paidBy": "us",
       "paidTo": "Ivanova parta",
       "status": "partially_paid",
       "settlementPaymentIds": [
         "payment-ivan-partial-settlement-2026-06-30",
-        "payment-ivan-settlement-2026-07-15"
+        "payment-ivan-settlement-2026-07-15",
+        "payment-ivan-settlement-2026-08-14"
       ],
       "workDayIds": [
         "work-2026-06-17",
@@ -311,10 +312,11 @@
         "work-2026-08-03",
         "work-2026-08-06",
         "work-2026-08-11",
-        "work-2026-08-13"
+        "work-2026-08-13",
+        "work-2026-08-14"
       ],
       "receiptIds": [],
-      "note": "Cista evidence prace Ivanovy party do 13. 8. 2026 bez materialu a uctenek. Dne 8. 7. je celkem k uhrade Ivanove parte 3 750 Kc: 2 250 Kc patri do naseho / sdileneho rozpoctu a 1 500 Kc je 100 % naklad Loffelmanovych hrazeny nami. Dne 17. 7. pracovala cela triclenna parta za 9 000 Kc na sdilenem projektu 50 / 50 a zahajeni rozvodu elektriny. Dny 21., 25., 27. 7., 6. 8., 11. 8. a 13. 8. byly vedeny jako 100 % nas projekt, dne 3. 8. pracovala dvouclenna parta za 6 000 Kc take jako 100 % nas projekt. Ivanovi bylo realne vyplaceno 72 000 Kc dne 30. 6. a 62 000 Kc dne 15. 7., celkem 134 000 Kc. Zbyva doplatit za praci 75 250 Kc."
+      "note": "Cista evidence prace Ivanovy party do 14. 8. 2026 bez materialu a uctenek. Dne 8. 7. je celkem k uhrade Ivanove parte 3 750 Kc: 2 250 Kc patri do naseho / sdileneho rozpoctu a 1 500 Kc je 100 % naklad Loffelmanovych hrazeny nami. Dne 17. 7. pracovala cela triclenna parta za 9 000 Kc na sdilenem projektu 50 / 50 a zahajeni rozvodu elektriny. Dny 21., 25., 27. 7., 6. 8., 11., 13. a 14. 8. byly vedeny jako 100 % nas projekt, dne 3. 8. pracovala dvouclenna parta za 6 000 Kc take jako 100 % nas projekt. Ivanovi bylo realne vyplaceno 72 000 Kc dne 30. 6., 62 000 Kc dne 15. 7. a 45 000 Kc dne 14. 8., celkem 179 000 Kc. Zbyva doplatit za praci 36 250 Kc."
     },
     {
       "id": "payment-ivan-partial-settlement-2026-06-30",
@@ -336,7 +338,7 @@
       "title": "Platba Ivanovi 15. 7.",
       "amount": 62000,
       "openBalanceReductionAmount": 62000,
-      "remainingBalanceAfterPayment": 75250,
+      "remainingBalanceAfterPayment": 81250,
       "paidBy": "us",
       "paidTo": "Ivan",
       "status": "paid",
@@ -344,7 +346,24 @@
         "liability-ivan-work-2026-06-17-26"
       ],
       "receiptIds": [],
-      "note": "Skutecna cashflow platba Ivanovi. Spolu s platbou 72 000 Kc ze dne 30. 6. tvori realne vyplaceno Ivanovi celkem 134 000 Kc. Uctenky hrazene Ivanem jsou vyrovnane a nejsou dale vedeny jako otevreny zavazek. Po zaevidovani prace do 13. 8. zbyva doplatit za praci 75 250 Kc. Platba nesmi navysovat projektove naklady ani sdilene vyuctovani."
+      "note": "Skutecna cashflow platba Ivanovi. Spolu s platbou 72 000 Kc ze dne 30. 6. tvori realne vyplaceno Ivanovi celkem 134 000 Kc. Uctenky hrazene Ivanem jsou vyrovnane a nejsou dale vedeny jako otevreny zavazek. Po zaevidovani prace do 14. 8. a pred platbou 14. 8. zbyvalo doplatit za praci 81 250 Kc. Platba nesmi navysovat projektove naklady ani sdilene vyuctovani."
+    },
+    {
+      "id": "payment-ivan-settlement-2026-08-14",
+      "date": "2026-08-14",
+      "type": "cashflow_settlement",
+      "title": "Platba Ivanovi 14. 8.",
+      "amount": 45000,
+      "openBalanceReductionAmount": 45000,
+      "remainingBalanceAfterPayment": 36250,
+      "paidBy": "us",
+      "paidTo": "Ivan",
+      "status": "paid",
+      "relatedLiabilityIds": [
+        "liability-ivan-work-2026-06-17-26"
+      ],
+      "receiptIds": [],
+      "note": "Skutecna cashflow platba Ivanovi. Spolu s platbami 72 000 Kc ze dne 30. 6. a 62 000 Kc ze dne 15. 7. tvori realne vyplaceno Ivanovi celkem 179 000 Kc. Po zaevidovani prace do 14. 8. zbyva doplatit za praci 36 250 Kc. Platba nesmi navysovat projektove naklady ani sdilene vyuctovani."
     }
   ]
 }
