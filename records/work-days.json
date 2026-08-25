@@ -584,19 +584,42 @@
       "grossTotal": 6000,
       "paymentStatus": "unallocated",
       "paymentAllocation": null
+    },
+    {
+      "id": "work-2026-08-25",
+      "date": "2026-08-25",
+      "dayRate": 9000,
+      "workers": [
+        "Ivan",
+        "Tatino",
+        "Vasil"
+      ],
+      "ownProjectPercent": 100,
+      "sharedProjectPercent": 0,
+      "ownProjectAmount": 9000,
+      "sharedProjectAmount": 0,
+      "ourSharedShare": 0,
+      "neighborSharedShare": 0,
+      "status": "logged",
+      "project": "Domek + pergola + navazujici dlazba / zpevnene plochy",
+      "note": "Plna triclenna parta Ivan, Tatino a Vasil pokracovala na zpevnenych plochach pro projekt Domek + pergola + navazujici dlazba. Prace 9 000 Kc je 100 % nas projekt. Odvoz zeminy 3 000 Kc je samostatny materialovy/sluzbovy naklad a platba Ivanovi 35 000 Kc je pouze cashflow proti zavazku, nikoli novy projektovy naklad.",
+      "crewSize": 3,
+      "grossTotal": 9000,
+      "paymentStatus": "unallocated",
+      "paymentAllocation": null
     }
   ],
   "totals": {
-    "days": 27,
-    "fullDays": 19,
+    "days": 28,
+    "fullDays": 20,
     "reducedDays": 6,
     "partialDays": 2,
-    "totalWork": 215250,
-    "ownProjectAmount": 137175,
+    "totalWork": 224250,
+    "ownProjectAmount": 146175,
     "sharedProjectAmount": 76575,
     "loffelmanProjectAmount": 1500,
     "ourSharedShare": 38287.5,
     "neighborSharedShare": 38287.5,
-    "ourTotalWorkCost": 175462.5
+    "ourTotalWorkCost": 184462.5
   }
 }

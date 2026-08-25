@@ -226,6 +226,32 @@
       "note": "4 m3 sterku frakce 0/32 + 0/8 bez dokladu pro projekt Virivka / zpevnene plochy. 100 % nas naklad mimo vyuctovani s Loffelmanovymi. Mnozstvi a cena nejsou dale delene mezi frakce, protoze rozpad neni znamy."
     },
     {
+      "id": "payment-gravel-032-hot-tub-2026-08-03-second-truck",
+      "date": "2026-08-03",
+      "type": "private_expense",
+      "title": "Sterk 0/32 - dalsi auto - virivka / zpevnene plochy",
+      "amount": 4900,
+      "paidBy": "us",
+      "paidTo": "dodavatel sterku",
+      "status": "paid",
+      "project": "Virivka / zpevnene plochy",
+      "receiptIds": [],
+      "note": "Dalsi samostatne auto sterku 0/32 ze dne 3. 8. 2026 za 4 900 Kc. 100 % nas naklad mimo vyuctovani s Loffelmanovymi. Neslucovat s predchozi evidenci sterku."
+    },
+    {
+      "id": "payment-soil-removal-garden-house-2026-08-25",
+      "date": "2026-08-25",
+      "type": "private_expense",
+      "title": "Odvoz zeminy - Domek + pergola + navazujici dlazba",
+      "amount": 3000,
+      "paidBy": "us",
+      "paidTo": "odvoz zeminy",
+      "status": "paid",
+      "project": "Domek + pergola + navazujici dlazba",
+      "receiptIds": [],
+      "note": "Odvoz zeminy vznikle pri vykopovych pracich dne 25. 8. 2026. 100 % nas naklad. Oddeleno od prace Ivanovy party za 9 000 Kc a od platby Ivanovi 35 000 Kc, ktera je pouze cashflow proti zavazku."
+    },
+    {
       "id": "payment-kv-elektro-cables-2026-08-13",
       "date": "2026-08-13",
       "type": "private_expense",
@@ -272,19 +298,20 @@
     },
     {
       "id": "liability-ivan-work-2026-06-17-26",
-      "date": "2026-08-14",
+      "date": "2026-08-25",
       "type": "work_liability",
-      "title": "Prace Ivanovy party 17. 6.-14. 8.",
-      "amount": 215250,
-      "paidAmount": 179000,
-      "outstandingAmount": 36250,
+      "title": "Prace Ivanovy party 17. 6.-25. 8.",
+      "amount": 224250,
+      "paidAmount": 214000,
+      "outstandingAmount": 10250,
       "paidBy": "us",
       "paidTo": "Ivanova parta",
       "status": "partially_paid",
       "settlementPaymentIds": [
         "payment-ivan-partial-settlement-2026-06-30",
         "payment-ivan-settlement-2026-07-15",
-        "payment-ivan-settlement-2026-08-14"
+        "payment-ivan-settlement-2026-08-14",
+        "payment-ivan-settlement-2026-08-25"
       ],
       "workDayIds": [
         "work-2026-06-17",
@@ -313,10 +340,11 @@
         "work-2026-08-06",
         "work-2026-08-11",
         "work-2026-08-13",
-        "work-2026-08-14"
+        "work-2026-08-14",
+        "work-2026-08-25"
       ],
       "receiptIds": [],
-      "note": "Cista evidence prace Ivanovy party do 14. 8. 2026 bez materialu a uctenek. Dne 8. 7. je celkem k uhrade Ivanove parte 3 750 Kc: 2 250 Kc patri do naseho / sdileneho rozpoctu a 1 500 Kc je 100 % naklad Loffelmanovych hrazeny nami. Dne 17. 7. pracovala cela triclenna parta za 9 000 Kc na sdilenem projektu 50 / 50 a zahajeni rozvodu elektriny. Dny 21., 25., 27. 7., 6. 8., 11., 13. a 14. 8. byly vedeny jako 100 % nas projekt, dne 3. 8. pracovala dvouclenna parta za 6 000 Kc take jako 100 % nas projekt. Ivanovi bylo realne vyplaceno 72 000 Kc dne 30. 6., 62 000 Kc dne 15. 7. a 45 000 Kc dne 14. 8., celkem 179 000 Kc. Zbyva doplatit za praci 36 250 Kc."
+      "note": "Cista evidence prace Ivanovy party do 25. 8. 2026 bez materialu a uctenek. Dne 8. 7. je celkem k uhrade Ivanove parte 3 750 Kc: 2 250 Kc patri do naseho / sdileneho rozpoctu a 1 500 Kc je 100 % naklad Loffelmanovych hrazeny nami. Dne 17. 7. pracovala cela triclenna parta za 9 000 Kc na sdilenem projektu 50 / 50 a zahajeni rozvodu elektriny. Dny 21., 25., 27. 7., 6. 8., 11., 13., 14. a 25. 8. byly vedeny jako 100 % nas projekt, dne 3. 8. pracovala dvouclenna parta za 6 000 Kc take jako 100 % nas projekt. Ivanovi bylo realne vyplaceno 72 000 Kc dne 30. 6., 62 000 Kc dne 15. 7., 45 000 Kc dne 14. 8. a 35 000 Kc dne 25. 8., celkem 214 000 Kc. Zbyva doplatit za praci 10 250 Kc."
     },
     {
       "id": "payment-ivan-partial-settlement-2026-06-30",
@@ -364,6 +392,23 @@
       ],
       "receiptIds": [],
       "note": "Skutecna cashflow platba Ivanovi. Spolu s platbami 72 000 Kc ze dne 30. 6. a 62 000 Kc ze dne 15. 7. tvori realne vyplaceno Ivanovi celkem 179 000 Kc. Po zaevidovani prace do 14. 8. zbyva doplatit za praci 36 250 Kc. Platba nesmi navysovat projektove naklady ani sdilene vyuctovani."
+    },
+    {
+      "id": "payment-ivan-settlement-2026-08-25",
+      "date": "2026-08-25",
+      "type": "cashflow_settlement",
+      "title": "Platba Ivanovi 25. 8.",
+      "amount": 35000,
+      "openBalanceReductionAmount": 35000,
+      "remainingBalanceAfterPayment": 10250,
+      "paidBy": "us",
+      "paidTo": "Ivan",
+      "status": "paid",
+      "relatedLiabilityIds": [
+        "liability-ivan-work-2026-06-17-26"
+      ],
+      "receiptIds": [],
+      "note": "Skutecna cashflow platba Ivanovi. Spolu s platbami 72 000 Kc dne 30. 6., 62 000 Kc dne 15. 7. a 45 000 Kc dne 14. 8. tvori realne vyplaceno Ivanovi celkem 214 000 Kc. Po zaevidovani prace 25. 8. zbyva doplatit za praci 10 250 Kc. Platba 35 000 Kc neni novy projektovy naklad a nesmi navysovat praci, material ani sdilene vyuctovani."
     }
   ]
 }
