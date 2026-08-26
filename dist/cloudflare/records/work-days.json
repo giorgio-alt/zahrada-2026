@@ -607,19 +607,42 @@
       "grossTotal": 9000,
       "paymentStatus": "unallocated",
       "paymentAllocation": null
+    },
+    {
+      "id": "work-2026-08-26",
+      "date": "2026-08-26",
+      "dayRate": 9000,
+      "workers": [
+        "Ivan",
+        "Tatino",
+        "Vasil"
+      ],
+      "ownProjectPercent": 100,
+      "sharedProjectPercent": 0,
+      "ownProjectAmount": 9000,
+      "sharedProjectAmount": 0,
+      "ourSharedShare": 0,
+      "neighborSharedShare": 0,
+      "status": "logged",
+      "project": "Domek + pergola + navazujici dlazba / Osvetleni",
+      "note": "Plna triclenna parta Ivan, Tatino a Vasil pracovala primarne pod dlazbou pro zahradni domek a na navazujicich zpevnenych plochach. Soucasne byla dokoncena svetla v horni chodbe a spodni chodbe. 100 % nas projekt, mimo sdilene vyuctovani.",
+      "crewSize": 3,
+      "grossTotal": 9000,
+      "paymentStatus": "unallocated",
+      "paymentAllocation": null
     }
   ],
   "totals": {
-    "days": 28,
-    "fullDays": 20,
+    "days": 29,
+    "fullDays": 21,
     "reducedDays": 6,
     "partialDays": 2,
-    "totalWork": 224250,
-    "ownProjectAmount": 146175,
+    "totalWork": 233250,
+    "ownProjectAmount": 155175,
     "sharedProjectAmount": 76575,
     "loffelmanProjectAmount": 1500,
     "ourSharedShare": 38287.5,
     "neighborSharedShare": 38287.5,
-    "ourTotalWorkCost": 184462.5
+    "ourTotalWorkCost": 193462.5
   }
 }

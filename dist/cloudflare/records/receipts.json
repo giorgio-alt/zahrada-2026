@@ -636,6 +636,119 @@
         }
       ],
       "note": "OBI uctenka z 13. 8. 2026. Polozky za 165 Kc a 59 Kc patri k dlazbe / zpevnenym plocham. Polozka za 99 Kc zustava TBD, protoze na fotce neni bezpecne citelna."
+    },
+    {
+      "id": "receipt-2026-08-25-obi-beton-obrubniky-garden-house",
+      "date": "2026-08-25",
+      "vendor": "OBI Ceska republika s.r.o.",
+      "amount": 1309,
+      "currency": "CZK",
+      "file": "assets/receipts/IMG_8928.JPG",
+      "status": "verified",
+      "lineItems": [
+        {
+          "title": "Beton Hobby",
+          "quantity": 4,
+          "unit": "ks",
+          "unitPriceWithVat": 99,
+          "totalWithVat": 396,
+          "project": "Domek + pergola + navazujici dlazba"
+        },
+        {
+          "title": "Obrubnik zahonovy",
+          "quantity": 11,
+          "unit": "ks",
+          "unitPriceWithVat": 83,
+          "totalWithVat": 913,
+          "project": "Domek + pergola + navazujici dlazba"
+        }
+      ],
+      "totals": {
+        "withVat": 1309,
+        "assigned": 1309,
+        "tbd": 0
+      },
+      "split": {
+        "type": "private",
+        "ourShare": 1309,
+        "counterpartyShare": 0
+      },
+      "linkedRecords": [
+        {
+          "type": "payment",
+          "id": "payment-obi-beton-obrubniky-garden-house-2026-08-25"
+        }
+      ],
+      "note": "OBI uctenka z 25. 8. 2026. Beton a zahonove obrubniky pro prace pod dlazbou u zahradniho domku. Hrazeno nami, 100 % soukromy naklad mimo vyuctovani s Loffelmanovymi. Rucni poznamka na uctence o 1 000 Kc Ivanovi neni zaevidovana jako cashflow."
+    },
+    {
+      "id": "receipt-2026-08-22-obi-hot-tub-maintenance",
+      "date": "2026-08-22",
+      "vendor": "OBI Ceska republika s.r.o.",
+      "amount": 1981,
+      "currency": "CZK",
+      "file": "assets/receipts/IMG_8928.JPG",
+      "status": "verified",
+      "lineItems": [
+        {
+          "title": "Cerpadlo ponorne",
+          "quantity": 1,
+          "unit": "ks",
+          "unitPriceWithVat": 1299,
+          "totalWithVat": 1299,
+          "project": "Virivka"
+        },
+        {
+          "title": "Specialni kartac",
+          "quantity": 1,
+          "unit": "ks",
+          "unitPriceWithVat": 269,
+          "totalWithVat": 269,
+          "project": "Virivka",
+          "unclearReason": "Druha cast nazvu polozky je na fotografii castecne necitelna."
+        },
+        {
+          "title": "Granulat pH+",
+          "quantity": 1,
+          "unit": "ks",
+          "unitPriceWithVat": 169,
+          "totalWithVat": 169,
+          "project": "Virivka"
+        },
+        {
+          "title": "Vune Planet Spa",
+          "quantity": 1,
+          "unit": "ks",
+          "unitPriceWithVat": 169,
+          "totalWithVat": 169,
+          "project": "Virivka"
+        },
+        {
+          "title": "Aqua Scoop nastavec",
+          "quantity": 1,
+          "unit": "ks",
+          "unitPriceWithVat": 75,
+          "totalWithVat": 75,
+          "project": "Virivka"
+        }
+      ],
+      "totals": {
+        "withVat": 1981,
+        "assigned": 1981,
+        "tbd": 0
+      },
+      "split": {
+        "type": "private",
+        "ourShare": 1981,
+        "counterpartyShare": 0
+      },
+      "linkedRecords": [
+        {
+          "type": "payment",
+          "id": "payment-obi-hot-tub-maintenance-2026-08-22"
+        }
+      ],
+      "note": "OBI uctenka z 22. 8. 2026 za vybaveni a udrzbu virivky. Hrazeno nami, 100 % soukromy naklad mimo vyuctovani s Loffelmanovymi."
     }
   ],
   "example": {
