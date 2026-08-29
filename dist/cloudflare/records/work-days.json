@@ -630,19 +630,42 @@
       "grossTotal": 9000,
       "paymentStatus": "unallocated",
       "paymentAllocation": null
+    },
+    {
+      "id": "work-2026-08-29",
+      "date": "2026-08-29",
+      "dayRate": 9000,
+      "workers": [
+        "Ivan",
+        "Tatino",
+        "Vasil"
+      ],
+      "ownProjectPercent": 100,
+      "sharedProjectPercent": 0,
+      "ownProjectAmount": 9000,
+      "sharedProjectAmount": 0,
+      "ourSharedShare": 0,
+      "neighborSharedShare": 0,
+      "status": "logged",
+      "project": "Domek + pergola + navazujici dlazba / zpevnene plochy",
+      "note": "Plna triclenna parta Ivan, Tatino a Vasil pokracovala na dlazbe pod zahradni domek, praci na podkladu / zpevnene plose a odvozu vytezeneho a prebytecneho materialu. Prace 9 000 Kc je 100 % nas projekt. Sterk 0/32 za 4 900 Kc a odvoz 3 kontejneru za 9 000 Kc jsou samostatne naklady, nikoli prace Ivanovy party.",
+      "crewSize": 3,
+      "grossTotal": 9000,
+      "paymentStatus": "unallocated",
+      "paymentAllocation": null
     }
   ],
   "totals": {
-    "days": 29,
-    "fullDays": 21,
+    "days": 30,
+    "fullDays": 22,
     "reducedDays": 6,
     "partialDays": 2,
-    "totalWork": 233250,
-    "ownProjectAmount": 155175,
+    "totalWork": 242250,
+    "ownProjectAmount": 164175,
     "sharedProjectAmount": 76575,
     "loffelmanProjectAmount": 1500,
     "ourSharedShare": 38287.5,
     "neighborSharedShare": 38287.5,
-    "ourTotalWorkCost": 193462.5
+    "ourTotalWorkCost": 202462.5
   }
 }

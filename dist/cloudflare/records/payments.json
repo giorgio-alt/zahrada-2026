@@ -252,6 +252,32 @@
       "note": "Odvoz zeminy vznikle pri vykopovych pracich dne 25. 8. 2026. 100 % nas naklad. Oddeleno od prace Ivanovy party za 9 000 Kc a od platby Ivanovi 35 000 Kc, ktera je pouze cashflow proti zavazku."
     },
     {
+      "id": "payment-gravel-032-garden-house-2026-08-29",
+      "date": "2026-08-29",
+      "type": "private_expense",
+      "title": "Sterk 0/32 - auto 29. 8. - Domek + pergola + navazujici dlazba",
+      "amount": 4900,
+      "paidBy": "us",
+      "paidTo": "dodavatel sterku",
+      "status": "paid",
+      "project": "Domek + pergola + navazujici dlazba",
+      "receiptIds": [],
+      "note": "Nova samostatna dodavka sterku 0/32 dne 29. 8. 2026, mnozstvi 1 auto, objem v m3 neni znamy. 100 % nas naklad. Neslucovat s predchozimi dodavkami sterku za 4 900 Kc."
+    },
+    {
+      "id": "payment-material-removal-garden-house-2026-08-29",
+      "date": "2026-08-29",
+      "type": "private_expense",
+      "title": "Odvoz materialu - 3 kontejnery - Domek + pergola + navazujici dlazba",
+      "amount": 9000,
+      "paidBy": "us",
+      "paidTo": "odvoz materialu",
+      "status": "paid",
+      "project": "Domek + pergola + navazujici dlazba",
+      "receiptIds": [],
+      "note": "Odvoz vytezeneho a prebytecneho materialu dne 29. 8. 2026: 3 kontejnery po 3 000 Kc, celkem 9 000 Kc. 100 % nas naklad. Neslucovat s odvozem zeminy z 25. 8. a nevest jako praci Ivanovy party."
+    },
+    {
       "id": "payment-obi-beton-obrubniky-garden-house-2026-08-25",
       "date": "2026-08-25",
       "type": "private_expense",
@@ -328,12 +354,12 @@
     },
     {
       "id": "liability-ivan-work-2026-06-17-26",
-      "date": "2026-08-26",
+      "date": "2026-08-29",
       "type": "work_liability",
-      "title": "Prace Ivanovy party 17. 6.-26. 8.",
-      "amount": 233250,
+      "title": "Prace Ivanovy party 17. 6.-29. 8.",
+      "amount": 242250,
       "paidAmount": 214000,
-      "outstandingAmount": 19250,
+      "outstandingAmount": 28250,
       "paidBy": "us",
       "paidTo": "Ivanova parta",
       "status": "partially_paid",
@@ -372,10 +398,11 @@
         "work-2026-08-13",
         "work-2026-08-14",
         "work-2026-08-25",
-        "work-2026-08-26"
+        "work-2026-08-26",
+        "work-2026-08-29"
       ],
       "receiptIds": [],
-      "note": "Cista evidence prace Ivanovy party do 26. 8. 2026 bez materialu a uctenek. Dne 8. 7. je celkem k uhrade Ivanove parte 3 750 Kc: 2 250 Kc patri do naseho / sdileneho rozpoctu a 1 500 Kc je 100 % naklad Loffelmanovych hrazeny nami. Dne 17. 7. pracovala cela triclenna parta za 9 000 Kc na sdilenem projektu 50 / 50 a zahajeni rozvodu elektriny. Dny 21., 25., 27. 7., 6. 8., 11., 13., 14., 25. a 26. 8. byly vedeny jako 100 % nas projekt, dne 3. 8. pracovala dvouclenna parta za 6 000 Kc take jako 100 % nas projekt. Ivanovi bylo realne vyplaceno 72 000 Kc dne 30. 6., 62 000 Kc dne 15. 7., 45 000 Kc dne 14. 8. a 35 000 Kc dne 25. 8., celkem 214 000 Kc. Zbyva doplatit za praci 19 250 Kc."
+      "note": "Cista evidence prace Ivanovy party do 29. 8. 2026 bez materialu a uctenek. Dne 8. 7. je celkem k uhrade Ivanove parte 3 750 Kc: 2 250 Kc patri do naseho / sdileneho rozpoctu a 1 500 Kc je 100 % naklad Loffelmanovych hrazeny nami. Dne 17. 7. pracovala cela triclenna parta za 9 000 Kc na sdilenem projektu 50 / 50 a zahajeni rozvodu elektriny. Dny 21., 25., 27. 7., 6. 8., 11., 13., 14., 25., 26. a 29. 8. byly vedeny jako 100 % nas projekt, dne 3. 8. pracovala dvouclenna parta za 6 000 Kc take jako 100 % nas projekt. Ivanovi bylo realne vyplaceno 72 000 Kc dne 30. 6., 62 000 Kc dne 15. 7., 45 000 Kc dne 14. 8. a 35 000 Kc dne 25. 8., celkem 214 000 Kc. Zbyva doplatit za praci 28 250 Kc."
     },
     {
       "id": "payment-ivan-partial-settlement-2026-06-30",
@@ -439,7 +466,7 @@
         "liability-ivan-work-2026-06-17-26"
       ],
       "receiptIds": [],
-      "note": "Skutecna cashflow platba Ivanovi. Spolu s platbami 72 000 Kc dne 30. 6., 62 000 Kc dne 15. 7. a 45 000 Kc dne 14. 8. tvori realne vyplaceno Ivanovi celkem 214 000 Kc. Po platbe 25. 8. a pred zaevidovanim prace 26. 8. zbyvalo doplatit za praci 10 250 Kc; po zaevidovani prace 26. 8. je otevreny doplatek 19 250 Kc. Platba 35 000 Kc neni novy projektovy naklad a nesmi navysovat praci, material ani sdilene vyuctovani."
+      "note": "Skutecna cashflow platba Ivanovi. Spolu s platbami 72 000 Kc dne 30. 6., 62 000 Kc dne 15. 7. a 45 000 Kc dne 14. 8. tvori realne vyplaceno Ivanovi celkem 214 000 Kc. Po platbe 25. 8. zbyvalo doplatit za praci 10 250 Kc; po zaevidovani prace 26. a 29. 8. je aktualni otevreny doplatek 28 250 Kc. Platba 35 000 Kc neni novy projektovy naklad a nesmi navysovat praci, material ani sdilene vyuctovani."
     }
   ]
 }
