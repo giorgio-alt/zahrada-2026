@@ -464,7 +464,7 @@
   }
 
   function crewSizeForDay(day) {
-    return (day.detail?.workers || []).length || 0;
+    return Number(day.detail?.crewSize) || (day.detail?.workers || []).length || 0;
   }
 
   function calculatePaymentAllocation(day) {
@@ -614,6 +614,12 @@
     const wrap = el("div", "finance-list");
     if (!finance) {
       wrap.append(financeRow("Celkem", type === "off" ? "0 Kč" : "Doplnit"));
+      return wrap;
+    }
+
+    if (finance.journalOnly) {
+      wrap.append(financeRow("Účetní dopad", "0 Kč"));
+      wrap.append(financeRow("Režim", "Pouze deníkový záznam"));
       return wrap;
     }
 

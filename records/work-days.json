@@ -653,19 +653,63 @@
       "grossTotal": 9000,
       "paymentStatus": "unallocated",
       "paymentAllocation": null
+    },
+    {
+      "id": "work-2026-09-01",
+      "date": "2026-09-01",
+      "dayRate": null,
+      "workers": [
+        "Tatino",
+        "Vasil"
+      ],
+      "ownProjectPercent": null,
+      "sharedProjectPercent": null,
+      "ownProjectAmount": 0,
+      "sharedProjectAmount": 0,
+      "ourSharedShare": 0,
+      "neighborSharedShare": 0,
+      "status": "logged",
+      "project": "Domek + pergola + navazujici dlazba / zpevnene plochy",
+      "note": "Pouze denikova udalost bez financniho dopadu. Tatino a Vasil nakupovali a pokladali dlazbu u zahradniho domku. Cena dlazby neni znama ani zauctovana. Informativni poznamka: Ivanovi predano 20 000 Kc; castka neni platba, cashflow, naklad ani snizeni zavazku.",
+      "crewSize": 2,
+      "grossTotal": 0,
+      "accountingMode": "journal_only",
+      "paymentStatus": "not_applicable",
+      "paymentAllocation": null
+    },
+    {
+      "id": "work-2026-09-12",
+      "date": "2026-09-12",
+      "dayRate": 9000,
+      "workers": [],
+      "crewDescription": "3 osoby / cely pracovni den; konkretni slozeni neuvedeno",
+      "ownProjectPercent": 100,
+      "sharedProjectPercent": 0,
+      "ownProjectAmount": 9000,
+      "sharedProjectAmount": 0,
+      "ourSharedShare": 0,
+      "neighborSharedShare": 0,
+      "status": "logged",
+      "project": "Domek + pergola + navazujici dlazba / zpevnene plochy",
+      "note": "Triclenna parta srovnavala teren, finalizovala dlazbu pod pergolou a polozila obrubniky pro budouci plochu s drcenym mramorem. Prace 9 000 Kc je 100 % nas projekt. Drceny mramor zatim neni polozeny; ceny a mnozstvi materialu nejsou zadane ani zauctovane.",
+      "crewSize": 3,
+      "grossTotal": 9000,
+      "paymentStatus": "unallocated",
+      "paymentAllocation": null
     }
   ],
   "totals": {
-    "days": 30,
-    "fullDays": 22,
+    "days": 31,
+    "fullDays": 23,
     "reducedDays": 6,
     "partialDays": 2,
-    "totalWork": 242250,
-    "ownProjectAmount": 164175,
+    "journalOnlyDays": 1,
+    "totalWork": 251250,
+    "ownProjectAmount": 173175,
     "sharedProjectAmount": 76575,
     "loffelmanProjectAmount": 1500,
     "ourSharedShare": 38287.5,
     "neighborSharedShare": 38287.5,
-    "ourTotalWorkCost": 202462.5
+    "ourTotalWorkCost": 211462.5
   }
 }

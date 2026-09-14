@@ -354,12 +354,12 @@
     },
     {
       "id": "liability-ivan-work-2026-06-17-26",
-      "date": "2026-08-29",
+      "date": "2026-09-12",
       "type": "work_liability",
-      "title": "Prace Ivanovy party 17. 6.-29. 8.",
-      "amount": 242250,
+      "title": "Prace Ivanovy party 17. 6.-12. 9.",
+      "amount": 251250,
       "paidAmount": 214000,
-      "outstandingAmount": 28250,
+      "outstandingAmount": 37250,
       "paidBy": "us",
       "paidTo": "Ivanova parta",
       "status": "partially_paid",
@@ -399,10 +399,11 @@
         "work-2026-08-14",
         "work-2026-08-25",
         "work-2026-08-26",
-        "work-2026-08-29"
+        "work-2026-08-29",
+        "work-2026-09-12"
       ],
       "receiptIds": [],
-      "note": "Cista evidence prace Ivanovy party do 29. 8. 2026 bez materialu a uctenek. Dne 8. 7. je celkem k uhrade Ivanove parte 3 750 Kc: 2 250 Kc patri do naseho / sdileneho rozpoctu a 1 500 Kc je 100 % naklad Loffelmanovych hrazeny nami. Dne 17. 7. pracovala cela triclenna parta za 9 000 Kc na sdilenem projektu 50 / 50 a zahajeni rozvodu elektriny. Dny 21., 25., 27. 7., 6. 8., 11., 13., 14., 25., 26. a 29. 8. byly vedeny jako 100 % nas projekt, dne 3. 8. pracovala dvouclenna parta za 6 000 Kc take jako 100 % nas projekt. Ivanovi bylo realne vyplaceno 72 000 Kc dne 30. 6., 62 000 Kc dne 15. 7., 45 000 Kc dne 14. 8. a 35 000 Kc dne 25. 8., celkem 214 000 Kc. Zbyva doplatit za praci 28 250 Kc."
+      "note": "Cista evidence uctovane prace Ivanovy party do 12. 9. 2026 bez materialu a uctenek. Den 1. 9. je pouze denikova udalost bez pracovniho nebo materialoveho nakladu. Dne 12. 9. je evidovan plny tricleny den za 9 000 Kc jako 100 % nas projekt. Ivanovi bylo realne vyplaceno 72 000 Kc dne 30. 6., 62 000 Kc dne 15. 7., 45 000 Kc dne 14. 8. a 35 000 Kc dne 25. 8., celkem 214 000 Kc. Zbyva doplatit za praci 37 250 Kc."
     },
     {
       "id": "payment-ivan-partial-settlement-2026-06-30",
@@ -466,7 +467,7 @@
         "liability-ivan-work-2026-06-17-26"
       ],
       "receiptIds": [],
-      "note": "Skutecna cashflow platba Ivanovi. Spolu s platbami 72 000 Kc dne 30. 6., 62 000 Kc dne 15. 7. a 45 000 Kc dne 14. 8. tvori realne vyplaceno Ivanovi celkem 214 000 Kc. Po platbe 25. 8. zbyvalo doplatit za praci 10 250 Kc; po zaevidovani prace 26. a 29. 8. je aktualni otevreny doplatek 28 250 Kc. Platba 35 000 Kc neni novy projektovy naklad a nesmi navysovat praci, material ani sdilene vyuctovani."
+      "note": "Skutecna cashflow platba Ivanovi. Spolu s platbami 72 000 Kc dne 30. 6., 62 000 Kc dne 15. 7. a 45 000 Kc dne 14. 8. tvori realne vyplaceno Ivanovi celkem 214 000 Kc. Po platbe 25. 8. zbyvalo doplatit za praci 10 250 Kc; po zaevidovani prace 26. a 29. 8. byl tehdejsi otevreny doplatek 28 250 Kc. Platba 35 000 Kc neni novy projektovy naklad a nesmi navysovat praci, material ani sdilene vyuctovani."
     }
   ]
 }
